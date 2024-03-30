@@ -1,0 +1,419 @@
+<script lang="ts">
+	import Title from '$lib/components/Title.svelte';
+	import hero from '$lib/images/hero.svg';
+	import imgeThree from '$lib/images/3.png';
+	import imgeFour from '$lib/images/4.png';
+
+	import ImageOne from '$lib/images/1.png';
+	import ImageTwo from '$lib/images/2.png';
+	import Button from '$lib/components/Button.svelte';
+	import SvgOne from '$lib/images/vision/1.svelte';
+	import SvgTwo from '$lib/images/vision/2.svelte';
+	import SvgThree from '$lib/images/vision/3.svelte';
+	import SvgFour from '$lib/images/vision/4.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import Conctact from '$lib/components/Conctact.svelte';
+
+	const visions = [
+		{
+			name: 'OUR VISION',
+			description: 'To be a globally trusted consulting firm.',
+			icon: 1
+		},
+		{
+			name: 'OUR MISSION',
+			description:
+				'To leverage on innovation, expertise and technology to offer globally competitive consultancy services to our clients',
+			icon: 2
+		},
+		{
+			name: 'CORE BELIEF',
+			description:
+				'Offering proactive services and delivering effective, reliable, dependable professional advice, maintaining the highest level of confidentiality and integrity. Delivering results based on evidence and research within timeframe, while maintaining the highest level of accuracy and professionalism.',
+			icon: 3
+		},
+		{
+			name: 'CORE VALUES',
+			description:
+				'At DNR PARTNERS INTERNATIONAL, our values: are summarized into TRIP2C. Our values make our people live the company culture in pursuit of customer satisfaction. These are: Trust, Respect, Integrity, Professional competence Confidentiality and Customer value.',
+			icon: 4
+		}
+	];
+</script>
+
+<div class="flex flex-col gap-6 sm:gap-10 mt-32">
+	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+		<div class="grid sm:grid-cols-2 gap-10 items-center">
+			<div class="flex flex-col gap-3">
+				<p class="text-[#D71A30] font-light text-lg">Bridging Cultures, Maximizing Potential</p>
+				<Title
+					name="Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business. "
+				/>
+				<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap">
+					<button
+						class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
+					>
+						<span>reach to us</span>
+						<span>
+							<svg
+								width="24"
+								height="25"
+								viewBox="0 0 24 25"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									opacity="0.4"
+									d="M19.75 12.2257L4.75 12.2257"
+									stroke="white"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+									stroke="white"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</span>
+					</button>
+					<button
+						class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[#083867] border rounded-xl text-[#083867] capitalize font-light col-span-2 mt-2"
+					>
+						<span>know more</span>
+						<span>
+							<svg
+								width="24"
+								height="25"
+								viewBox="0 0 24 25"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									opacity="0.4"
+									d="M19.75 12.2257L4.75 12.2257"
+									stroke="#083867"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+									stroke="#083867"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="bg-[#F2F2F2] rounded-xl px-8 py-12">
+				<img src={hero} alt="" class="w-full h-full object-cover rounded-xl" />
+			</div>
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
+			<div class="">
+				<img
+					src={ImageOne}
+					width={325.69}
+					height={328.41}
+					alt=""
+					class="w-[460px] h-full object-cover"
+				/>
+			</div>
+			<div class="flex flex-col gap-3">
+				<div class="w-fit">
+					<Button>about us</Button>
+				</div>
+				<Title
+					name="We are a global chartered professional accountants and business advisors headquartered in England"
+				/>
+				<p class="text-[#4C4A4A] font-light">
+					It has a sharp expertise from long term experiences in various business industries. The
+					firm is in charge of coordinating the international activities of the DNR PARTNERS network
+					Firms but does not provide, supervise or manage professional services to clients. which is
+					a world-wide network of independent professional accounting firms and business advisers,
+					each of which is a separate and independent legal entity. DNR PARTNERS has offices in
+					England, Rwanda, Burundi, Kenya, Zambia and South Africa.
+				</p>
+				<button
+					class="py-3 px-6 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
+				>
+					<span>know more</span>
+					<span>
+						<svg
+							width="10"
+							height="16"
+							viewBox="0 0 10 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.5 1L8.5 8L1.5 15"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="bg-[#F0F8FF] pt-6">
+		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+			<div class="grid sm:grid-cols-2 items-center">
+				<div class="flex flex-col gap-2">
+					<div class="w-fit">
+						<Button>services</Button>
+					</div>
+					<div class="sm:w-[60%]">
+						<Title isSmall name="Your Expectation, Our Value Proposition" />
+					</div>
+				</div>
+				<p class="text-[#636363] text-[16px] font-light">
+					We offer services such as audit and assurance, Tax advisory, Accounting, Corporate finance
+					advisory and Management consultancy. Our clients are from various industries like NGOs,
+					Trading, Manufacturing, Universities, Coffee & Tea export, Capital market, etc.
+				</p>
+			</div>
+			<div class="flex mt-8 gap-4 items-center w-full flex-wrap justify-center">
+				{#each [1, 2, 3, 5, 6] as item}
+					<div class="py-12 px-6 bg-white rounded-xl w-[390px]">
+						<div class="flex items-center gap-4">
+							<div>
+								<svg
+									width="48"
+									height="49"
+									viewBox="0 0 48 49"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M31.1395 17C31.0465 16.9845 30.938 16.9845 30.845 17C28.7054 16.9225 27 15.1705 27 13C27 10.7829 28.7829 9 31 9C33.2171 9 35 10.7984 35 13C34.9845 15.1705 33.2791 16.9225 31.1395 17Z"
+										stroke="#083867"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M30.0418 27.8656C31.9493 28.2318 34.0517 27.8497 35.5276 26.7192C37.4908 25.2226 37.4908 22.7706 35.5276 21.2739C34.0378 20.1436 31.9075 19.7614 30 20.1435"
+										stroke="#C43228"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M11.8605 17C11.9535 16.9845 12.062 16.9845 12.155 17C14.2946 16.9225 16 15.1705 16 13C16 10.7829 14.2171 9 12 9C9.78295 9 8 10.7984 8 13C8.0155 15.1705 9.72093 16.9225 11.8605 17Z"
+										stroke="#083867"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M13.9523 27.8656C11.7723 28.2318 9.36947 27.8497 7.68274 26.7192C5.43909 25.2226 5.43909 22.7706 7.68274 21.2739C9.38538 20.1436 11.82 19.7614 14 20.1435"
+										stroke="#C43228"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M22.1396 28C22.0465 27.9845 21.938 27.9845 21.845 28C19.7055 27.9225 18 26.1706 18 24C18 21.783 19.783 20 22 20C24.2171 20 26 21.7985 26 24C25.9845 26.1706 24.2791 27.938 22.1396 28Z"
+										stroke="#083867"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M17.5992 33.2676C15.4669 34.7663 15.4669 37.2217 17.5992 38.7205C20.0189 40.4265 23.9811 40.4265 26.4008 38.7205C28.5331 37.2217 28.5331 34.7663 26.4008 33.2676C23.9962 31.5775 20.0189 31.5775 17.5992 33.2676Z"
+										stroke="#C43228"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</div>
+							<div class="flex flex-col gap-2">
+								<span class="capitalize text-[#083867] font-semibold">consultancy </span>
+								<p class="line-clamp-2 text-[#595959] font-light">
+									Come and experience our consultancy services for your growth. Our experts design
+									manuals that suit your company’s need and size
+								</p>
+								<button class="flex items-center gap-2.5 text-[#C43228]">
+									<span>Learn more</span>
+									<span
+										><svg
+											width="17"
+											height="15"
+											viewBox="0 0 17 15"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												opacity="0.4"
+												d="M16.25 7.72559L1.25 7.72559"
+												stroke="#C43228"
+												stroke-width="1.5"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+											<path
+												d="M10.2002 1.70124L16.2502 7.72524L10.2002 13.7502"
+												stroke="#C43228"
+												stroke-width="1.5"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+		<div class="relative h-[250px] mt-10 flex items-center justify-center">
+			<div class="absolute top-0 w-full bg-[#083867] h-full z-10" />
+			<img
+				src={ImageTwo}
+				alt="logo"
+				class="absolute top-0 w-full h-full z-20 bg-opacity-10 object-cover"
+			/>
+			<div class="flex items-start z-40 max-w-2xl text-center mx-10">
+				<div class="mt-4">
+					<svg
+						width="15"
+						height="14"
+						viewBox="0 0 15 14"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M13.7407 8.05138C14.5802 8.05138 15 8.47227 15 9.31406V12.7373C15 13.5791 14.5802 14 13.7407 14H10.4944C9.65485 14 9.23507 13.5791 9.23507 12.7373V9.31406C9.23507 7.34989 9.4403 5.63826 9.85075 4.17917C10.2799 2.70137 11.1101 1.41063 12.3414 0.306954C12.7519 -0.0484664 13.097 -0.0952323 13.3769 0.166657L14.6362 1.34516C14.916 1.60705 14.8507 1.92505 14.4403 2.29918C13.806 2.86037 13.2836 3.6741 12.8731 4.74036C12.4813 5.78791 12.2854 6.89159 12.2854 8.05138H13.7407ZM4.5056 8.05138C5.34515 8.05138 5.76493 8.47227 5.76493 9.31406V12.7373C5.76493 13.5791 5.34515 14 4.5056 14H1.25933C0.419776 14 0 13.5791 0 12.7373V9.31406C0 7.34989 0.205224 5.63826 0.615672 4.17917C1.04478 2.70137 1.875 1.41063 3.10634 0.306954C3.51679 -0.0484664 3.86194 -0.0952323 4.14179 0.166657L5.40112 1.34516C5.68097 1.60705 5.61567 1.92505 5.20522 2.29918C4.5709 2.86037 4.04851 3.6741 3.63806 4.74036C3.24627 5.78791 3.05037 6.89159 3.05037 8.05138H4.5056Z"
+							fill="white"
+						/>
+					</svg>
+				</div>
+				<h1 class="text-xl sm:text-2xl md:text-4xl font-semibold text-white md:leading-[48px]">
+					we believe in investing time to develop true long term partnerships and trusted
+					relationships with our clients
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+		<div class="grid sm:grid-cols-2 gap-10">
+			{#each visions as item}
+				<div class="flex gap-6">
+					<div>
+						{#if item.icon === 1}
+							<SvgOne />
+						{:else if item.icon === 2}
+							<SvgTwo />
+						{:else if item.icon === 3}
+							<SvgThree />
+						{:else if item.icon === 4}
+							<SvgFour />
+						{:else}
+							{item.icon}
+						{/if}
+					</div>
+					<div class="flex flex-col gap-1">
+						<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
+						<p class="font-extralight text-lg">{item.description}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+		<div class="flex flex-col items-center gap-4">
+			<Button>insights</Button>
+			<Title name="Latest News And Events" />
+			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
+				{#each [1, 2, 4, 5] as item}
+					<Card />	
+				{/each}
+			</div>
+			<div class="flex items-end justify-end w-full">
+				<button
+					class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-6"
+				>
+					<span>View more News</span>
+					<span>
+						<svg
+							width="10"
+							height="16"
+							viewBox="0 0 10 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.5 1L8.5 8L1.5 15"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
+		<div class="w-full h-[350px] relative overflow-hidden rounded-2xl flex items-center">
+			<div class="absolute top-0 w-full bg-[#083867] h-full z-10" />
+			<img
+				src={imgeFour}
+				alt="logo"
+				class="absolute top-0 w-full h-full z-20 bg-opacity-10 object-cover"
+			/>
+			<div class="z-50 flex flex-col gap-5 mx-10 sm:mx-20 my-10">
+				<button class="capitalize w-fit text-white bg-[#124E89] px-6 pt-2 pb-2.5 rounded-lg"
+					>services</button
+				>
+				<p class="text-xl sm:text-2xl md:text-4xl font-medium text-white md:leading-[48px]">
+					Want to Be Part of <br /> Our Team?
+				</p>
+				<button
+					class="py-3 px-6 w-fit flex items-center gap-6 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+				>
+					<span>View more News</span>
+					<span>
+						<svg
+							width="10"
+							height="16"
+							viewBox="0 0 10 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.5 1L8.5 8L1.5 15"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<Conctact />
+</div>
