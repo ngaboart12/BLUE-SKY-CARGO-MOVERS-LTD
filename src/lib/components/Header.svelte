@@ -52,10 +52,6 @@
                 </div>
          
                 <div class="relative">        
-                 
-                    <!-- <div  class="absolute top-10 right-0 bg-white px-4 py-4 shadow rounded-2xl w-[500px]" >
-                   
-                    </div> -->
                     <Popover style="position: relative;">
                         <PopoverButton>
                             <button class="md:hidden lg:flex items-center gap-2 mt-2">
@@ -208,9 +204,9 @@
                     </Popover>
                 </div>
         
-                <button class="hidden md:block py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light">
+                <a href="/contact" class="hidden md:block py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light">
                     reach to us
-                </button>
+                </a>
             </div>
             <div class="md:hidden block">
                 <Popover style="position: relative;">
@@ -222,9 +218,9 @@
                         {#each menu as { name, href }}
                         <a href={href} class="text-base flex flex-col gap-2 capitalize">{name}</a>
                     {/each}
-                    <button class="py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light w-full col-span-2 mt-2">
+                    <a href="/contact" class="py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light w-full col-span-2 mt-2">
                         reach to us
-                    </button>
+                      </a>
                     </PopoverPanel>
                 </Popover>
             </div>

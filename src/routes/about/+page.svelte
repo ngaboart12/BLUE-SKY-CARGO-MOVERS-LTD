@@ -6,34 +6,77 @@
 	import ImageOne from '$lib/images/1.png';
 	import ImageThree from '$lib/images/8.png';
 	import ImageFour from '$lib/images/9.png';
+	import Modal from '$lib/components/Modal.svelte';
 
-
-
-	const visions = [
+	const typeJob = [
 		{
-			name: 'OUR VISION',
-			description: 'To be a globally trusted consulting firm.',
-			icon: 1
+			name:"Board of directors",
+			id:1
 		},
 		{
-			name: 'OUR MISSION',
-			description:
-				'To leverage on innovation, expertise and technology to offer globally competitive consultancy services to our clients',
-			icon: 2
-		},
-		{
-			name: 'CORE BELIEF',
-			description:
-				'Offering proactive services and delivering effective, reliable, dependable professional advice, maintaining the highest level of confidentiality and integrity. Delivering results based on evidence and research within timeframe, while maintaining the highest level of accuracy and professionalism.',
-			icon: 3
-		},
-		{
-			name: 'CORE VALUES',
-			description:
-				'At DNR PARTNERS INTERNATIONAL, our values: are summarized into TRIP2C. Our values make our people live the company culture in pursuit of customer satisfaction. These are: Trust, Respect, Integrity, Professional competence Confidentiality and Customer value.',
-			icon: 4
+			name:"Senior Management",
+			id:2
 		}
-	];
+	]
+
+	let whichIsActive = typeJob[0].id;
+
+	const ourRoles = [
+		{
+			id:1,
+			name:"Accountant Manager",
+			experience:"5-6 years",
+			type:"Full Time",
+			location:"Kigali City",
+			openings:5
+		},
+		{
+			id:2,
+			name:"Accountant Manager",
+			experience:"5-6 years",
+			type:"Full Time",
+			location:"Kigali City",
+			openings:5
+		},
+		{
+			id:3,
+			name:"Accountant Manager",
+			experience:"5-6 years",
+			type:"Full Time",
+			location:"Kigali City",
+			openings:5
+		},
+		{
+			id:4,
+			name:"Accountant Manager",
+			experience:"5-6 years",
+			type:"Full Time",
+			location:"Kigali City",
+			openings:5
+		}
+	]
+
+	let showModal = false;
+	let modelData = ourRoles[0]
+
+	let showModalone = false;
+	let modelDataone:any;
+
+	const educationLevels = [
+    "Preschool Education",
+    "Primary Education",
+    "Secondary Education",
+    "Post-Secondary Education",
+    "Vocational Education",
+    "Higher Education",
+    "Undergraduate Education",
+    "Graduate Education",
+    "Master's Degree Programs",
+    "Doctoral Programs (Ph.D.)",
+    "Professional Education",
+    "Continuing Education",
+	"None"
+]
 </script>
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-20">
@@ -88,28 +131,6 @@
 					each of which is a separate and independent legal entity. DNR PARTNERS has offices in
 					England, Rwanda, Burundi, Kenya, Zambia and South Africa.
 				</p>
-				<button
-					class="py-3 px-6 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
-				>
-					<span>know more</span>
-					<span>
-						<svg
-							width="10"
-							height="16"
-							viewBox="0 0 10 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M1.5 1L8.5 8L1.5 15"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</span>
-				</button>
 			</div>
 		</div>
 	</div>
@@ -122,14 +143,14 @@
 			<Title name="Meet The Team" />
 		</div>
 		<div class="flex items-center flex-wrap sm:w-auto w-full mt-4">
-			<button class="flex flex-col bg-[#C43228]/10 sm:w-auto w-full">
-				<span class="px-8 font-light py-3.5 text-[#C43228]">Board of directors</span>
-				<span class="w-full h-1 bg-[#C43228]" />
-			</button>
-			<button class="flex flex-col bg-transparent sm:w-auto w-full">
-				<span class="px-8 font-light py-3.5 text-[#828282] capitalize">senior management</span>
-				<span class="w-full h-1 bg-[#E4E4E4]" />
-			</button>
+			{#each typeJob as item}
+				<button 
+				on:click={() => whichIsActive = item.id}
+				class="flex flex-col transition-all duration-300 {item.id === whichIsActive ? "bg-[#C43228]/10" : "bg-transparent"} sm:w-auto w-full">
+					<span class="px-8 font-light py-3.5 transition-all duration-300 {item.id === whichIsActive ? "text-[#C43228]" :"text-[#828282]"} capitalize">{item.name}</span>
+					<span class="w-full h-1 transition-all duration-300 {item.id === whichIsActive ? "bg-[#C43228]" : "bg-[#E4E4E4]"}" />
+				</button>
+			{/each}
 		</div>
 		<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mt-10">
 			{#each [1,2,3,4,1,2,3,4] as item }
@@ -169,8 +190,13 @@
 						</div>
 					</div>
 					<div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
-						{#each [1,2,3,4] as item }
-						<div class="flex items-center gap-4 md:flex-nowrap flex-wrap bg-white px-4 py-4 rounded-xl cursor-pointer">
+						{#each ourRoles as item }
+						<button 
+						on:click={() => {
+							modelData = item;
+							showModal = true;
+						}}
+						class="flex items-center justify-start text-start gap-4 md:flex-nowrap flex-wrap bg-white px-4 py-4 rounded-xl cursor-pointer">
 							<div class="md:flex-nowrap flex-wrap">
 								<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M20 35.5C28.2843 35.5 35 28.7843 35 20.5C35 12.2157 28.2843 5.5 20 5.5C11.7157 5.5 5 12.2157 5 20.5C5 28.7843 11.7157 35.5 20 35.5Z" fill="#2A4157" fill-opacity="0.14"/>
@@ -179,27 +205,27 @@
 								</svg>
 							</div>
 							<div class="flex flex-col gap-2 md:flex-nowrap flex-wrap">
-								<h2 class="text-[#083867] capitalize font-medium text-lg">accountant manager</h2>
+								<h2 class="text-[#083867] capitalize font-medium text-lg">{item.name}</h2>
 								<div class="grid sm:grid-cols-2 gap-x-12">
 									<div class="flex items-center gap-1">
 										<span class="text-[#464646]">Exp:</span>
-										<span class="text-[#7D7D7D] font-light">5-6 years</span>
+										<span class="text-[#7D7D7D] font-light">{item.experience}</span>
 									</div>
 									<div class="flex items-center gap-1">
 										<span class="text-[#464646]">Type:</span>
-										<span class="text-[#7D7D7D] font-light">Full Time</span>
+										<span class="text-[#7D7D7D] font-light">{item.type}</span>
 									</div>
 									<div class="flex items-center gap-1">
 										<span class="text-[#464646]">Location:</span>
-										<span class="text-[#7D7D7D] font-light">Kigali City</span>
+										<span class="text-[#7D7D7D] font-light">{item.location}</span>
 									</div>
 									<div class="flex items-center gap-1">
 										<span class="text-[#464646]">Openings:</span>
-										<span class="text-[#7D7D7D] font-light">5</span>
+										<span class="text-[#7D7D7D] font-light">{item.openings}</span>
 									</div>
 								</div>
 							</div>
-						</div>
+						</button>
 						{/each}
 					</div>
 				</div>
@@ -219,16 +245,152 @@
 		</div>
 		<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4"> 
 			 {#each [1,2,4] as item }
-				<div class="overflow-hidden rounded-2xl relative h-[300px] gap-4 flex items-center justify-center">
+				<div 
+				 class="overflow-hidden rounded-2xl relative h-[300px] gap-4 flex items-center justify-center">
 					<img src={ImageFour} alt="" class="absolute left-0 top-0 w-full h-full z-10 object-cover" />
-					<div class="z-50 cursor-pointer">
+					<button 
+					on:click={() => {
+						modelDataone = item;
+						showModalone = true;
+					}}
+					class="z-50 cursor-pointer">
 						<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path opacity="0.4" d="M36.2407 65.1199C52.5325 65.1199 65.7393 51.9128 65.7393 35.6214C65.7393 19.3297 52.5325 6.1228 36.2407 6.1228C19.9492 6.1228 6.74219 19.3297 6.74219 35.6214C6.74219 51.9128 19.9492 65.1199 36.2407 65.1199Z" fill="#C43228"/>
 							<path d="M45.0866 30.4006L36.532 25.4744C34.4081 24.2354 31.8417 24.2354 29.7178 25.4744C27.5939 26.7133 26.3254 28.8962 26.3254 31.374V41.256C26.3254 43.7044 27.5939 45.9168 29.7178 47.1558C30.7798 47.7752 31.9597 48.0702 33.1102 48.0702C34.2901 48.0702 35.4406 47.7752 36.5025 47.1558L45.0571 42.2295C47.181 40.9906 48.4494 38.8077 48.4494 36.3298C48.5084 33.8519 47.24 31.6395 45.0866 30.4006Z" fill="white"/>
 						</svg>	
-					</div>
+					</button>
 				</div>
 			 {/each}
 		</div>
 	</div>
+
+	<!-- <iframe width="1145" height="644" src="https://www.youtube.com/embed/m6iNNcL1jHo" title="IKIGO DNR PARTNERS KIRASOBANURA UKO WAFATA UMUKOZI NEZA  KUGIRANGO ATANGE UMUSARURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 </div>
+
+
+{#if showModal}
+<Modal bind:showModal>
+	<div class="flex min-w-[400px] sm:h-auto h-[300px] flex-col items-start w-full justify-start gap-2 px-4 text-center py-2 pb-4">
+		<h2 class="text-2xl font-semibold text-[#083867]">Apply now</h2>
+		<div class="flex flex-col gap-1 text-start items-start">
+			<p class="text-lg">for <u>{modelData.name}</u></p>
+			<div class="grid sm:grid-cols-2 gap-x-12">
+				<div class="flex items-center gap-1">
+					<span class="text-[#464646]">Exp:</span>
+					<span class="text-[#7D7D7D] font-light">{modelData.experience}</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<span class="text-[#464646]">Type:</span>
+					<span class="text-[#7D7D7D] font-light">{modelData.type}</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<span class="text-[#464646]">Location:</span>
+					<span class="text-[#7D7D7D] font-light">{modelData.location}</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<span class="text-[#464646]">Openings:</span>
+					<span class="text-[#7D7D7D] font-light">{modelData.openings}</span>
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col sm:grid sm:grid-cols-2 gap-5 w-full h-fit font-light mt-3">
+			<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
+				<input
+					type="text"
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="Your names"
+				/>
+			</div>
+			<div
+				class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+				data-svelte-h="svelte-13uk75n"
+			>
+				<input
+					type="email"
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="your email"
+				/>
+			</div>
+			<div
+				class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+			>
+				<input
+					type="tel"
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="your phone number"
+				/>
+			</div>
+			<div
+				class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+				data-svelte-h="svelte-13uk75n"
+			>
+				<input
+					type="text"
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="your address"
+				/>
+			</div>
+			<div
+				class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+			>
+			<select class="w-full bg-transparent text-[#ADADAD] rounded-[12px] border border-none outline-none">
+                <option selected hidden disabled>Your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+			</div>
+			<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
+				<select class="w-full bg-transparent text-[#ADADAD] rounded-[12px] border border-none outline-none">
+					<option selected hidden disabled>Education Level</option>
+					{#each educationLevels as item }
+						<option value={item}>{item}</option>
+					{/each}
+					</select>
+			</div>
+			<div
+				class="rounded-lg col-span-2 bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+				data-svelte-h="svelte-1y98z1w"
+			>
+				<textarea
+					class="bg-transparent h-20 outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="write something about you"
+				></textarea>
+			</div>
+			<div class="col-span-2">
+				<button
+			class="py-3 px-6 sm:mb-0 mb-5 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+		>
+			<span>Send Application</span>
+			<span>
+				<svg
+					width="10"
+					height="16"
+					viewBox="0 0 10 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M1.5 1L8.5 8L1.5 15"
+						stroke="white"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			</span>
+		</button>
+			</div>
+		</div>
+    </div>
+</Modal>
+{/if}
+
+
+{#if showModalone}
+<Modal bind:showModal={showModalone}>
+	<h2 class="text-2xl font-semibold text-[#083867] ml-4">Watch Video</h2>
+	<div class="flex w-[1000px] h-[500px] flex-col items-start justify-start gap-2 px-4 text-center py-2 pb-4">
+		<iframe  width="1145" height="644" class="w-full h-full" src="https://www.youtube.com/embed/m6iNNcL1jHo" title="IKIGO DNR PARTNERS KIRASOBANURA UKO WAFATA UMUKOZI NEZA  KUGIRANGO ATANGE UMUSARURO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</Modal>
+{/if}
