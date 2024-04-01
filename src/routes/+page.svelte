@@ -1,9 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import hero from '$lib/images/hero.svg';
-	import imgeThree from '$lib/images/3.png';
 	import imgeFour from '$lib/images/4.png';
-
 	import ImageOne from '$lib/images/1.png';
 	import ImageTwo from '$lib/images/2.png';
 	import Button from '$lib/components/Button.svelte';
@@ -14,6 +12,7 @@
 	import Card from '$lib/components/Card.svelte';
 	import Conctact from '$lib/components/Conctact.svelte';
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
+	import showdown from "showdown";
 
 	const visions = [
 		{
@@ -40,6 +39,22 @@
 			icon: 4
 		}
 	];
+	export let data;
+	const blog = data.blogs.slice(0, 4).map((value:any) =>{
+		if(value.mainImage){
+			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';  
+			const removeTypePrefix = value.mainImage.asset._ref.split(typePrefix)[1]
+			const lastIndex = removeTypePrefix.lastIndexOf("-");
+			const modifiedFilename = removeTypePrefix.substring(0, lastIndex) + "." + removeTypePrefix.substring(lastIndex + 1);
+			return {
+				...value,
+				mainImage: `https://cdn.sanity.io/images/f3af10kw/dnr-data-set/${modifiedFilename}`
+			}
+		}else{
+			return value
+		}
+	})
+
 </script>
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-32">
@@ -256,8 +271,14 @@
 			<Button>insights</Button>
 			<Title name="Latest News And Events" />
 			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
-				{#each [1, 2, 4, 5] as item}
-					<Card />	
+				{#each blog as item}
+					<Card 
+						title={item.title}
+						desc={item.description}
+						createdAt={item.publishedAt}
+						imgUrl={item.mainImage}
+						id={item._id}
+					/>	
 				{/each}
 			</div>
 			<div class="flex items-end justify-end w-full">

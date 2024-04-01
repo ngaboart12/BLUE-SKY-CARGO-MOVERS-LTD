@@ -1,19 +1,26 @@
 <script lang="ts">
-	import imgeThree from '$lib/images/3.png';
+	// import imgeThree from '$lib/images/3.png';
+    import dayjs from 'dayjs'
+    export let title: string;
+    export let desc: any[];
+    export let createdAt: string;
+    export let id: string;
+    export let imgUrl:string;
+
 </script>
 
-<div class="flex flex-col gap-2">
+<a href={`/insights/${id}`} class="flex flex-col gap-2">
     <div class="w-full h-[247px]">
-        <img src={imgeThree} alt="" class="w-full h-full object-cover" />
+        <img src={imgUrl} alt={title} class="w-full h-full object-cover" />
     </div>
-    <span class="text-sm text-[#797C7F] mt-2">Feb 14, 2024</span>
-    <h4 class="font-medium text-black">
-        Data-Driven Decisions: Leveraging Analytics in Consulting
+    <span class="text-sm text-[#797C7F] mt-2">
+        {dayjs(createdAt).format("MMM DD, YYYY")}
+    </span>
+    <h4 class="font-medium text-black capitalize">
+        {title}
     </h4>
     <p class="text-[#797C7F] font-light line-clamp-2">
-        We are a global chartered professional accountants and business advisors headquartered
-        in England. It has a sharp expertise from long term experiences in various business
-        industries.
+        {desc}
     </p>
     <button
         class="py-3 px-6 w-fit flex items-center gap-2 bg-transparent text-[#C43228] border border-[#C43228]/50 rounded-xl capitalize font-light col-span-2 mt-2"
@@ -44,4 +51,4 @@
             </svg>
         </span>
     </button>
-</div>
+</a>
