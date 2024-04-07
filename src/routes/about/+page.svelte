@@ -2,9 +2,9 @@
 	// @ts-nocheck
 	import Button from '$lib/components/Button.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import imgeFive from '$lib/images/6.png';
-	import imgeSix from '$lib/images/7.png';
-	import ImageOne from '$lib/images/1.png';
+	import imgeFive from '$lib/images/two--2.jpg';
+	import imgeSix from '$lib/images/three-99.jpg';
+	import ImageOne from '$lib/images/onnw.png';
 	import ImageFour from '$lib/images/9.png';
 	import empty from '$lib/images/empty.png';
 	import Modal from '$lib/components/Modal.svelte';

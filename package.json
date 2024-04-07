@@ -29,10 +29,15 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@portabletext/to-html": "^2.0.12",
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
+		"@sanity/block-content-to-html": "^2.0.0",
 		"@sanity/client": "^6.15.7",
 		"@sanity/image-url": "^1.0.2",
 		"dayjs": "^1.11.10",
-		"showdown": "^2.1.0"
+		"htm": "^3.1.1",
+		"showdown": "^2.1.0",
+		"svelte-share-buttons-component": "^3.0.0",
+		"vhtml": "^2.2.0"
 	}
 }
