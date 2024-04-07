@@ -9,13 +9,14 @@
 	import empty from '$lib/images/empty.png';
 	import Modal from '$lib/components/Modal.svelte';
 	import { createClient } from '@sanity/client';
+	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 
 	export let data;
 
 	const typeJob = data.organizationTypes;
 	let whichIsActive = typeJob[0]._id;
 
-	const allOurRoles = data.openRoles.map((item) => {
+	const allOurRoles = data.openRoles.map((item: any) => {
 		return {
 			_id: item._id,
 			name: item.name,
@@ -23,6 +24,20 @@
 			type: item.type,
 			location: item.location,
 			openings: item.openings
+		};
+	});
+
+	const youtubeUpdates = data.youtubeUpdates.map((item: any) => {
+		const typePrefix = item.mainImage._type ? `${item.mainImage._type}-` : 'image-';
+		const removeTypePrefix = item.mainImage.asset._ref.split(typePrefix)[1];
+		const lastIndex = removeTypePrefix.lastIndexOf('-');
+		const modifiedFilename =
+			removeTypePrefix.substring(0, lastIndex) + '.' + removeTypePrefix.substring(lastIndex + 1);
+		return {
+			_id: item._id,
+			title: item.title,
+			image: `https://cdn.sanity.io/images/f3af10kw/dnr-data-set/${modifiedFilename}`,
+			url: item.link
 		};
 	});
 
@@ -46,6 +61,7 @@
 	let showModalone = false;
 	let modelDataone: any;
 	let isLoading = false;
+	let vidioLink = '';
 
 	const educationLevels = [
 		'Preschool Education',
@@ -62,7 +78,6 @@
 		'Continuing Education',
 		'None'
 	];
-
 
 	let nameValue;
 	let emailValue;
@@ -104,47 +119,47 @@
 			error.push({
 				message: 'Gender is required',
 				field: 'gender'
-			})
+			});
 		}
 		if (!educationValue || educationValue.trim() === '') {
 			error.push({
 				message: 'Education level is required',
 				field: 'education'
-			})
+			});
 		}
 		if (error.length > 0) {
-			return
+			return;
 		}
-	 	submitForm();
+		submitForm();
 	}
 	async function submitForm() {
 		const client = createClient({
-			projectId: "f3af10kw",
-			dataset: "dnr-data-set",
-			apiVersion: "2024-03-31",
+			projectId: 'f3af10kw',
+			dataset: 'dnr-data-set',
+			apiVersion: '2024-03-31',
 			useCdn: true,
-			token:"skclefAj5z0Kt0AmGmYC0h3p0UOgxEU1bVxRVpeWghg4TmZTcyAius9SwDJMSuhHlcKIN4h5BD8cu93qLgPG7et4JyXOjTa7UnsnKu6FNuqNZCJYKtZnURQwaWBdVNGi8AcURrpd3Kb0kL9MoWSMwgxCVzIEJZsQZy4PHuo31VEQ4yKq54PN"
-		})
+			token:
+				'skclefAj5z0Kt0AmGmYC0h3p0UOgxEU1bVxRVpeWghg4TmZTcyAius9SwDJMSuhHlcKIN4h5BD8cu93qLgPG7et4JyXOjTa7UnsnKu6FNuqNZCJYKtZnURQwaWBdVNGi8AcURrpd3Kb0kL9MoWSMwgxCVzIEJZsQZy4PHuo31VEQ4yKq54PN'
+		});
 
 		try {
 			isLoading = true;
-		 await client.create({
-			_type: 'applications',
-			name: nameValue,
-			email: emailValue,
-			phone: phoneValue,
-			address: addressValue,
-			message: messageValue,
-			gender: genderValue,
-			openRole: { _type: 'reference', _ref: modelData._id },
-		})
-		showModal = false;
+			await client.create({
+				_type: 'applications',
+				name: nameValue,
+				email: emailValue,
+				phone: phoneValue,
+				address: addressValue,
+				message: messageValue,
+				gender: genderValue,
+				openRole: { _type: 'reference', _ref: modelData._id }
+			});
+			showModal = false;
 		} catch (error) {
-			console.error(error)
-		}finally{
+			console.error(error);
+		} finally {
 			isLoading = false;
 		}
-		
 	}
 </script>
 
@@ -395,17 +410,18 @@
 			<h3 class="text-[28px] font-medium capitalize mt-4">youtube updates</h3>
 		</div>
 		<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
-			{#each [1, 2, 4] as item}
+			{#each youtubeUpdates as item}
 				<div
 					class="overflow-hidden rounded-2xl relative h-[300px] gap-4 flex items-center justify-center"
 				>
 					<img
-						src={ImageFour}
+						src={item.image}
 						alt=""
 						class="absolute left-0 top-0 w-full h-full z-10 object-cover"
 					/>
 					<button
 						on:click={() => {
+							vidioLink = item.url;
 							modelDataone = item;
 							showModalone = true;
 						}}
@@ -475,7 +491,24 @@
 					/>
 					{#if error.find((item) => item.field === 'name')}
 						<div class="text-red-500 w-5 h-5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
 						</div>
 					{/if}
 				</div>
@@ -491,9 +524,26 @@
 						bind:value={emailValue}
 					/>
 					{#if error.find((item) => item.field === 'email')}
-					<div class="text-red-500 w-5 h-5">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					</div>
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
 					{/if}
 				</div>
 				<div class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full">
@@ -505,9 +555,26 @@
 						bind:value={phoneValue}
 					/>
 					{#if error.find((item) => item.field === 'phone')}
-					<div class="text-red-500 w-5 h-5">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					</div>
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
 					{/if}
 				</div>
 				<div
@@ -522,9 +589,26 @@
 						bind:value={addressValue}
 					/>
 					{#if error.find((item) => item.field === 'address')}
-					<div class="text-red-500 w-5 h-5">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					</div>
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
 					{/if}
 				</div>
 				<div class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full">
@@ -532,14 +616,31 @@
 						class="w-full bg-transparent text-[#ADADAD] rounded-[12px] border border-none outline-none"
 						name="gender"
 						bind:value={genderValue}
-						>
+					>
 						<option value="" selected hidden disabled>Your Gender</option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
 					</select>
 					{#if error.find((item) => item.field === 'gender')}
 						<div class="text-red-500 w-5 h-5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
 						</div>
 					{/if}
 				</div>
@@ -550,7 +651,7 @@
 						class="w-full bg-transparent text-[#ADADAD] rounded-[12px] border border-none outline-none"
 						name="education"
 						bind:value={educationValue}
-						>
+					>
 						<option value="" selected hidden disabled>Education Level</option>
 						{#each educationLevels as item}
 							<option value={item}>{item}</option>
@@ -558,9 +659,26 @@
 					</select>
 
 					{#if error.find((item) => item.field === 'education')}
-					<div class="text-red-500 w-5 h-5">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					</div>
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
 					{/if}
 				</div>
 				<div
@@ -575,23 +693,73 @@
 					></textarea>
 
 					{#if error.find((item) => item.field === 'message')}
-					<div class="text-red-500 w-5 h-5">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					</div>
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
 					{/if}
 				</div>
 				<div class="col-span-2">
 					<button
-					    disabled={isLoading}
+						disabled={isLoading}
 						on:click={validateForm}
-						class="{isLoading && "bg-opacity-80"} py-3 px-6 sm:mb-0 mb-5 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+						class="{isLoading &&
+							'bg-opacity-80'} py-3 px-6 sm:mb-0 mb-5 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
 					>
 						<span>Send Application</span>
 						{#if isLoading}
 							<div class="animate-spin">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="feather feather-loader"
+									><line x1="12" y1="2" x2="12" y2="6" /><line
+										x1="12"
+										y1="18"
+										x2="12"
+										y2="22"
+									/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76" /><line
+										x1="16.24"
+										y1="16.24"
+										x2="19.07"
+										y2="19.07"
+									/><line x1="2" y1="12" x2="6" y2="12" /><line
+										x1="18"
+										y1="12"
+										x2="22"
+										y2="12"
+									/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24" /><line
+										x1="16.24"
+										y1="7.76"
+										x2="19.07"
+										y2="4.93"
+									/></svg
+								>
 							</div>
-							{:else}
+						{:else}
 							<span>
 								<svg
 									width="10"
@@ -610,7 +778,6 @@
 								</svg>
 							</span>
 						{/if}
-					
 					</button>
 				</div>
 			</div>
@@ -620,21 +787,6 @@
 
 {#if showModalone}
 	<Modal bind:showModal={showModalone}>
-		<h2 class="text-2xl font-semibold text-[#083867] ml-4">Watch Video</h2>
-		<div
-			class="flex w-[1000px] h-[500px] flex-col items-start justify-start gap-2 px-4 text-center py-2 pb-4"
-		>
-			<iframe
-				width="1145"
-				height="644"
-				class="w-full h-full"
-				src="https://www.youtube.com/embed/m6iNNcL1jHo"
-				title="IKIGO DNR PARTNERS KIRASOBANURA UKO WAFATA UMUKOZI NEZA  KUGIRANGO ATANGE UMUSARURO"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-			></iframe>
-		</div>
+		<VideoPlayer url={vidioLink} />
 	</Modal>
 {/if}

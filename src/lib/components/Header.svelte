@@ -28,10 +28,10 @@
             name:"carrers",
             href:"/carrers"
         },
-        {
-            name:"global network",
-            href:"/global"
-        }
+        // {
+        //     name:"global network",
+        //     href:"/global"
+        // }
     ]
     let isdroped = false;
 </script>
@@ -55,15 +55,30 @@
                     <Popover style="position: relative;">
                         <PopoverButton>
                             <button class="md:hidden lg:flex items-center gap-2 mt-2">
-                                <img src={uk} width={24} height={24} alt="dnr united kingdom" />
-                                <span class="uppercase">eng</span>
+                                <!-- <img src={uk} width={24} height={24} alt="dnr united kingdom" /> -->
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_189_548)">
+                                        <path d="M0 15C0 17.5986 0.661113 20.0428 1.82385 22.1739L15 23.4783L28.1762 22.1739C29.3389 20.0428 30 17.5986 30 15L15 13.6956L0 15Z" fill="#FFDA44"/>
+                                        <path d="M28.1762 7.82607C25.6321 3.16342 20.6856 0 15 0C9.31436 0 4.36793 3.16342 1.82385 7.82607C0.661113 9.95719 0 12.4014 0 15H30C30 12.4014 29.3389 9.95719 28.1762 7.82607Z" fill="#338AF3"/>
+                                        <path d="M15 30C20.6857 30 25.6321 26.8366 28.1762 22.1739H1.82385C4.36793 26.8366 9.31436 30 15 30Z" fill="#496E2D"/>
+                                        <path d="M16.9565 8.77857L18.7885 9.64031L17.813 11.4145L19.8023 11.034L20.0543 13.0435L21.4398 11.5655L22.8255 13.0435L23.0775 11.034L25.0667 11.4144L24.0913 9.64025L25.9231 8.77857L24.0912 7.91695L25.0667 6.14273L23.0775 6.52324L22.8254 4.51376L21.4398 5.99173L20.0543 4.51376L19.8023 6.52324L17.8129 6.14273L18.7885 7.91701L16.9565 8.77857Z" fill="#FFDA44"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_189_548">
+                                        <rect width="30" height="30" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                        </svg>
+                                </div>
+                                <span class="uppercase">Global Network</span>
                                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg> 
                             </button>
                         </PopoverButton>
-                        <PopoverPanel style="position: absolute; z-index: 10; width:500px; right: 0;">
-                            <div class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[500px]">
+                        <PopoverPanel style="position: absolute; z-index: 10; width:600px; right: 0;">
+                            <div class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[600px]">
                                 <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,12 +93,12 @@
                                             <rect width="30" height="30" fill="white"/>
                                             </clipPath>
                                             </defs>
-                                            </svg>
+                                        </svg>
                                             
                                     </span> 
                                     <span class="font-medium capitalize">rwanda</span>
                                 </button>   
-                                <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
+                                <a target="_blank"  href="https://bu.dnrpartners.com/" class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_189_619)">
@@ -105,9 +120,9 @@
                                         </svg>
                                     </span> 
                                     <span class="font-medium capitalize">burundi</span>
-                                </button>   
+                                </a>   
                           
-                                <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
+                                <a target="_blank"  href="https://uk.dnrpartners.com/" class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_189_652)">
@@ -133,9 +148,9 @@
                                             </defs>
                                          </svg>
                                     </span> 
-                                    <span class="font-medium capitalize">canada</span>
-                                </button>   
-                                <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
+                                    <span class="font-medium capitalize">England</span>
+                                </a>   
+                                <a href="http://zm.dnrpartners.com/" class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_189_716)">
@@ -154,28 +169,14 @@
                                             
                                     </span> 
                                     <span class="font-medium capitalize">zambia</span>
-                                </button>   
-                                <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
+                                </a>   
+                                <a target="_blank"  href="https://za.dnrpartners.com/" class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_189_724)">
-                                            <path d="M14.9149 30C23.1521 30 29.8297 23.2843 29.8297 15C29.8297 6.71573 23.1521 0 14.9149 0C6.67761 0 0 6.71573 0 15C0 23.2843 6.67761 30 14.9149 30Z" fill="#F0F0F0"/>
-                                            <path d="M4.36845 25.6066C-1.45615 19.7487 -1.45615 10.2513 4.36845 4.39337C4.36804 4.39402 12.9695 15 12.9695 15L4.36845 25.6066Z" fill="black"/>
-                                            <path d="M12.9694 15L1.97811 7.53006C1.63734 8.12578 1.33683 8.74758 1.07861 9.39117L6.64308 15.0001L1.07879 20.6092C1.33677 21.2524 1.63699 21.8737 1.97752 22.4691L12.9694 15Z" fill="#FFDA44"/>
-                                            <path d="M29.7034 13.0435H12.969L4.36829 4.39359C3.44147 5.32569 2.63624 6.37985 1.97812 7.53011L9.39121 15L1.97754 22.4689C2.63566 23.6195 3.44123 24.674 4.36829 25.6063L12.969 16.9565H29.7034C29.7864 16.3161 29.8297 15.6631 29.8297 15C29.8297 14.3369 29.7864 13.6839 29.7034 13.0435Z" fill="#6DA544"/>
-                                            <path d="M5.83411 26.899C8.34918 28.8433 11.4974 30 14.9148 30C21.8059 30 27.6044 25.2995 29.3159 18.9131H13.7748L5.83411 26.899Z" fill="#0052B4"/>
-                                            <path d="M29.3159 11.0869C27.6044 4.70045 21.8059 0 14.9148 0C11.4974 0 8.34918 1.1567 5.83411 3.10096L13.7748 11.0869H29.3159Z" fill="#D80027"/>
-                                            </g>
-                                            <defs>
-                                            <clipPath id="clip0_189_724">
-                                            <rect width="29.8297" height="30" fill="white"/>
-                                            </clipPath>
-                                            </defs>
-                                         </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet"><path d="M60.9 40c.7-2.5 1.1-5.2 1.1-8s-.4-5.5-1.1-8H31.7L14.8 7.4c-4 2.8-7.3 6.6-9.6 11L19 32L5.3 45.6c2.2 4.4 5.5 8.2 9.6 11L31.7 40h29.2z" fill="#699635"/><path d="M3.5 22.5c-1 3-1.5 6.2-1.5 9.5s.5 6.5 1.5 9.5l9.6-9.5l-9.6-9.5" fill="#3e4347"/><path d="M18.3 58.7C22.4 60.8 27.1 62 32 62c12.3 0 22.9-7.4 27.5-18.1H33.4L18.3 58.7z" fill="#428bc1"/><path d="M59.5 20.1C54.9 9.4 44.3 2 32 2c-4.9 0-9.6 1.2-13.7 3.3l15.1 14.8h26.1" fill="#ed4c5c"/><path d="M60.5 22.7c-.3-.9-.6-1.8-1-2.6H33.4L18.3 5.3c-.7.3-1.3.7-2 1.1c-.5.3-1 .7-1.5 1L31.7 24h29.2c-.1-.4-.2-.9-.4-1.3" fill="#ffffff"/><path d="M5.3 18.4c-.1.2-.2.4-.3.7c-.5 1.1-1 2.2-1.4 3.4l9.6 9.5l-9.6 9.5c.4 1.2.8 2.3 1.4 3.4c.1.2.2.4.3.7L19 32L5.3 18.4" fill="#ffce31"/><path d="M31.7 40L14.8 56.6c.3.2.7.5 1 .7c.8.5 1.6 1 2.5 1.4l15.1-14.8h26.1c.4-1 .8-2 1.2-3.1c.1-.3.1-.5.2-.8H31.7" fill="#ffffff"/></svg>
                                     </span> 
-                                    <span class="font-medium capitalize">tanzania</span>
-                                </button> 
-                                <button class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
+                                    <span class="font-medium capitalize">South Africa</span>
+                                </a> 
+                                <a target="_blank"  href="https://ke.dnrpartners.com/" class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2">
                                     <span>
                                         <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_189_733)">
@@ -197,8 +198,8 @@
                                             </defs>
                                         </svg>
                                     </span> 
-                                    <span class="font-medium capitalize">uganda</span>
-                                </button>   
+                                    <span class="font-medium capitalize">Kenya</span>
+                                </a>   
                             </div>
                         </PopoverPanel>
                     </Popover>

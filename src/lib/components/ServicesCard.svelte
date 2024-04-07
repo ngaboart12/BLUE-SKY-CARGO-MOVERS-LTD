@@ -1,51 +1,11 @@
 <script lang="ts">
-    import Modal from './Modal.svelte';
+    // import Modal from './Modal.svelte';
+    import DATA  from '../../data/sevrives.json';
     let showModal = false;
-    let data = [
-        {
-            title: "Consultancy",
-            description: "Come and experience our consultancy services for your growth. Our experts design manuals that suit your company’s need and size",
-            icon:1
-        },
-        {
-            title: "financial advisory",
-            description: "offers sharpened financial advisory backed by thorough financial and non- financial data analysis of the client as well as these of the market. Our experts analyze both short and long term trends to appreciate possible opportunities in stock market,",
-            icon:2
-        },
-        {
-            title: "tax advisory",
-            description: "offers broad tax solutions that enhance tax planning and full compliance. Our tax experts make an all-out effort to ensure you are compliant with tax administration and save clients from huge non-compliance penalties.",
-            icon:3
-        },
-        {
-            title: "accounting  advisory",
-            description: "Are you struggling with recording transactions every day? Do you feel shaken once RRA staff calls you for audit of previous years, we have accounting solution for you.",
-            icon:4
-        },
-        {
-            title: "Corporate training",
-            description: "We train people of various capacities and personalities with various areas such as strategic management; financial management; IFRS reporting & other accounting practices:",
-            icon:5
-        },
-        {
-            title: "accounting  software solution",
-            description: "Are you struggling with recording transactions every day? Do you feel shaken once RRA staff calls you for audit of previous years, we have accounting solution for you. ",
-            icon:6
-        },
-        {
-            title: "Corporate social reponsibilities",
-            description: "we are helping young people to discover their respective purposes and how they can achieve them; we are training young people at secondary schools and universities the leadership traits, entrepreneurship and integrity matters as one of the paths to becoming really entrepreneurs.",
-            icon:7
-        },
-        {
-            title: "audit  & assurance",
-            description: "we deliver independent, high quality audit of financial statements. We go beyond the financial statements by advising our clients upon internal control systems, strategic direction and performance improvements. ",
-            icon:8
-        }
-    ]
+    let data = DATA;
 
     export let isHome = false;
-    let modelData = data[0]
+    // let modelData = data[0]
     data = isHome ? data.slice(0, 5) : data;
     
 </script>
@@ -195,10 +155,7 @@
 				<p class="line-clamp-2 text-[#595959] font-light">
 					{item.description}
 				</p>
-				<button on:click={() => {
-                    modelData = item;
-                    showModal = true;
-                }} class="flex items-center gap-2.5 text-[#C43228]">
+				<a href="/services/{item.icon}" class="flex items-center gap-2.5 text-[#C43228]">
 					<span>Learn more</span>
 					<span
 						><svg
@@ -225,13 +182,13 @@
 							/>
 						</svg>
 					</span>
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>
 {/each}
 
-{#if showModal}
+<!-- {#if showModal}
 <Modal bind:showModal>
 	<div class="flex !max-w-[32em] flex-col items-center w-full justify-center gap-2 px-4 text-center py-2 pb-4">
         <div>
@@ -375,4 +332,4 @@
         </p>
     </div>
 </Modal>
-{/if}
+{/if} -->
