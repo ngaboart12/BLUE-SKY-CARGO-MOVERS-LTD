@@ -10,6 +10,18 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import { createClient } from '@sanity/client';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+	import Dropzone from 'svelte-file-dropzone';
+
+	let files = {
+		accepted: [],
+		rejected: []
+	};
+
+	function handleFilesSelect(e) {
+		const { acceptedFiles, fileRejections } = e.detail;
+		files.accepted = [...files.accepted, ...acceptedFiles];
+		files.rejected = [...files.rejected, ...fileRejections];
+	}
 
 	export let data;
 
@@ -127,6 +139,13 @@
 				field: 'education'
 			});
 		}
+		if (files.accepted.length === 0) {
+			error.push({
+				message: 'Resume is required',
+				field: 'resume'
+			});
+		}
+
 		if (error.length > 0) {
 			return;
 		}
@@ -144,6 +163,9 @@
 
 		try {
 			isLoading = true;
+
+			const uploadedFile = await client.assets.upload('file', files.accepted[0]);
+
 			await client.create({
 				_type: 'applications',
 				name: nameValue,
@@ -152,7 +174,8 @@
 				address: addressValue,
 				message: messageValue,
 				gender: genderValue,
-				openRole: { _type: 'reference', _ref: modelData._id }
+				openRole: { _type: 'reference', _ref: modelData._id },
+				resume: { _type: 'file', asset: { _type: 'reference', _ref: uploadedFile._id } }
 			});
 			showModal = false;
 		} catch (error) {
@@ -682,6 +705,61 @@
 					{/if}
 				</div>
 				<div
+					class="rounded-lg relative col-span-2 bg-[#F0F0F0] border-2 border-dashed px-4 py-3 flex items-center justify-between w-full"
+					data-svelte-h="svelte-1y98z1w"
+				>
+					{#if error.find((item) => item.field === 'resume')}
+						<div class="text-red-500 w-5 h-5">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-alert-circle"
+								><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line
+									x1="12"
+									y1="16"
+									x2="12.01"
+									y2="16"
+								/></svg
+							>
+						</div>
+					{/if}
+					{#if files.accepted.length === 0}
+						<Dropzone containerClasses="!bg-transparent !border-none" on:drop={handleFilesSelect}>
+							<p>Drag or drop your CV file here</p>
+						</Dropzone>
+					{:else}
+						<div class="py-8 w-full">
+							<div class="flex items-center gap-1 w-fit mx-auto">
+								<div>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="feather feather-file"
+										><path
+											d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+										/><polyline points="13 2 13 9 20 9" /></svg
+									>
+								</div>
+								<p>{files.accepted[0].name}</p>
+							</div>
+						</div>
+					{/if}
+				</div>
+				<div
 					class="rounded-lg col-span-2 bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
 					data-svelte-h="svelte-1y98z1w"
 				>
@@ -715,6 +793,7 @@
 						</div>
 					{/if}
 				</div>
+
 				<div class="col-span-2">
 					<button
 						disabled={isLoading}

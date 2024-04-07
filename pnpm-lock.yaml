@@ -29,6 +29,9 @@ dependencies:
   showdown:
     specifier: ^2.1.0
     version: 2.1.0
+  svelte-file-dropzone:
+    specifier: ^2.0.6
+    version: 2.0.6(svelte@4.2.12)
   svelte-share-buttons-component:
     specifier: ^3.0.0
     version: 3.0.0
@@ -1034,6 +1037,13 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /file-selector@0.6.0:
+    resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
     engines: {node: '>=8'}
@@ -1888,6 +1898,15 @@ packages:
       - stylus
       - sugarss
     dev: true
+
+  /svelte-file-dropzone@2.0.6(svelte@4.2.12):
+    resolution: {integrity: sha512-0sC9ek8ADTGRe6mp+X3uvTXindPhkib95fU0arbSG6ij8yJyUKRQgsdf2XEkn200xceLQwFAcZp4VLZ5A75pMA==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0
+    dependencies:
+      file-selector: 0.6.0
+      svelte: 4.2.12
+    dev: false
 
   /svelte-hmr@0.15.3(svelte@4.2.12):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
