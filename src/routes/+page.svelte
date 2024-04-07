@@ -12,7 +12,8 @@
 	import Card from '$lib/components/Card.svelte';
 	import Conctact from '$lib/components/Conctact.svelte';
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
-	import showdown from "showdown";
+	import showdown from 'showdown';
+	import Partnership from '$lib/components/Partnership.svelte';
 
 	const visions = [
 		{
@@ -40,21 +41,21 @@
 		}
 	];
 	export let data;
-	const blog = data.blogs.slice(0, 4).map((value:any) =>{
-		if(value.mainImage){
-			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';  
-			const removeTypePrefix = value.mainImage.asset._ref.split(typePrefix)[1]
-			const lastIndex = removeTypePrefix.lastIndexOf("-");
-			const modifiedFilename = removeTypePrefix.substring(0, lastIndex) + "." + removeTypePrefix.substring(lastIndex + 1);
+	const blog = data.blogs.slice(0, 4).map((value: any) => {
+		if (value.mainImage) {
+			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';
+			const removeTypePrefix = value.mainImage.asset._ref.split(typePrefix)[1];
+			const lastIndex = removeTypePrefix.lastIndexOf('-');
+			const modifiedFilename =
+				removeTypePrefix.substring(0, lastIndex) + '.' + removeTypePrefix.substring(lastIndex + 1);
 			return {
 				...value,
 				mainImage: `https://cdn.sanity.io/images/f3af10kw/dnr-data-set/${modifiedFilename}`
-			}
-		}else{
-			return value
+			};
+		} else {
+			return value;
 		}
-	})
-
+	});
 </script>
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-32">
@@ -207,7 +208,7 @@
 				</p>
 			</div>
 			<div class="flex mt-8 gap-4 items-center w-full flex-wrap justify-center">
-					<ServicesCard isHome />
+				<ServicesCard isHome />
 			</div>
 		</div>
 		<div class="relative h-[250px] mt-10 flex items-center justify-center">
@@ -272,13 +273,13 @@
 			<Title name="Latest News And Events" />
 			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
 				{#each blog as item}
-					<Card 
+					<Card
 						title={item.title}
 						desc={item.description}
 						createdAt={item.publishedAt}
 						imgUrl={item.mainImage}
 						id={item._id}
-					/>	
+					/>
 				{/each}
 			</div>
 			<div class="flex items-end justify-end w-full">
@@ -350,5 +351,6 @@
 			</div>
 		</div>
 	</div>
+	<Partnership />
 	<Conctact />
 </div>
