@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import hero from '$lib/images/hero.svg';
 	import imgeFour from '$lib/images/one--1.jpg';
 	import ImageOne from '$lib/images/1-1.png';
 	import ImageTwo from '$lib/images/2.png';
@@ -133,7 +132,7 @@
 			</div>
 
 			<div class="bg-[#F2F2F2] rounded-xl px-8 py-12">
-				<!-- <img src={hero} alt="" class="w-full h-full object-cover rounded-xl" /> -->
+				<img src={'/hero.svg'} alt="" class="w-full h-full object-cover rounded-xl" />
 			</div>
 		</div>
 	</div>
