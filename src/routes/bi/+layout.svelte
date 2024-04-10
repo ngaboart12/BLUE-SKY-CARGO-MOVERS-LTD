@@ -25,9 +25,6 @@
 	<meta name="og:description" content={meta_description} />
 </svelte:head>
 
-<Header />
 <main transition:fade>
 	<slot />
 </main>
-
-<Footer />
