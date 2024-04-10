@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import imgeFour from '$lib/images/one--1.jpg';
-	import ImageOne from '$lib/images/1-1.png';
+	import imgeFour from '$lib/images/one--1.jpg?enhanced';
+	import ImageOne from '$lib/images/1-1.png?enhanced';
 	import ImageTwo from '$lib/images/2.png';
 	import Button from '$lib/components/Button.svelte';
 	import SvgOne from '$lib/images/vision/1.svelte';
@@ -13,6 +13,7 @@
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
 	import showdown from 'showdown';
 	import Partnership from '$lib/components/Partnership.svelte';
+	import heroImage from '$lib/images/hero-1.png?enhanced';
 
 	const visions = [
 		{
@@ -132,7 +133,7 @@
 			</div>
 
 			<div class="bg-[#F2F2F2] rounded-xl px-8 py-12">
-				<img src={'/hero-1.png'} alt="" class="w-full h-full object-cover rounded-xl" />
+				<enhanced:img src={heroImage} alt="" class="w-full h-full object-cover rounded-xl" />
 			</div>
 		</div>
 	</div>
@@ -140,13 +141,7 @@
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 			<div class="">
-				<img
-					src={ImageOne}
-					width={325.69}
-					height={328.41}
-					alt=""
-					class="w-[460px] h-full object-cover"
-				/>
+				<enhanced:img src={ImageOne} alt="" class="w-[460px] h-full object-cover" />
 			</div>
 			<div class="flex flex-col gap-3">
 				<div class="w-fit">
@@ -311,7 +306,7 @@
 
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
 		<div class="w-full h-[350px] relative overflow-hidden rounded-2xl flex items-center">
-			<img
+			<enhanced:img
 				src={imgeFour}
 				alt="logo"
 				class="absolute top-0 w-full h-full z-10 bg-opacity-10 object-cover"
