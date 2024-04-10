@@ -132,7 +132,7 @@
 			</div>
 
 			<div class="bg-[#F2F2F2] rounded-xl px-8 py-12">
-				<img src={'/hero.svg'} alt="" class="w-full h-full object-cover rounded-xl" />
+				<img src={'/hero-1.png'} alt="" class="w-full h-full object-cover rounded-xl" />
 			</div>
 		</div>
 	</div>
