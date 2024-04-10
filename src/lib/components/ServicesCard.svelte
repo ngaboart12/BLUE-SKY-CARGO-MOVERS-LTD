@@ -8,6 +8,7 @@
 	export let isHome = false;
 	const filteredData = data.filter((item) => item.icon !== expctedId);
 	data = isHome ? filteredData.slice(0, 5) : filteredData;
+	import { page } from '$app/stores';
 </script>
 
 {#each data as item}
@@ -487,7 +488,10 @@
 				<p class="line-clamp-2 text-[#595959] font-light">
 					{item.description}
 				</p>
-				<a href="/services/{item.icon}" class="flex items-center gap-2.5 text-[#C43228]">
+				<a
+					href="{$page.url.pathname.split('/')[1]}/services/{item.icon}"
+					class="flex items-center gap-2.5 text-[#C43228]"
+				>
 					<span>Learn more</span>
 					<span
 						><svg

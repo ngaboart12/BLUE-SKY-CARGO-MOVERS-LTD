@@ -8,7 +8,9 @@ const client = createClient({
 });
 
 export async function load({}) {
-	const membersTeams = await client.fetch(`*[_type == "membersTeam"]`);
+	const membersTeams = await client.fetch(
+		`*[_type == "membersTeam" && (country == "rw" || country == "all")]`
+	);
 	const membersTeamsWithImages = membersTeams.map((membersTeam: { mainImage: any }) => {
 		const typePrefix = membersTeam.mainImage._type ? `${membersTeam.mainImage._type}-` : 'image-';
 		const removeTypePrefix = membersTeam.mainImage.asset._ref.split(typePrefix)[1];
@@ -20,9 +22,15 @@ export async function load({}) {
 			mainImage: `https://cdn.sanity.io/images/f3af10kw/dnr-data-set/${modifiedFilename}`
 		};
 	});
-	const organizationTypes = await client.fetch(`*[_type == "organizationType"]`);
-	const openRoles = await client.fetch(`*[_type == "openRoles" && isAvailable == true]`);
-	const youtubeUpdates = await client.fetch(`*[_type == "youtubeUpdates"]`);
+	const organizationTypes = await client.fetch(
+		`*[_type == "organizationType" && (country == "rw" || country == "all")]`
+	);
+	const openRoles = await client.fetch(
+		`*[_type == "openRoles" && isAvailable == true && (country == "rw" || country == "all")]`
+	);
+	const youtubeUpdates = await client.fetch(
+		`*[_type == "youtubeUpdates" && (country == "rw" || country == "all")]`
+	);
 
 	const result = organizationTypes.map((organizationType: { _id: any }) => {
 		return {

@@ -6,9 +6,13 @@
 	export let createdAt: string;
 	export let id: string;
 	export let imgUrl: string;
+	import { page } from '$app/stores';
 </script>
 
-<a href={`/insights/${id}`} class="flex flex-col gap-2 h-full justify-between">
+<a
+	href={`${$page.url.pathname.split('/')[1]}/insights/${id}`}
+	class="flex flex-col gap-2 h-full justify-between"
+>
 	<div>
 		<div class="w-full h-[247px]">
 			<img src={imgUrl} alt={title} class="w-full h-full object-cover" />
