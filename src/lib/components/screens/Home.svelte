@@ -13,7 +13,8 @@
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
 	import showdown from 'showdown';
 	import Partnership from '$lib/components/Partnership.svelte';
-	import heroImage from '$lib/images/hero-1.png?enhanced';
+	import { page } from '$app/stores';
+	import CONTENT from '../../../data/countryText.json'
 
 	const visions = [
 		{
@@ -56,88 +57,91 @@
 			return value;
 		}
 	});
+	let findContenent = CONTENT.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT[0];
 </script>
 
-<div class="flex flex-col gap-6 sm:gap-10 mt-32">
-	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
-		<div class="grid sm:grid-cols-2 gap-10 items-center">
-			<div class="flex flex-col gap-3">
-				<p class="text-[#D71A30] font-light text-lg">Bridging Cultures, Maximizing Potential</p>
-				<Title
-					name="Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business. "
-				/>
-				<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap">
-					<a
-						href="/contact"
-						class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
-					>
-						<span>reach to us</span>
-						<span>
-							<svg
-								width="24"
-								height="25"
-								viewBox="0 0 24 25"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									opacity="0.4"
-									d="M19.75 12.2257L4.75 12.2257"
-									stroke="white"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-									stroke="white"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</span>
-					</a>
-					<a
-						href="/services"
-						class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[#083867] border rounded-xl text-[#083867] capitalize font-light col-span-2 mt-2"
-					>
-						<span>know more</span>
-						<span>
-							<svg
-								width="24"
-								height="25"
-								viewBox="0 0 24 25"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									opacity="0.4"
-									d="M19.75 12.2257L4.75 12.2257"
-									stroke="#083867"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-									stroke="#083867"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="bg-[#F2F2F2] rounded-xl px-8 py-12">
-				<enhanced:img src={heroImage} alt="" class="w-full h-full object-cover rounded-xl" />
+<div class="min-h-screen h-full flex relative justify-center items-center">
+	<img
+		src={findContenent.heroImage}
+		alt="logo"
+		class="absolute top-0 w-full h-full z-10 object-cover"
+	/>
+	<div class="absolute top-0 w-full bg-black/70 h-full z-20"></div>
+	<div class="flex flex-col gap-4 items-center z-40">
+		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28">
+			<p class="text-xl font-light mb-10">{findContenent.subTitle}</p>
+			<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
+				{findContenent.title}
+			</p>
+			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
+				<a
+					href="/contact"
+					class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
+				>
+					<span>reach to us</span>
+					<span>
+						<svg
+							width="24"
+							height="25"
+							viewBox="0 0 24 25"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								opacity="0.4"
+								d="M19.75 12.2257L4.75 12.2257"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
+				<a
+					href="/services"
+					class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
+				>
+					<span>know more</span>
+					<span>
+						<svg
+							width="24"
+							height="25"
+							viewBox="0 0 24 25"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								opacity="0.4"
+								d="M19.75 12.2257L4.75 12.2257"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
 			</div>
 		</div>
 	</div>
+</div>
 
+<div class="flex flex-col gap-6 sm:gap-10 mt-32">
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 			<div class="">

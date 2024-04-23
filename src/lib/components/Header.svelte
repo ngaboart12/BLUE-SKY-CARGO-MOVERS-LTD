@@ -1,43 +1,51 @@
 <script lang="ts">
 	import logo from '../images/red-logo.svg';
+	import logowhite from '$lib/images/5.png';
+
+
 	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
 	import { page } from '$app/stores';
 	let y: number;
+	export let isColored = false;
+	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
+
+	let basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
 	const menu = [
 		{
 			name: 'Home',
-			href: `${$page.url.pathname.split('/')[1]}/`
+			href: `${basePath}/`
 		},
 		{
 			name: 'about us',
-			href: `${$page.url.pathname.split('/')[1]}/about`
+			href: `${basePath}/about`
 		},
 		{
 			name: 'Services',
-			href: `${$page.url.pathname.split('/')[1]}/services`
+			href: `${basePath}/services`
 		},
 		{
 			name: 'insights',
-			href: `${$page.url.pathname.split('/')[1]}/insights`
+			href: `${basePath}/insights`
 		},
 		{
 			name: 'carrers',
-			href: `${$page.url.pathname.split('/')[1]}/carrers`
+			href: `${basePath}/carrers`
 		}
 	];
 
-	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 </script>
 
 <div
 	class="{y > 50
 		? 'bg-white shadow-md'
-		: 'bg-transparent shadow-none'} fixed top-0 left-0 w-full z-[100]"
+		: '!bg-transparent shadow-none'} fixed top-0 left-0 w-full z-[100]"
 >
-	<div class="max-w-7xl mx-auto py-4 md:px-8 px-4 bg-white">
+	<div class="max-w-7xl mx-auto py-4 md:px-8 px-4 { isColored? "text-black" :y > 50 ? "bg-white " :" text-white"}
+		{isColored? "text-black" : y > 50 ? "text-black" : "text-white"}
+		}">
 		<div class="flex items-center justify-between">
 			<a href="/">
-				<img src={logo} alt="dnr" />
+				<img src={isColored ? logo : y > 50  ? logo : logowhite} alt="dnr" width={100} height={100} />
 			</a>
 
 			<div class="hidden md:flex items-center gap-8">
@@ -368,7 +376,7 @@
 								>
 									<path
 										d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
-										stroke="black"
+										stroke="{isColored? "black" : y > 50 ? "black" :"white"}"
 										stroke-width="1.5"
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -378,7 +386,7 @@
 						</PopoverButton>
 						<PopoverPanel style="position: absolute; z-index: 10; width:600px; right: 0;">
 							<div
-								class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[600px]"
+								class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[600px] text-black"
 							>
 								<a
 									href="/"

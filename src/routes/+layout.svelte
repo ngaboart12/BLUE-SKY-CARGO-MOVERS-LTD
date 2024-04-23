@@ -5,6 +5,7 @@
   import { onNavigate } from '$app/navigation';
   import { fade } from 'svelte/transition';
   import "../app.css";
+	import { page } from "$app/stores";
 
   const meta_description = `Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.`
   onNavigate((navigation) => {
@@ -17,6 +18,11 @@
         });
       });
     });
+
+
+  const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
+	let isPage = country.includes($page.url.pathname.split('/')[1]);
+
   </script>
 
 <svelte:head>
@@ -24,8 +30,11 @@
     <meta name="DNR" content={meta_description} />
     <meta name="og:description" content={meta_description} />
 </svelte:head>
-
+  {#if $page.url.pathname.split('/')[0] === "" && (isPage || $page.url.pathname.split('/')[1] === "") && $page.url.pathname.split('/').length !== 3 }
   <Header/>
+  {:else}
+  <Header isColored/>
+  {/if}
   <main transition:fade>
     <slot />
   </main>

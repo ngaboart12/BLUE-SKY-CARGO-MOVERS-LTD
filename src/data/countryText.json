@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "path": "rw",
+        "heroImage":"https://deih43ym53wif.cloudfront.net/cityscape-things-to-do-in-kigali-rwanda_44e57bd0bf.jpeg",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In Rwanda Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England",
+        "aboutUsContent":"It has a sharp expertise from long term experiences in various business industries. The firm is in charge of coordinating the international activities of the DNR PARTNERS network Firms but does not provide, supervise or manage professional services to clients. which is a world-wide network of independent professional accounting firms and business advisers, each of which is a separate and independent legal entity. DNR PARTNERS has offices in England, Rwanda, Burundi, Kenya, Zambia and South Africa."
+    },
+    {
+        "id": 2,
+        "path": "en",
+        "heroImage":"https://upload.wikimedia.org/wikipedia/commons/2/22/London_Eye_-_tunliweb.no.JPG",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In England our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England",
+        "aboutUsContent":"It has a sharp expertise from long term experiences in various business industries. The firm is in charge of coordinating the international activities of the DNR PARTNERS network Firms but does not provide, supervise or manage professional services to clients. which is a world-wide network of independent professional accounting firms and business advisers, each of which is a separate and independent legal entity. DNR PARTNERS has offices in England, Rwanda, Burundi, Kenya, Zambia and South Africa."
+    },
+    {
+        "id":3,
+        "path": "ke",
+        "heroImage":"https://www.kenya2uhub.com/wp-content/uploads/2019/04/Dual_Citizenship_Two_Passports-1.jpg",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In Kenya our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England",
+        "aboutUsContent":"It has a sharp expertise from long term experiences in various business industries. The firm is in charge of coordinating the international activities of the DNR PARTNERS network Firms but does not provide, supervise or manage professional services to clients. which is a world-wide network of independent professional accounting firms and business advisers, each of which is a separate and independent legal entity. DNR PARTNERS has offices in England, Rwanda, Burundi, Kenya, Zambia and South Africa."
+    },
+    {
+        "id":4,
+        "path": "bi",
+        "heroImage":"https://petnahafricatours.com/wp-content/uploads/2020/05/Bujumbura-Burundi.jpg",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In Burundi our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England"
+    },
+    {
+        "id":5,
+        "path": "sa",
+        "heroImage":"https://media.cntraveler.com/photos/65988c68ba9c434d5460c732/16:9/w_1920,c_limit/Cape_Town_When_to_Visit_South_Africa_November_GettyImages-671323338.jpg",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In  South Africa  our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England"
+    },
+    {
+        "id":6,
+        "path": "za",
+        "heroImage":"https://www.telegraph.co.uk/content/dam/Travel/2016/October/Zambia-travel-AP66087413.jpg?imwidth=1280",
+        "subTitle": "Bridging Cultures, Maximizing Potential",
+        "title": "In Zambia our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.",
+        "aboutUsTitle":"We are a global chartered professional accountants and business advisors headquartered in England"
+    }
+]
