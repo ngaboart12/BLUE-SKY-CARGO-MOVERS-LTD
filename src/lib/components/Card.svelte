@@ -7,10 +7,13 @@
 	export let id: string;
 	export let imgUrl: string;
 	import { page } from '$app/stores';
+
+	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
+	let basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
 </script>
 
 <a
-	href={`${$page.url.pathname.split('/')[1]}/insights/${id}`}
+	href={`${basePath}/insights/${id}`}
 	class="flex flex-col gap-2 h-full justify-between"
 >
 	<div>
