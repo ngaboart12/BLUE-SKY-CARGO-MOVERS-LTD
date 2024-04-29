@@ -9,8 +9,8 @@
 	export let isColored = false;
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 
-	let basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
-	const menu = [
+	$: basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
+	$: menu = [
 		{
 			name: 'Home',
 			href: `${basePath}/`

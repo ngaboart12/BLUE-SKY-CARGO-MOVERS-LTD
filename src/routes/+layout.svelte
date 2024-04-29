@@ -21,7 +21,7 @@
 
 
   const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
-	let isPage = country.includes($page.url.pathname.split('/')[1]);
+	$: isPage = country.includes($page.url.pathname.split('/')[1]);
 
   </script>
 

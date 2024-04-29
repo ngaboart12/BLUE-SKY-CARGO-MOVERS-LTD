@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import imgeFour from '$lib/images/one--1.jpg?enhanced';
-	import ImageOne from '$lib/images/1-1.png?enhanced';
+	import ImageOne from '$lib/images/2.2.png?enhanced';
 	import ImageTwo from '$lib/images/2.png';
 	import Button from '$lib/components/Button.svelte';
 	import SvgOne from '$lib/images/vision/1.svelte';
