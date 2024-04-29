@@ -30,7 +30,7 @@
     <meta name="DNR" content={meta_description} />
     <meta name="og:description" content={meta_description} />
 </svelte:head>
-  {#if $page.url.pathname.split('/')[0] === "" && (isPage || $page.url.pathname.split('/')[1] === "") && $page.url.pathname.split('/').length !== 3 }
+  {#if $page.url.pathname.split('/')[0] === "" && (isPage || $page.url.pathname.split('/')[1] === "") && $page.url.pathname.split('/').length < 3 }
   <Header/>
   {:else}
   <Header isColored/>

@@ -9,6 +9,8 @@
 	const filteredData = data.filter((item) => item.icon !== expctedId);
 	data = isHome ? filteredData.slice(0, 5) : filteredData;
 	import { page } from '$app/stores';
+	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
+	$: basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
 </script>
 
 {#each data as item}
@@ -489,7 +491,7 @@
 					{item.description}
 				</p>
 				<a
-					href="{$page.url.pathname.split('/')[1]}/services/{item.icon}"
+					href="{basePath}/services/{item.icon}"
 					class="flex items-center gap-2.5 text-[#C43228]"
 				>
 					<span>Learn more</span>
