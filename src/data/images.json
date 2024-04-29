@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "path": "rw",
+        "images":[
+            "/two--2.jpg",
+            "/three-99.jpg",
+            "/onnw.png"
+        ]
+    },
+    {
+        "id": 2,
+        "path": "en",
+        "images":[
+            "/eng-1.jpeg",
+            "/eng-2.jpg",
+            "/eng-3.png"
+        ]
+    },
+    {
+        "id":3,
+        "path": "ke",
+        "images":[
+            "/ke-1.jpg",
+            "/key-2.jpeg",
+            "/ke-3.png"
+        ]
+    },
+    {
+        "id":4,
+        "path": "bi",
+        "images":[
+            "/two--2.jpg",
+            "/three-99.jpg",
+            "/bu-1.png"
+        ]
+    },
+    {
+        "id":5,
+        "path": "sa",
+        "images":[
+            "/sa-1.jpeg",
+            "/sa-3.webp",
+            "/sa.png"
+        ]
+    },
+    {
+        "id":6,
+        "path": "za",
+        "images":[
+            "/sa-1.jpeg",
+            "/sa-2.jpg",
+            "/za-1.png"
+        ]
+    }
+]

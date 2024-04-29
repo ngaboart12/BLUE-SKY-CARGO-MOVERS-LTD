@@ -15,6 +15,7 @@
 	import Partnership from '$lib/components/Partnership.svelte';
 	import { page } from '$app/stores';
 	import CONTENT from '../../../data/countryText.json'
+	import CONTENT_IMG from "../../../data/images.json"
 
 	const visions = [
 		{
@@ -58,6 +59,8 @@
 		}
 	});
 	let findContenent = CONTENT.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT[0];
+	$: findImage = CONTENT_IMG.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT_IMG[0];
+
 </script>
 
 <div class="min-h-screen h-full flex relative justify-center items-center">
@@ -145,7 +148,7 @@
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 			<div class="">
-				<enhanced:img src={ImageOne} alt="" class="w-[460px] h-full object-cover" />
+				<img src={findImage.images[2]} alt="" class="w-[460px] h-full object-cover" />
 			</div>
 			<div class="flex flex-col gap-3">
 				<div class="w-fit">

@@ -2,15 +2,19 @@
 	// @ts-nocheck
 	import Button from '$lib/components/Button.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import imgeFive from '$lib/images/two--2.jpg?enhanced';
-	import imgeSix from '$lib/images/three-99.jpg?enhanced';
-	import ImageOne from '$lib/images/onnw.png?enhanced';
 	import empty from '$lib/images/empty.png';
 	import Modal from '$lib/components/Modal.svelte';
 	import { createClient } from '@sanity/client';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 	import Dropzone from 'svelte-file-dropzone';
 	import { browser } from '$app/environment';
+	import CONTENT from '../../../data/images.json'
+	import { page } from '$app/stores';
+
+
+
+
+	$: findContenent = CONTENT.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT[0];
 	let files = {
 		accepted: [],
 		rejected: []
@@ -226,7 +230,7 @@
 			</div>
 			<div class="w-full flex h-[400px] flex-wrap md:flex-nowrap gap-10 mt-10">
 				<div class="rounded-2xl overflow-hidden sm:w-[700px]">
-					<enhanced:img src={imgeFive} alt="" class="w-full h-full object-cover" />
+					<img src={findContenent.images[0]} alt="" class="w-full h-full object-cover" />
 				</div>
 
 				<div class="w-full relative">
@@ -252,7 +256,7 @@
 							relationships with our clients
 						</p>
 					</div>
-					<enhanced:img src={imgeSix} alt="" class="w-full rounded-2xl h-full object-cover" />
+					<img src={findContenent.images[1]} alt="" class="w-full rounded-2xl h-full object-cover" />
 				</div>
 			</div>
 		</div>
@@ -260,7 +264,7 @@
 		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 			<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 				<div class="">
-					<enhanced:img src={ImageOne} alt="" class="w-[460px] h-full object-cover" />
+					<img src={findContenent.images[2]} alt="" class="w-[460px] h-full object-cover" />
 				</div>
 				<div class="flex flex-col gap-3">
 					<div class="w-fit">
