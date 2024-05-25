@@ -9,7 +9,7 @@
 		</h1>
 		<h2 class=" font-semibold text-[#083867] capitalize text-sm sm:mt-3">latest news and events</h2>
 
-		<div class="flex mt-8 gap-4 items-center w-full flex-wrap justify-center">
+		<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full flex-wrap justify-center">
 			<ServicesCard />
 		</div>
 	</div>

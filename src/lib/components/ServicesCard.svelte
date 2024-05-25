@@ -14,7 +14,24 @@
 </script>
 
 {#each data as item}
-	<div class="py-12 px-6 bg-white rounded-xl w-[390px]">
+<a
+href="{basePath}/services/{item.icon}"
+  class="relative group grid cursor-pointer h-[22rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+  <img
+   src={item.images[0]}
+   alt=""
+    class="absolute group-hover:scale-110 object-cover duration-300 transition-all inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none" />
+<div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/80"></div>
+  <div class="relative p-6 px-6 py-14 md:px-12">
+    <h2 class="mb-6 block font-sans text-2xl font-medium capitalize tracking-normal text-white antialiased">
+		{item.title}
+    </h2>
+	<p class="line-clamp-3  text-gray-400 font-light">
+		{item.description}
+	</p>
+  </div>
+</a>  
+	<!-- <div class="py-12 px-6 bg-white rounded-xl w-[390px]">
 		<div class="flex items-center gap-4">
 			<div>
 				{#if item.icon === 1}
@@ -523,7 +540,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 {/each}
 
 <!-- {#if showModal}

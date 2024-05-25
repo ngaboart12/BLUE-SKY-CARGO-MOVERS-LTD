@@ -22,6 +22,7 @@
 
   const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 	$: isPage = country.includes($page.url.pathname.split('/')[1]);
+  console.log()
 
   </script>
 
@@ -30,8 +31,8 @@
     <meta name="DNR" content={meta_description} />
     <meta name="og:description" content={meta_description} />
 </svelte:head>
-  {#if $page.url.pathname.split('/')[0] === "" && (isPage || $page.url.pathname.split('/')[1] === "") && $page.url.pathname.split('/').length < 3 }
-  <Header/>
+  {#if ($page.url.pathname.split('/')[0] === "" && (isPage || $page.url.pathname.split('/')[1] === "") && ($page.url.pathname.split('/').length < 3) || $page.url.pathname.includes("services")) }
+  <Header />
   {:else}
   <Header isColored/>
   {/if}

@@ -43,7 +43,7 @@
 		}
 	];
 	export let data;
-	const blog = data.blogs.slice(0, 4).map((value: any) => {
+	export const blog = data.blogs.slice(0, 4).map((value: any) => {
 		if (value.mainImage) {
 			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';
 			const removeTypePrefix = value.mainImage.asset._ref.split(typePrefix)[1];
@@ -208,7 +208,7 @@
 					Trading, Manufacturing, Universities, Coffee & Tea export, Capital market, etc.
 				</p>
 			</div>
-			<div class="flex mt-8 gap-4 items-center w-full flex-wrap justify-center">
+			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
 				<ServicesCard isHome />
 			</div>
 		</div>
