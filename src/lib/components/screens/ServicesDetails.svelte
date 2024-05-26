@@ -78,19 +78,23 @@
 				</p>
 			</div>
 		</div>
-		<div class="w-full mt-10 h-[400px] overflow-hidden rounded-2xl">
+		<div class="w-full mt-10 h-[400px] overflow-hidden rounded-2xl grid grid-cols-2 items-center gap-10">
 			<img
 				src={data.service.images[0]}
 				alt={data.service?.title}
 				class="w-full object-cover h-full"
 			/>
-		</div>
-		<div class="w-full text-start mt-10 flex flex-col gap-8">
-			{#each paragraphsPartOne || [] as item}
+			<div class="flex flex-col gap-5">
+				{#each paragraphsPartOne || [] as item}
 				<p class="text-[#595959] font-light">
 					{item}
 				</p>
 			{/each}
+			</div>
+		</div>
+
+		<div class="w-full text-start mt-10 flex flex-col gap-8">
+		
 
 			<div class="sm:grid-cols-2 grid items-center gap-10">
 				<div class="flex flex-col gap-2,5">
