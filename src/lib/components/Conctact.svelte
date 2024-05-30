@@ -74,7 +74,7 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<span class="font-light text-sm text-[#606060]">Gives us a Call</span>
-						<span class="font-m">+250 788 386 134</span>
+						<span class="font-m">+250 788 386 136 / +250 788 386 134</span>
 					</div>
 				</a>
 				<a href="mailto:info@rw.dnrpartners.com" class="flex items-center gap-2 mt-4">

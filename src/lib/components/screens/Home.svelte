@@ -20,13 +20,13 @@
 	const visions = [
 		{
 			name: 'OUR VISION',
-			description: 'To be a globally trusted consulting firm.',
+			description: 'To be a globally trusted consulting firm in audit and advisory services.',
 			icon: 1
 		},
 		{
 			name: 'OUR MISSION',
 			description:
-				'To leverage on innovation, expertise and technology to offer globally competitive consultancy services to our clients',
+				'To leverage innovation, expertise, and technology to offer globally competitive consultancy services to our clients.',
 			icon: 2
 		},
 		{
@@ -38,7 +38,7 @@
 		{
 			name: 'CORE VALUES',
 			description:
-				'At DNR PARTNERS INTERNATIONAL, our values: are summarized into TRIP2C. Our values make our people live the company culture in pursuit of customer satisfaction. These are: Trust, Respect, Integrity, Professional competence Confidentiality and Customer value.',
+				'At DNR PARTNERS INTERNATIONAL, our values: are summarized into TRIP2C. Our values make our people live the company culture in pursuit of customer satisfaction. These are: Integrity, Professionalism, Excellence, Customer Centricity',
 			icon: 4
 		}
 	];

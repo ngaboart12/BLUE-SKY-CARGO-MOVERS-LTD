@@ -41,9 +41,7 @@
 					<img src={logo} width={133} height={62} alt="logo" />
 				</div>
 				<p class="text-white font-light">
-					We are a global chartered professional accountants and business advisors headquartered in
-					England. It has a sharp expertise from long term experiences in various business
-					industries.
+					DNR Partners International is a global network of chartered professional accountants and business advisors headquartered in England. We operate in Rwanda, Burundi, Kenya, England, Zambia, Zimbabwe, and South Africa. Our firm provides services in audit and assurance, outsourced accounting, tax and business advisory, corporate training, risk, and legal compliance.
 				</p>
 				<div class="flex items-center gap-8">
 					<a href="https://twitter.com/ngilidius">
@@ -125,11 +123,51 @@
 							target="_blank"
 							href="https://maps.app.goo.gl/qHRpdGjuYQxAeSMP8"
 							class="text-base flex flex-col gap-2 capitalize"
-							>KG 647 St, Kigali P. O. Box 5247 Kigali, Rwanda</a
+							>
+							{#if $page.url.pathname.split('/')[1] === 'ke'}
+								Kenya
+							{:else if $page.url.pathname.split('/')[1] === 'en'}
+								England
+							{:else if $page.url.pathname.split('/')[1] === 'bi'}
+								burundi
+							{:else if $page.url.pathname.split('/')[1] === 'za'}
+								Zambia
+							{:else if $page.url.pathname.split('/')[1] === 'sa'}
+								South Africa
+							{:else}
+								KG 647 St, Kigali P. O. Box 5247 Kigali, Rwanda
+							{/if}
+							</a
 						>
-						<a href="tel:+250788386134" class="text-base flex flex-col gap-2 capitalize">
-							+250 788 386 134
+
+						{#if $page.url.pathname.split('/')[1] === 'ke'}
+						<a href="tel:+254732227307" class="text-base flex flex-col gap-2 capitalize">
+							+254 732 227 307
 						</a>
+						{:else if $page.url.pathname.split('/')[1] === 'en'}
+						<a href="tel:+447568197733" class="text-base flex flex-col gap-2 capitalize">
+							+44 7568 197733
+					    </a>
+						{:else if $page.url.pathname.split('/')[1] === 'bi'}
+						<a href="tel:+25771582452" class="text-base flex flex-col gap-2 capitalize">
+							+257 71 58 24 52
+					   </a>
+						{:else if $page.url.pathname.split('/')[1] === 'za'}
+					   	<a href="tel:+260977753307" class="text-base flex flex-col gap-2 capitalize">
+						+260 97 7753307 / +260 96 6753307
+				   		</a>
+						{:else if $page.url.pathname.split('/')[1] === 'sa'}
+						<a href="tel:+27737181692" class="text-base flex flex-col gap-2 capitalize">
+							+27 73 718 1692
+						</a>
+						{:else}
+						<a href="tel:+250788386136" class="text-base flex flex-col gap-2 capitalize">
+							+250 788 386 136 <br/> / +250 788 386 134
+						</a>
+						{/if}
+
+
+						
 						<a href="mailto:info@rw.dnrpartners.com" class="text-base flex flex-col gap-2">
 							info@rw.dnrpartners.com</a
 						>
