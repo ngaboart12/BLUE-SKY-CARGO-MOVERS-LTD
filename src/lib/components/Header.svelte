@@ -9,6 +9,8 @@
 	export let isColored = false;
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 
+	$: isColored_1 = $page.url.pathname.includes('services');
+	console.log(isColored_1,"...///")
 	$: basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
 	$: menu = [
 		{
@@ -40,12 +42,12 @@
 		? 'bg-white shadow-md'
 		: '!bg-transparent shadow-none'} fixed top-0 left-0 w-full z-[100]"
 >
-	<div class="max-w-7xl mx-auto py-4 md:px-8 px-4 { isColored? "text-black" :y > 50 ? "bg-white " :" text-white"}
-		{isColored? "text-black" : y > 50 ? "text-black" : "text-white"}
+	<div class="max-w-7xl mx-auto py-4 md:px-8 px-4 { isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "text-black" :y > 50 ? "bg-white " :" text-white"}
+		{isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "text-black" : y > 50 ? "text-black" : "text-white"}
 		}">
 		<div class="flex items-center justify-between">
 			<a href="/">
-				<img src={isColored ? logo : y > 50  ? logo : logowhite} alt="dnr" width={100} height={100} />
+				<img src={isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2]) ? logo : y > 50  ? logo : logowhite} alt="dnr" width={100} height={100} />
 			</a>
 
 			<div class="hidden md:flex items-center gap-8">
@@ -376,7 +378,7 @@
 								>
 									<path
 										d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
-										stroke="{isColored? "black" : y > 50 ? "black" :"white"}"
+										stroke="{isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "black" : y > 50 ? "black" :"white"}"
 										stroke-width="1.5"
 										stroke-linecap="round"
 										stroke-linejoin="round"

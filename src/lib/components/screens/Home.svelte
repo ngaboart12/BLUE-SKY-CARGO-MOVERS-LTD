@@ -212,6 +212,24 @@
 				<ServicesCard isHome />
 			</div>
 		</div>
+		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+			<div class="grid sm:grid-cols-2 items-center">
+				<div class="flex flex-col gap-2">
+					<div class="w-fit">
+						<Button>Specialized Packages</Button>
+					</div>
+					<div class="sm:w-[60%]">
+						<Title isSmall name="Your Packages, Our Packages" />
+					</div>
+				</div>
+				<p class="text-[#636363] text-[16px] font-light">
+					We offer specialized packages including corporate strategy planning, monitoring & evaluation tools, advanced financial modeling, sustainability management, corporate strategic positioning, e-marketing, IFRSs (including IFRS 9, 17), climate adaptation, and ESG strategy
+				</p>
+			</div>
+			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
+				<ServicesCard isHome={true} baseNumber={12} />
+			</div>
+		</div>
 		<div class="relative h-[250px] mt-10 flex items-center justify-center">
 			<div class="absolute top-0 w-full bg-[#083867] h-full z-10" />
 			<img
