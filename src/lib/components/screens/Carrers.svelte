@@ -71,6 +71,7 @@
 		<h2 class=" font-semibold text-[#083867] capitalize text-sm sm:mt-3">
 			Your Expectation,Our Value Proposition
 		</h2>
+		<p class="mx-auto max-w-xl text-center text-[#5e5d5de3] mt-4">We are always looking for talented professionals to join our growing team. Visit our Careers page to see current openings and learn more about working at DNR Partners.</p>
 		<div class="w-full"></div>
 	</div>
 	<div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col items-center w-full">

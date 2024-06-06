@@ -16,6 +16,9 @@
 	import { page } from '$app/stores';
 	import CONTENT from '../../../data/countryText.json'
 	import CONTENT_IMG from "../../../data/images.json"
+	import Testimonials from '../Testimonials.svelte';
+	import FQs from '../FQs.svelte';
+	import Event from '../Event.svelte';
 
 	const visions = [
 		{
@@ -372,5 +375,8 @@
 		</div>
 	</div>
 	<Partnership />
+	<FQs />
+	<Testimonials />
+	<Event />
 	<Conctact />
 </div>

@@ -323,8 +323,16 @@
 				{/if}
 
 				{#each typeJob.find((item) => item._id === whichIsActive).membersTeams as item}
-					<div class="flex flex-col">
-						<img src={item.mainImage} alt="" class="w-full h-[300px] object-cover rounded-2xl" />
+					<div class="flex flex-col overflow-hidden">
+						<div class="relative overflow-hidden group">
+							<div class="absolute group-hover:opacity-100 opacity-0 duration-200 transition-all cursor-pointer top-0 flex flex-col items-center justify-center rounded-2xl left-0 bg-black/60 w-full h-full text-white px-2 py-1 rounded-tr-lg rounded-bl-lg">
+								<h3 class="font-semibold">Meet {item.name}</h3>
+								<p class="text-sm text-center">
+									{item?.bio}
+								</p>
+							</div>
+							<img src={item.mainImage} alt="" class="w-full h-[300px] object-cover rounded-2xl" />
+						</div>
 						<span class="font-light mt-2 capitalize">{item.name}</span>
 						<span class="font-light text-[#6C6C6C] capitalize">{item.subtitle}</span>
 					</div>
