@@ -1,6 +1,7 @@
 <script lang="ts">
 	import logo from '../images/red-logo.svg';
 	import logowhite from '$lib/images/5.png';
+	import DATA from '../../data/sevrives.json';
 
 
 	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
@@ -42,7 +43,7 @@
 		? 'bg-white shadow-md'
 		: '!bg-transparent shadow-none'} fixed top-0 left-0 w-full z-[100]"
 >
-	<div class="max-w-7xl mx-auto py-4 md:px-8 px-4 { isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "text-black" :y > 50 ? "bg-white " :" text-white"}
+	<div class="max-w-7xl mx-auto py-2 md:px-8 px-4 { isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "text-black" :y > 50 ? "bg-white " :" text-white"}
 		{isColored || ($page.url.pathname.includes('services') && !$page.url.pathname.split("/")[2])? "text-black" : y > 50 ? "text-black" : "text-white"}
 		}">
 		<div class="flex items-center justify-between">
@@ -53,7 +54,36 @@
 			<div class="hidden md:flex items-center gap-8">
 				<div class="flex items-center gap-8 font-light">
 					{#each menu as item}
+						{#if item.name === 'Services'}
+						<div class="relative group py-5">
+							<a href={item.href} class="capitalize">{item.name}</a>
+							<div class="absolute left-1/2 z-10 mt-5 w-screen max-w-max h-[500px] overflow-auto rounded-3xl -translate-x-1/2 px-4 group-hover:block hidden">
+								<div class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+								  <div class="p-4">
+									{#each DATA as item }
+									<div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+									  <div class="mt-1 flex h-11 w-11 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white">
+										<img src={item.images[0]} alt="1" class="object-cover w-full h-full" />
+									  </div>
+									  <div class="flex flex-col">
+										<a href="{basePath}/services/{item.icon}" class="font-semibold text-gray-900">
+										  {item.title}
+										  <span class="absolute inset-0"></span>
+										</a>
+										<p class="mt-1 text-gray-600 line-clamp-1">
+												{item.description}
+										</p>
+									  </div>
+									</div>
+										
+									{/each}
+								  </div>
+								</div>
+							  </div>
+						</div>
+						{:else}
 						<a href={item.href} class="capitalize">{item.name}</a>
+						{/if}
 					{/each}
 				</div>
 
