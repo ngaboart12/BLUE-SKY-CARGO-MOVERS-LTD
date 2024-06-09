@@ -386,13 +386,13 @@
 								</svg>
 							</button>
 						</PopoverButton>
-						<PopoverPanel style="position: absolute; z-index: 10; width:600px; right: 0;">
+						<PopoverPanel style="position: absolute; z-index: 10; width:250px; right: 0;">
 							<div
-								class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[600px] text-black"
+								class=" grid sm:grid-cols-1 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[250px] text-black"
 							>
 								<a
 									href="/"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
@@ -431,7 +431,7 @@
 								</a>
 								<a
 									href="/bi"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
@@ -491,7 +491,7 @@
 
 								<a
 									href="/en"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
@@ -570,7 +570,7 @@
 								</a>
 								<a
 									href="/za"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
@@ -613,7 +613,7 @@
 								</a>
 								<a
 									href="/sa"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
@@ -654,7 +654,7 @@
 								</a>
 								<a
 									href="/ke"
-									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
 										<svg
