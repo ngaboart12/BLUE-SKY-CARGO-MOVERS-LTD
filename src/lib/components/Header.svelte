@@ -34,7 +34,7 @@
 		}
 	];
 
-	isColored = $page.url.pathname.includes('insights') && $page.url.pathname.split('/').length !== 3  ? false : isColored;
+	isColored = false;
 
 </script>
 

@@ -25,9 +25,6 @@ export async function load({}) {
 	const organizationTypes = await client.fetch(
 		`*[_type == "organizationType" && (country == "rw" || country == "all")]`
 	);
-	const openRoles = await client.fetch(
-		`*[_type == "openRoles" && isAvailable == true && (country == "rw" || country == "all")]`
-	);
 	const youtubeUpdates = await client.fetch(
 		`*[_type == "youtubeUpdates" && (country == "rw" || country == "all")]`
 	);
@@ -45,6 +42,5 @@ export async function load({}) {
 	return {
 		organizationTypes: result,
 		youtubeUpdates: youtubeUpdates,
-		openRoles: openRoles
 	};
 }
