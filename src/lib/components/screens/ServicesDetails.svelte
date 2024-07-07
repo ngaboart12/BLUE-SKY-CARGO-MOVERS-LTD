@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Siema from 'siema';
+	import { onMount, createEventDispatcher } from 'svelte';
 	import Conctact from './../../../lib/components/Conctact.svelte';
 	import Button from './../../../lib/components/Button.svelte';
 	import Title from './../../../lib/components/Title.svelte';
@@ -6,10 +8,11 @@
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
 	import imgeFive from '$lib/images/6.png';
 	import Card from '../Card.svelte';
+	import Carousel from '../Carousel.svelte';
 	export let data;
 
 	const badData = data.blogs;
-	
+
 	const blog = badData.slice(0, 4).map((value: any) => {
 		if (value.mainImage) {
 			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';
@@ -28,23 +31,53 @@
 
 	const paragraphsPartOne = data.service?.paragraphs.slice(0, 2) || [];
 	const paragraphsPartTwo = data.service?.paragraphs.slice(2, 4) || [];
-	function handleAnchorClick (event) {
-		event.preventDefault()
-		const anchor = document.getElementById('anchor-sectiion')
+	function handleAnchorClick(event) {
+		event.preventDefault();
+		const anchor = document.getElementById('anchor-sectiion');
 		window.scrollTo({
 			top: anchor.offsetTop,
 			behavior: 'smooth'
-		})
+		});
 	}
+	let siema;
+	let controller;
+	let timer;
+	const dispatch = createEventDispatcher();
+	let currentIndex = 0;
+	function handleChange(event) {
+		currentIndex = controller.currentSlide;
+		dispatch('change', {
+			currentSlide: controller.currentSlide,
+			slideCount: controller.innerElements.length
+		});
+	}
+
+	onMount(() => {
+		controller = new Siema({
+			selector: siema,
+			perPage: 1,
+			loop: true,
+			duration: 200,
+			easing: 'ease-out',
+			startIndex: 0,
+			draggable: true,
+			multipleDrag: true,
+			threshold: 20,
+			rtl: false,
+			timer: 2000,
+			onChange: handleChange
+		});
+	});
 </script>
 
-
 <div class="min-h-[70vh] flex relative justify-center items-center">
-	<img
-		src={data.service.images[1]}
-		alt="logo"
-		class="absolute top-0 w-full h-full z-10 object-cover"
-	/>
+	<div class="absolute top-0 w-full h-full z-10 object-cover overflow-hidden">
+		<Carousel dots={false}>
+			{#each data.service.images as item}
+				<img src={item} alt="logo" class="w-full object-cover h-[70vh]" />
+			{/each}
+		</Carousel>
+	</div>
 	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
 	<div class="flex flex-col gap-4 items-center z-40">
 		<div class="text-white text-center max-w-3xl sm:mt-0 mt-28">
@@ -52,11 +85,24 @@
 			<p class="text-[24px] sm:text-[24px] font-medium mt-2">
 				{data.service?.description}
 			</p>
-			<a 
-			href="#anchor-sectiion" 
-			on:click={handleAnchorClick}
-			class="bg-[#D71B30] text-white flex items-center justify-center w-[50px] h-[50px] mx-auto  mt-10 rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+			<a
+				href="#anchor-sectiion"
+				on:click={handleAnchorClick}
+				class="bg-[#D71B30] text-white flex items-center justify-center w-[50px] h-[50px] mx-auto mt-10 rounded-full"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-arrow-down"
+					><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg
+				>
 			</a>
 		</div>
 	</div>
@@ -78,7 +124,9 @@
 				</p>
 			</div>
 		</div>
-		<div class="w-full mt-10 h-[400px] overflow-hidden rounded-2xl grid grid-cols-2 items-center gap-10">
+		<div
+			class="w-full mt-10 h-[400px] overflow-hidden rounded-2xl grid grid-cols-2 items-center gap-10"
+		>
 			<img
 				src={data.service.images[0]}
 				alt={data.service?.title}
@@ -86,16 +134,14 @@
 			/>
 			<div class="flex flex-col gap-5">
 				{#each paragraphsPartOne || [] as item}
-				<p class="text-[#595959] font-light">
-					{item}
-				</p>
-			{/each}
+					<p class="text-[#595959] font-light">
+						{item}
+					</p>
+				{/each}
 			</div>
 		</div>
 
 		<div class="w-full text-start mt-10 flex flex-col gap-8">
-		
-
 			<div class="sm:grid-cols-2 grid items-center gap-10">
 				<div class="flex flex-col gap-2,5">
 					<h2 class="text-[#083867] font-semibold text-2xl mb-3">How we can help</h2>

@@ -19,6 +19,7 @@
 	import Testimonials from '../Testimonials.svelte';
 	import FQs from '../FQs.svelte';
 	import Event from '../Event.svelte';
+	import Carousel from '../Carousel.svelte';
 
 	const visions = [
 		{
@@ -66,86 +67,90 @@
 
 </script>
 
-<div class="min-h-screen h-full flex relative justify-center items-center">
-	<img
-		src={findContenent.heroImage}
-		alt="logo"
-		class="absolute top-0 w-full h-full z-10 object-cover"
-	/>
-	<div class="absolute top-0 w-full bg-black/70 h-full z-20"></div>
-	<div class="flex flex-col gap-4 items-center z-40">
-		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28">
-			<p class="text-xl font-light mb-10">{findContenent.subTitle}</p>
-			<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
-				{findContenent.title}
-			</p>
-			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
-				<a
-					href="/contact"
-					class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
-				>
-					<span>reach to us</span>
-					<span>
-						<svg
-							width="24"
-							height="25"
-							viewBox="0 0 24 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
+<Carousel>
+	{#each CONTENT  as item }
+		<div class="min-h-screen h-full flex relative justify-center items-center">
+			<img
+				src={item.heroImage}
+				alt="logo"
+				class="absolute top-0 w-full h-full z-10 object-cover"
+			/>
+			<div class="absolute top-0 w-full bg-black/70 h-full z-20"></div>
+			<div class="flex flex-col gap-4 items-center z-40">
+				<div class="text-white text-center max-w-4xl sm:mt-0 mt-28">
+					<p class="text-xl font-light mb-10">{item.subTitle}</p>
+					<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
+						{item.title}
+					</p>
+					<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
+						<a
+							href="/contact"
+							class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
 						>
-							<path
-								opacity="0.4"
-								d="M19.75 12.2257L4.75 12.2257"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</span>
-				</a>
-				<a
-					href="/services"
-					class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
-				>
-					<span>know more</span>
-					<span>
-						<svg
-							width="24"
-							height="25"
-							viewBox="0 0 24 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
+							<span>reach to us</span>
+							<span>
+								<svg
+									width="24"
+									height="25"
+									viewBox="0 0 24 25"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										opacity="0.4"
+										d="M19.75 12.2257L4.75 12.2257"
+										stroke="white"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+										stroke="white"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</span>
+						</a>
+						<a
+							href="/services"
+							class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
 						>
-							<path
-								opacity="0.4"
-								d="M19.75 12.2257L4.75 12.2257"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</span>
-				</a>
+							<span>know more</span>
+							<span>
+								<svg
+									width="24"
+									height="25"
+									viewBox="0 0 24 25"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										opacity="0.4"
+										d="M19.75 12.2257L4.75 12.2257"
+										stroke="white"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+										stroke="white"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	{/each}
+</Carousel>
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-32">
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">

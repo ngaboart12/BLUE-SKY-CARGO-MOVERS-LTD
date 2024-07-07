@@ -38,6 +38,7 @@
 		"dayjs": "^1.11.10",
 		"htm": "^3.1.1",
 		"showdown": "^2.1.0",
+		"siema": "^1.5.1",
 		"svelte-file-dropzone": "^2.0.6",
 		"svelte-share-buttons-component": "^3.0.0",
 		"vhtml": "^2.2.0"

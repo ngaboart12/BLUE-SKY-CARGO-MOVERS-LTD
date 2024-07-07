@@ -1,6 +1,6 @@
 [
 	{
-		"title": "Tax Compliance",
+		"title": "Tax Advisory Services",
 		"description": "Tax compliance refers to the adherence to tax laws and regulations by individuals and businesses. It encompasses a range of activities and behaviors aimed at fulfilling tax obligations",
 		"paragraphs": [
 			"Tax compliance refers to the adherence to tax laws and regulations by individuals and businesses. This includes the crucial task of filing accurate and timely tax returns to the appropriate tax authorities.",
@@ -13,7 +13,7 @@
 		"icon": 1
 	},
 	{
-		"title": "Finance Training for Non-Finance Managers",
+		"title": "Management Consulting Services",
 		"description": "offers sharpened financial advisory backed by thorough financial and non- financial data analysis of the client as well as these of the market. Our experts analyze both short and long term trends to appreciate possible opportunities in stock market,",
 		"paragraphs": [
 			"Immerse yourself in a realm of refined financial advisory services, meticulously honed to elevate your financial standing. Our consultancy not only delves into the intricacies of financial data but also conducts comprehensive analyses of non-financial factors, providing a holistic perspective that informs sound decision-making. With a keen eye for detail, our experts scrutinize both short-term fluctuations and long-term trends, enabling you to seize opportunities within the dynamic stock market landscape.",
@@ -238,7 +238,7 @@
 		"icon": 7
 	},
 	{
-		"title": "Climate Adaptation",
+		"title": "Climate Change Management Advisory Services",
 		"description": "Climate adaptation involves preparing for and responding to the impacts of climate change on communities, ecosystems, and economies. It focuses on building resilience, reducing vulnerabilities, and adapting to changing climate conditions.",
 		"paragraphs": [
 			"Climate adaptation involves preparing for and responding to the impacts of climate change on communities, ecosystems, and economies. It focuses on building resilience, reducing vulnerabilities, and adapting to changing climate conditions.",
@@ -250,7 +250,7 @@
 		"icon": 8
 	},
 	{
-		"title":"ESG Strategy",
+		"title":"ESG & Sustainability Advisory Services",
 		"description":"ESG strategy involves integrating environmental, social, and governance factors into business operations and decision-making. It focuses on creating long-term value, managing risks, and meeting the expectations of stakeholders.",
 		"paragraphs":[
 			"ESG strategy involves integrating environmental, social, and governance factors into business operations and decision-making. It focuses on creating long-term value, managing risks, and meeting the expectations of stakeholders.",
@@ -260,5 +260,18 @@
 		],
 		"images":["/ii.1.jpg","/yy.1.jpg"],
 		"icon": 1
+	},
+	{
+		"title":"Audit & Assurance",
+		"description":"Audit and assurance services are essential for ensuring the accuracy and reliability of financial information. They involve independent examination and verification of financial statements, internal controls, and compliance with regulations.",
+		"paragraphs":[
+			"Audit and assurance services are essential for ensuring the accuracy and reliability of financial information. They involve independent examination and verification of financial statements, internal controls, and compliance with regulations.",
+			"Audit services involve the examination of financial statements to provide an opinion on their fairness and compliance with accounting standards. Auditors assess the risk of material misstatement and provide assurance on the accuracy of financial reporting.",
+			"Assurance services go beyond traditional audits to provide additional insights and recommendations. They may include reviews of internal controls, risk assessments, and compliance with regulations. Assurance services help organizations improve their operations and mitigate risks.",
+			"Audit and assurance services are essential for maintaining transparency, accountability, and trust in financial reporting. They provide stakeholders with confidence in the accuracy and reliability of financial information, enabling informed decision-making and risk management.",
+			"By engaging audit and assurance services, organizations can enhance their credibility, strengthen governance practices, and demonstrate compliance with regulations. These services help organizations build trust with investors, lenders, and other stakeholders, contributing to long-term success and sustainability."
+		],
+		"images": ["/4.jpg", "/4.1.jpeg"],
+		"icon": 2
 	}
 ]

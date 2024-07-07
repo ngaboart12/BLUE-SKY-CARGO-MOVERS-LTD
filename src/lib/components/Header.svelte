@@ -3,14 +3,16 @@
 	import logowhite from '$lib/images/5.png';
 	import DATA from '../../data/sevrives.json';
 
-
 	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
 	import { page } from '$app/stores';
+	import AllCountrySvg from './AllCountrySVG.svelte';
 	let y: number;
 	export let isColored = false;
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 
-	$: basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
+	$: basePath = country.includes($page.url.pathname.split('/')[1])
+		? `/${$page.url.pathname.split('/')[1]}`
+		: '';
 	$: menu = [
 		{
 			name: 'Home',
@@ -35,7 +37,6 @@
 	];
 
 	isColored = false;
-
 </script>
 
 <div
@@ -43,46 +44,73 @@
 		? 'bg-white shadow-md'
 		: '!bg-transparent shadow-none'} fixed top-0 left-0 w-full z-[100]"
 >
-	<div class="max-w-7xl mx-auto py-2 md:px-8 px-4 { isColored? "text-black" :y > 50 ? "bg-white " :" text-white"}
-		{isColored? "text-black" : y > 50 ? "text-black" : "text-white"}
-		}">
+	<div
+		class="max-w-7xl mx-auto py-2 md:px-8 px-4 {isColored
+			? 'text-black'
+			: y > 50
+				? 'bg-white '
+				: ' text-white'}
+		{isColored ? 'text-black' : y > 50 ? 'text-black' : 'text-white'}
+		}"
+	>
 		<div class="flex items-center justify-between">
 			<a href="/">
-				<img src={isColored ? logo : y > 50  ? logo : logowhite} alt="dnr" width={100} height={100} />
+				<img
+					src={isColored ? logo : y > 50 ? logo : logowhite}
+					alt="dnr"
+					width={100}
+					height={100}
+				/>
 			</a>
 
 			<div class="hidden md:flex items-center gap-8">
 				<div class="flex items-center gap-8 font-light">
 					{#each menu as item}
 						{#if item.name === 'Services'}
-						<div class="relative group py-5">
-							<a href={item.href} class="capitalize">{item.name}</a>
-							<div class="absolute left-1/2 z-10 mt-5 w-screen max-w-max h-[500px] overflow-auto rounded-3xl -translate-x-1/2 px-4 group-hover:block hidden">
-								<div class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
-								  <div class="p-4">
-									{#each DATA as item }
-									<div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-									  <div class="mt-1 flex h-11 w-11 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white">
-										<img src={item.images[0]} alt="1" class="object-cover w-full h-full" />
-									  </div>
-									  <div class="flex flex-col">
-										<a href="{basePath}/services/{item.icon}" class="font-semibold text-gray-900">
-										  {item.title}
-										  <span class="absolute inset-0"></span>
-										</a>
-										<p class="mt-1 text-gray-600 line-clamp-1">
+							<div class="relative group py-5">
+								<a href={item.href} class="capitalize">{item.name}</a>
+								<div
+									class="absolute left-1/2 z-10 mt-5 w-screen max-w-max h-[500px] overflow-auto rounded-3xl -translate-x-1/2 px-4 group-hover:block hidden"
+								>
+									<div
+										class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5"
+									>
+										<div class="p-4">
+											{#each DATA as item}
+												{#if item.title === 'Audit & Assurance' || item.title === 'Tax Advisory Services' || item.title === 'Management Consulting Services' || item.title === 'Climate Change Management Advisory Services' || item.title === 'ESG & Sustainability Advisory Services'}
+													<div
+														class="group relative flex gap-x-6 items-center rounded-lg p-4 hover:bg-gray-50"
+													>
+														<div
+															class="mt-1 flex h-6 w-6 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white"
+														>
+															<img
+																src={item.images[0]}
+																alt="1"
+																class="object-cover w-full h-full"
+															/>
+														</div>
+														<div class="flex flex-col">
+															<a
+																href="{basePath}/services/{item.icon}"
+																class="font-semibold text-gray-900"
+															>
+																{item.title}
+																<span class="absolute inset-0"></span>
+															</a>
+															<!-- <p class="mt-1 text-gray-600 line-clamp-1">
 												{item.description}
-										</p>
-									  </div>
+										</p> -->
+														</div>
+													</div>
+												{/if}
+											{/each}
+										</div>
 									</div>
-										
-									{/each}
-								  </div>
 								</div>
-							  </div>
-						</div>
+							</div>
 						{:else}
-						<a href={item.href} class="capitalize">{item.name}</a>
+							<a href={item.href} class="capitalize">{item.name}</a>
 						{/if}
 					{/each}
 				</div>
@@ -362,40 +390,43 @@
 											>
 										</span>
 									{/if}
+									{#if $page.url.pathname.split('/')[1] === 'rw' }
+									<span>
+										<svg
+											width="24"
+											height="24"
+											viewBox="0 0 30 30"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<g clip-path="url(#clip0_189_548)">
+												<path
+													d="M0 15C0 17.5986 0.661113 20.0428 1.82385 22.1739L15 23.4783L28.1762 22.1739C29.3389 20.0428 30 17.5986 30 15L15 13.6956L0 15Z"
+													fill="#FFDA44"
+												/>
+												<path
+													d="M28.1762 7.82607C25.6321 3.16342 20.6856 0 15 0C9.31436 0 4.36793 3.16342 1.82385 7.82607C0.661113 9.95719 0 12.4014 0 15H30C30 12.4014 29.3389 9.95719 28.1762 7.82607Z"
+													fill="#338AF3"
+												/>
+												<path
+													d="M15 30C20.6857 30 25.6321 26.8366 28.1762 22.1739H1.82385C4.36793 26.8366 9.31436 30 15 30Z"
+													fill="#496E2D"
+												/>
+												<path
+													d="M16.9565 8.77857L18.7885 9.64031L17.813 11.4145L19.8023 11.034L20.0543 13.0435L21.4398 11.5655L22.8255 13.0435L23.0775 11.034L25.0667 11.4144L24.0913 9.64025L25.9231 8.77857L24.0912 7.91695L25.0667 6.14273L23.0775 6.52324L22.8254 4.51376L21.4398 5.99173L20.0543 4.51376L19.8023 6.52324L17.8129 6.14273L18.7885 7.91701L16.9565 8.77857Z"
+													fill="#FFDA44"
+												/>
+											</g>
+											<defs>
+												<clipPath id="clip0_189_548">
+													<rect width="30" height="30" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+									</span>
+									{/if}
 									{#if !country.includes($page.url.pathname.split('/')[1])}
-										<span>
-											<svg
-												width="24"
-												height="24"
-												viewBox="0 0 30 30"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g clip-path="url(#clip0_189_548)">
-													<path
-														d="M0 15C0 17.5986 0.661113 20.0428 1.82385 22.1739L15 23.4783L28.1762 22.1739C29.3389 20.0428 30 17.5986 30 15L15 13.6956L0 15Z"
-														fill="#FFDA44"
-													/>
-													<path
-														d="M28.1762 7.82607C25.6321 3.16342 20.6856 0 15 0C9.31436 0 4.36793 3.16342 1.82385 7.82607C0.661113 9.95719 0 12.4014 0 15H30C30 12.4014 29.3389 9.95719 28.1762 7.82607Z"
-														fill="#338AF3"
-													/>
-													<path
-														d="M15 30C20.6857 30 25.6321 26.8366 28.1762 22.1739H1.82385C4.36793 26.8366 9.31436 30 15 30Z"
-														fill="#496E2D"
-													/>
-													<path
-														d="M16.9565 8.77857L18.7885 9.64031L17.813 11.4145L19.8023 11.034L20.0543 13.0435L21.4398 11.5655L22.8255 13.0435L23.0775 11.034L25.0667 11.4144L24.0913 9.64025L25.9231 8.77857L24.0912 7.91695L25.0667 6.14273L23.0775 6.52324L22.8254 4.51376L21.4398 5.99173L20.0543 4.51376L19.8023 6.52324L17.8129 6.14273L18.7885 7.91701L16.9565 8.77857Z"
-														fill="#FFDA44"
-													/>
-												</g>
-												<defs>
-													<clipPath id="clip0_189_548">
-														<rect width="30" height="30" fill="white" />
-													</clipPath>
-												</defs>
-											</svg>
-										</span>
+										<AllCountrySvg />
 									{/if}
 								</div>
 								<span class="uppercase">Global Network</span>
@@ -408,7 +439,7 @@
 								>
 									<path
 										d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
-										stroke="{isColored? "black" : y > 50 ? "black" :"white"}"
+										stroke={isColored ? 'black' : y > 50 ? 'black' : 'white'}
 										stroke-width="1.5"
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -422,6 +453,13 @@
 							>
 								<a
 									href="/"
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+								>
+									<AllCountrySvg />
+									<span class="font-medium capitalize">Global Network</span>
+								</a>
+								<a
+									href="/rw"
 									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 								>
 									<span>
@@ -749,6 +787,19 @@
 										</svg>
 									</span>
 									<span class="font-medium capitalize">Kenya</span>
+								</a>
+								<a
+									class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+									href="/ug"
+								>
+									<span class="w-8 h-8 rounded-full overflow-hidden">
+										<img
+											class="w-full h-full object-cover"
+											src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/800px-Flag_of_Uganda.svg.png?20221207005450"
+											alt="ugunda"
+										/>
+									</span>
+									<span class="font-medium capitalize"> Uganda </span>
 								</a>
 							</div>
 						</PopoverPanel>

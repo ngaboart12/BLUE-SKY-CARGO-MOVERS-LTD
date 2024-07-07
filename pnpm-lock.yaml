@@ -29,6 +29,9 @@ dependencies:
   showdown:
     specifier: ^2.1.0
     version: 2.1.0
+  siema:
+    specifier: ^1.5.1
+    version: 1.5.1
   svelte-file-dropzone:
     specifier: ^2.0.6
     version: 2.0.6(svelte@4.2.12)
@@ -2065,6 +2068,10 @@ packages:
     hasBin: true
     dependencies:
       commander: 9.5.0
+    dev: false
+
+  /siema@1.5.1:
+    resolution: {integrity: sha512-BUNFdTSbC9/2gA6r6teBY9B8O/XZOUz8kVyttpsbq4gbHF9PidUDzs6aPtiObhV4KoEuPQdhRvK5hPPi9lgSTg==}
     dev: false
 
   /signal-exit@4.1.0:
