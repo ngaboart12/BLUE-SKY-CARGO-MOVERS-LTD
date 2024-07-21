@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import imgeFour from '$lib/images/one--1.jpg?enhanced';
-	import ImageOne from '$lib/images/2.2.png?enhanced';
 	import ImageTwo from '$lib/images/2.png';
 	import Button from '$lib/components/Button.svelte';
 	import SvgOne from '$lib/images/vision/1.svelte';
@@ -20,6 +19,7 @@
 	import FQs from '../FQs.svelte';
 	import Event from '../Event.svelte';
 	import Carousel from '../Carousel.svelte';
+	import Map from '../Map.svelte';
 
 	const visions = [
 		{
@@ -65,113 +65,135 @@
 	let findContenent = CONTENT.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT[0];
 	$: findImage = CONTENT_IMG.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT_IMG[0];
 
+	const HERO_CONTENT = [
+		{
+			title: 'Your Gateway to Global Business Success',
+			subTitle: 'Our company is Your Gateway to Global Business Success, providing the expertise and innovative solutions needed to empower your vision and drive worldwide impact.',
+		},
+		{
+			title: 'Empowering Your Vision with Global Expertise',
+			subTitle: 'We are committed to empowering your vision with global expertise, ensuring your business reaches its fullest potential on the international stage.',
+		},
+		{
+			title: 'Strategic Insight, Worldwide Impact',
+			subTitle: 'Our strategic insight delivers worldwide impact, driving your business to new heights across the globe.',
+		},
+		{
+			title: 'Innovative Solutions for a Boundless World',
+			subTitle: 'We offer innovative solutions for a boundless world, enabling your business to overcome challenges and seize global opportunities.',
+		},
+		{
+			title: 'Your Partner in Global Growth and Innovation',
+			subTitle: 'We are your partner in global growth and innovation, dedicated to helping your business expand and thrive on an international scale.',
+		},
+		{
+			title: 'Leading the Way in Global Consulting Excellence',
+			subTitle: 'We are leading the way in global consulting excellence, providing top-tier expertise and solutions to drive your business success worldwide.',
+		}
+	]
+
 </script>
 
-<Carousel>
-	{#each CONTENT  as item }
-		<div class="min-h-screen h-full flex relative justify-center items-center">
-			<img
-				src={item.heroImage}
-				alt="logo"
-				class="absolute top-0 w-full h-full z-10 object-cover"
-			/>
-			<div class="absolute top-0 w-full bg-black/70 h-full z-20"></div>
-			<div class="flex flex-col gap-4 items-center z-40">
-				<div class="text-white text-center max-w-4xl sm:mt-0 mt-28">
-					<p class="text-xl font-light mb-10">{item.subTitle}</p>
-					<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
+<div class="min-h-screen h-full flex relative justify-center items-center">
+	<video src="/bg-2.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
+	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
+	<div class="flex flex-col gap-4 items-center z-40">
+		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28 overflow-hidden">
+			<Carousel dots={false} autoplay={4000}>
+				{#each HERO_CONTENT as item }
+				<div class="flex flex-col w-full">
+					<p class="text-xl font-light mb-10">
 						{item.title}
 					</p>
-					<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
-						<a
-							href="/contact"
-							class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
-						>
-							<span>reach to us</span>
-							<span>
-								<svg
-									width="24"
-									height="25"
-									viewBox="0 0 24 25"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										opacity="0.4"
-										d="M19.75 12.2257L4.75 12.2257"
-										stroke="white"
-										stroke-width="1.5"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-										stroke="white"
-										stroke-width="1.5"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-							</span>
-						</a>
-						<a
-							href="/services"
-							class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
-						>
-							<span>know more</span>
-							<span>
-								<svg
-									width="24"
-									height="25"
-									viewBox="0 0 24 25"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										opacity="0.4"
-										d="M19.75 12.2257L4.75 12.2257"
-										stroke="white"
-										stroke-width="1.5"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-										stroke="white"
-										stroke-width="1.5"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-							</span>
-						</a>
-					</div>
+					<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
+						{item.subTitle}
+					</p>
 				</div>
+				{/each}
+			</Carousel>
+			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
+				<a
+					href="/contact"
+					class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
+				>
+					<span>reach to us</span>
+					<span>
+						<svg
+							width="24"
+							height="25"
+							viewBox="0 0 24 25"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								opacity="0.4"
+								d="M19.75 12.2257L4.75 12.2257"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
+				<a
+					href="/services"
+					class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
+				>
+					<span>know more</span>
+					<span>
+						<svg
+							width="24"
+							height="25"
+							viewBox="0 0 24 25"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								opacity="0.4"
+								d="M19.75 12.2257L4.75 12.2257"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
+								stroke="white"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
 			</div>
 		</div>
-	{/each}
-</Carousel>
+	</div>
+</div>
 
-<div class="flex flex-col gap-6 sm:gap-10 mt-32">
+<div class="flex flex-col gap-6 sm:gap-10 mt-10">
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
-			<div class="">
-				<img src={findImage.images[2]} alt="" class="w-[460px] h-full object-cover" />
+			<div class="overflow-hidden w-full">
+				<Map />
 			</div>
 			<div class="flex flex-col gap-3">
 				<div class="w-fit">
-					<Button>about us</Button>
+					<Button>WELCOME</Button>
 				</div>
 				<Title
-					name="We are a global chartered professional accountants and business advisors headquartered in England"
+					name="Empowering businesses worldwide with cutting-edge solutions and strategic insights that drive exceptional growth"
 				/>
 				<p class="text-[#4C4A4A] font-light">
-					It has a sharp expertise from long term experiences in various business industries. The
-					firm is in charge of coordinating the international activities of the DNR PARTNERS network
-					Firms but does not provide, supervise or manage professional services to clients. which is
-					a world-wide network of independent professional accounting firms and business advisers,
-					each of which is a separate and independent legal entity. DNR PARTNERS has offices in
-					England, Rwanda, Burundi, Kenya, Zambia and South Africa.
+					At DNR Partners International, we are redefining excellence in auditing, assurance, and business management consultancy on a global scale. With our footprint grounded in Kigali, Rwanda, expanding to Europe in London, England, and across Africa in South Africa, Zambia, Burundi, Kenya, Uganda, Tanzania and growing…., we offer unparalleled expertise and innovative solutions that drive success in today’s complex business environment.
 				</p>
 				<a
 					href="/about"
@@ -204,17 +226,17 @@
 			<div class="grid sm:grid-cols-2 items-center">
 				<div class="flex flex-col gap-2">
 					<div class="w-fit">
-						<Button>services</Button>
+						<Button>Our Services</Button>
 					</div>
-					<div class="sm:w-[60%]">
+					<!-- <div class="sm:w-[60%]">
 						<Title isSmall name="Your Expectation, Our Value Proposition" />
-					</div>
+					</div> -->
 				</div>
-				<p class="text-[#636363] text-[16px] font-light">
+				<!-- <p class="text-[#636363] text-[16px] font-light">
 					We offer services such as audit and assurance, Tax advisory, Accounting, Corporate finance
 					advisory and Management consultancy. Our clients are from various industries like NGOs,
 					Trading, Manufacturing, Universities, Coffee & Tea export, Capital market, etc.
-				</p>
+				</p> -->
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
 				<ServicesCard isHome />
@@ -226,13 +248,13 @@
 					<div class="w-fit">
 						<Button>Specialized Packages</Button>
 					</div>
-					<div class="sm:w-[60%]">
+					<!-- <div class="sm:w-[60%]">
 						<Title isSmall name="Your Packages, Our Packages" />
-					</div>
+					</div> -->
 				</div>
-				<p class="text-[#636363] text-[16px] font-light">
+				<!-- <p class="text-[#636363] text-[16px] font-light">
 					We offer specialized packages including corporate strategy planning, monitoring & evaluation tools, advanced financial modeling, sustainability management, corporate strategic positioning, e-marketing, IFRSs (including IFRS 9, 17), climate adaptation, and ESG strategy
-				</p>
+				</p> -->
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
 				<ServicesCard isHome={true} baseNumber={12} />

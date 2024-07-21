@@ -35,6 +35,7 @@
 		"@sanity/block-content-to-html": "^2.0.0",
 		"@sanity/client": "^6.15.7",
 		"@sanity/image-url": "^1.0.2",
+		"amcharts": "^3.14.5",
 		"dayjs": "^1.11.10",
 		"htm": "^3.1.1",
 		"showdown": "^2.1.0",
