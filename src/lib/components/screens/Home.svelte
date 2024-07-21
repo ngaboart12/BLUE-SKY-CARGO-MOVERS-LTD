@@ -305,7 +305,6 @@
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="flex flex-col items-center gap-4">
 			<Button>insights</Button>
-			<Title name="Latest News And Events" />
 			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
 				{#each blog as item}
 					<Card
@@ -388,8 +387,8 @@
 		</div>
 	</div>
 	<Partnership />
-	<FQs />
-	<Testimonials />
-	<Event />
+	<!-- <FQs /> -->
+	<!-- <Testimonials /> -->
+	<!-- <Event /> -->
 	<Conctact />
 </div>

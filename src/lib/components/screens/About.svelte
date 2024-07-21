@@ -10,6 +10,8 @@
 	import CONTENT from '../../../data/images.json'
 	import BG_IMAGE from '$lib/images/bg.1.jpeg'
 	import { page } from '$app/stores';
+	import ModelPersonDetail from '../ModelPersonDetail.svelte';
+	import ModalTwo from '../ModalTwo.svelte';
 
 
 
@@ -20,7 +22,7 @@
 	export let data;
 
 	const typeJob = data.organizationTypes;
-	let whichIsActive = typeJob[0]._id;
+	let whichIsActive = typeJob[1]._id;
 
 
 	const youtubeUpdates = data.youtubeUpdates.map((item: any) => {
@@ -37,7 +39,9 @@
 		};
 	});
 	let showModalone = false;
-	let modelDataone: any;
+	let showModaltwo = false;
+	let modelDataone:any;
+	let modelDataTwo: any;
 	let vidioLink = '';
 
 
@@ -132,7 +136,7 @@
 				<Title name="Meet The Team" />
 			</div>
 			<div class="flex items-center flex-wrap sm:w-auto w-full mt-4">
-				{#each typeJob as item}
+				{#each typeJob.reverse() as item}
 					<button
 						on:click={() => {
 							whichIsActive = item._id;
@@ -164,12 +168,15 @@
 				{#each typeJob.find((item) => item._id === whichIsActive).membersTeams as item}
 					<div class="flex flex-col overflow-hidden">
 						<div class="relative overflow-hidden group">
-							<div class="absolute group-hover:opacity-100 opacity-0 duration-200 transition-all cursor-pointer top-0 flex flex-col items-center justify-center rounded-2xl left-0 bg-black/60 w-full h-full text-white px-2 py-1 rounded-tr-lg rounded-bl-lg">
+							<button on:click={() => {
+								showModaltwo = true;
+								modelDataTwo = item;
+							}} class="absolute group-hover:opacity-100 opacity-0 duration-200 transition-all cursor-pointer top-0 flex flex-col items-center justify-center rounded-2xl left-0 bg-black/60 w-full h-full text-white px-2 py-1 rounded-tr-lg rounded-bl-lg">
 								<h3 class="font-semibold">Meet {item.name}</h3>
 								<p class="text-sm text-center">
 									{item?.bio}
 								</p>
-							</div>
+							</button>
 							<img src={item.mainImage} alt="" class="w-full h-[300px] object-cover rounded-2xl" />
 						</div>
 						<span class="font-light mt-2 capitalize">{item.name}</span>
@@ -235,4 +242,10 @@
 	<Modal bind:showModal={showModalone}>
 		<VideoPlayer url={vidioLink} />
 	</Modal>
+{/if}
+
+{#if showModaltwo}
+	<ModalTwo bind:showModal={showModaltwo}>
+		<ModelPersonDetail data={modelDataTwo} />
+	</ModalTwo>
 {/if}

@@ -11,7 +11,7 @@
 </script>
 
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
-	<h2 class="text-xl mb-6 sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Partnerships</h2>
+	<h2 class="text-xl mb-6 sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Clientele</h2>
 	<div class=" gap-10 flex justify-between flex-wrap">
 		<a target="_blank" href="https://ecms.rra.gov.rw/home" class="flex justify-center items-center">
 			<img src={RRA} alt="RRA RWANDA REVENUE AUTHORITY" class="h-14" />

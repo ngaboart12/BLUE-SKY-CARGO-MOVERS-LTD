@@ -30,6 +30,11 @@ export default defineType({
       to: [{type: 'organizationType'}],
     }),
     defineField({
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
+    }),
+    defineField({
       name:"bio",
       title:"Bio",
       type:"text",
