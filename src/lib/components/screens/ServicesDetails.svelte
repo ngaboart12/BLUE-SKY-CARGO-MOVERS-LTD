@@ -177,6 +177,39 @@
 		</div>
 		{/if}
 
+		{#if data.service?.keyComponents}	
+		<div class="flex flex-col gap-2 items-start justify-start w-full mt-10">
+			<h2 class="text-[#083867] font-semibold text-2xl mb-3">{data.service?.keyComponentsName ||  "Key Components"}</h2>
+			<div class="-m-1.5 overflow-auto w-full">
+				<div class="p-1.5 min-w-full inline-block align-middle w-full">
+				  <div class="overflow-hidden w-full">
+					<div class="table border-collapse table-auto w-full divide-y divide-gray-200">
+					  <div class="table-header-group">
+						<div class="table-row">
+						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Service</div>
+						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Description of Service</div>
+						</div>
+					  </div>
+					  <div class="table-row-group divide-y divide-gray-200 bg-white">
+						{#each data.service?.keyComponents as item }		
+						<div class="table-row">
+						  <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+							{item.service}
+						  </div>
+						  <div class="table-cell px-6 py-4 text-sm text-gray-800">
+							{item.description}
+						  </div>
+						</div>
+						{/each}
+				
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+		{/if}
+
 		<div class="w-full text-start mt-10 flex flex-col gap-8">
 			<div class="sm:grid-cols-2 grid items-center gap-10">
 				<div class="flex flex-col gap-2,5">

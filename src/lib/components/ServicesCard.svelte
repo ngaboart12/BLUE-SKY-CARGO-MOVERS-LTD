@@ -5,9 +5,10 @@
 	let data = DATA;
 	export let expctedId: number = null;
 	export let baseNumber:number = 8;
+	export let endNumber:number = 16;
 	export let isHome = false;
 	const filteredData = data.filter((item) => item.icon !== expctedId);
-	data = isHome ? filteredData.slice(baseNumber) : filteredData;
+	data = isHome ? filteredData.slice(baseNumber,endNumber) : filteredData;
 	const DATA_NUMBER = isHome ? data.slice(0, 8) : data;
 	import { page } from '$app/stores';
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];

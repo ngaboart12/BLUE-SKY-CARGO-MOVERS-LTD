@@ -30,19 +30,19 @@
 		{
 			name: 'OUR MISSION',
 			description:
-				'To leverage innovation, expertise, and technology to offer globally competitive consultancy services to our clients.',
+				'To leverage on innovation, expertise and technology to offer globally competitive consultancy services to our clients',
 			icon: 2
 		},
 		{
 			name: 'CORE BELIEF',
 			description:
-				'Offering proactive services and delivering effective, reliable, dependable professional advice, maintaining the highest level of confidentiality and integrity. Delivering results based on evidence and research within timeframe, while maintaining the highest level of accuracy and professionalism.',
+				'To offer proactive services and delivering effective, reliable, dependable professional advice, maintaining the highest level of confidentiality and integrity. ',
 			icon: 3
 		},
 		{
 			name: 'CORE VALUES',
 			description:
-				'At DNR PARTNERS INTERNATIONAL, our values: are summarized into TRIP2C. Our values make our people live the company culture in pursuit of customer satisfaction. These are: Integrity, Professionalism, Excellence, Customer Centricity',
+				'Integrity, Customer Centricity, Excellence, Professionalism',
 			icon: 4
 		}
 	];
@@ -228,15 +228,7 @@
 					<div class="w-fit">
 						<Button>Our Services</Button>
 					</div>
-					<!-- <div class="sm:w-[60%]">
-						<Title isSmall name="Your Expectation, Our Value Proposition" />
-					</div> -->
 				</div>
-				<!-- <p class="text-[#636363] text-[16px] font-light">
-					We offer services such as audit and assurance, Tax advisory, Accounting, Corporate finance
-					advisory and Management consultancy. Our clients are from various industries like NGOs,
-					Trading, Manufacturing, Universities, Coffee & Tea export, Capital market, etc.
-				</p> -->
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
 				<ServicesCard isHome />
@@ -248,16 +240,10 @@
 					<div class="w-fit">
 						<Button>Specialized Packages</Button>
 					</div>
-					<!-- <div class="sm:w-[60%]">
-						<Title isSmall name="Your Packages, Our Packages" />
-					</div> -->
 				</div>
-				<!-- <p class="text-[#636363] text-[16px] font-light">
-					We offer specialized packages including corporate strategy planning, monitoring & evaluation tools, advanced financial modeling, sustainability management, corporate strategic positioning, e-marketing, IFRSs (including IFRS 9, 17), climate adaptation, and ESG strategy
-				</p> -->
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
-				<ServicesCard isHome={true} baseNumber={12} />
+				<ServicesCard isHome={true} baseNumber={16} endNumber={21} />
 			</div>
 		</div>
 		<div class="relative h-[250px] mt-10 flex items-center justify-center">
