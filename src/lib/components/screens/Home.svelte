@@ -20,6 +20,7 @@
 	import Event from '../Event.svelte';
 	import Carousel from '../Carousel.svelte';
 	import Map from '../Map.svelte';
+	import CountryButton from '../CountryButton.svelte';
 
 	const visions = [
 		{
@@ -95,22 +96,18 @@
 </script>
 
 <div class="min-h-screen h-full flex relative justify-center items-center">
-	<video src="/bg-2.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
+	<video src="/videoplayback.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
 	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
 	<div class="flex flex-col gap-4 items-center z-40">
 		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28 overflow-hidden">
-			<Carousel dots={false} autoplay={4000}>
-				{#each HERO_CONTENT as item }
 				<div class="flex flex-col w-full">
 					<p class="text-xl font-light mb-10">
-						{item.title}
+						{HERO_CONTENT[0].title}
 					</p>
 					<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
-						{item.subTitle}
+						{HERO_CONTENT[0].subTitle}
 					</p>
 				</div>
-				{/each}
-			</Carousel>
 			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
 				<a
 					href="/contact"
@@ -176,6 +173,12 @@
 				</a>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
+	<h2 class="text-xl mb-6 sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Network</h2>
+	<div class="grid grid-cols-6 gap-6"> 
+		<CountryButton onHome />
 	</div>
 </div>
 
@@ -387,6 +390,7 @@
 		</div>
 	</div>
 	<Partnership />
+
 	<!-- <FQs /> -->
 	<!-- <Testimonials /> -->
 	<!-- <Event /> -->

@@ -55,6 +55,11 @@
 								exclude: ['AQ']
 							})
 						);
+						chart.set("homeZoomLevel", 1.5); // Adjust zoom level as needed
+						chart.set("homeGeoPoint", { latitude: 0, longitude: 20 });
+						polygonSeries.events.on("datavalidated", function() {
+							chart.goHome(); // This will apply the homeZoomLevel and homeGeoPoint settings
+						});
 
 						polygonSeries.mapPolygons.template.setAll({
 							tooltipText: '{name}',
@@ -79,11 +84,6 @@
                                     countryDataItem.get('mapPolygon').set('active', true);
                                 }
                             });
-
-							// let countryDataItem = polygonSeries.getDataItemById('RW');
-                            // if(countryDataItem){
-                            //     countryDataItem.get('mapPolygon').set('active', true);
-                            // }
 						});
 					});
 				})
@@ -93,13 +93,3 @@
 </script>
 
 <div class="w-[700px] h-[500px]" bind:this={chartdiv}></div>
-
-<!-- 
-<svelte:head>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-    defer
-  ></script>
-</svelte:head>
-
-<div id="map" class="w-full h-full">cfbfdg </div> -->

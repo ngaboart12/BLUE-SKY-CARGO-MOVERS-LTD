@@ -5,3 +5,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.calendly-badge-widget { 
+    right: auto !important; 
+    left: 20px !important; 
+} 
