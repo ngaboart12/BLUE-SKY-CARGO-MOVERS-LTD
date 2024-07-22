@@ -22,7 +22,6 @@
 
   const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 	$: isPage = country.includes($page.url.pathname.split('/')[1]);
-  console.log()
 
   </script>
 
@@ -42,7 +41,7 @@
   {:else}
   <Header isColored/>
   {/if}
-  <main transition:fade>
+  <main>
     <slot />
   </main>
 

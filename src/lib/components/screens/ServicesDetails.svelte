@@ -68,9 +68,6 @@
 			onChange: handleChange
 		});
 	});
-
-
-	console.log(data.service?.functionalServices,"-=--=-==")
 </script>
 
 <div class="min-h-[70vh] flex relative justify-center items-center">
