@@ -13,11 +13,12 @@
 	import { page } from '$app/stores';
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
 	$: basePath = country.includes($page.url.pathname.split('/')[1]) ? `/${$page.url.pathname.split('/')[1]}` : '';
+	
 </script>
 
 {#each DATA_NUMBER as item}
 <a
-href="{basePath}/services/{item.icon}"
+  href={basePath ? `${basePath}/services/${item.icon}` : `/services/${item.icon}`}
   class="relative group grid cursor-pointer h-[22rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
   <img
    src={item.images[0]}

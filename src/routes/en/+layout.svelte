@@ -3,20 +3,20 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import { onNavigate } from '$app/navigation';
-	import { fade } from 'svelte/transition';
+	// import { fade } from 'svelte/transition';
 	import '../../app.css';
 
 	const meta_description = `Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.`;
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+	// onNavigate((navigation) => {
+	// 	if (!document.startViewTransition) return;
 
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
+	// 	return new Promise((resolve) => {
+	// 		document.startViewTransition(async () => {
+	// 			resolve();
+	// 			await navigation.complete;
+	// 		});
+	// 	});
+	// });
 </script>
 
 <svelte:head>

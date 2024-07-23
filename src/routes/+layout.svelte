@@ -10,11 +10,11 @@
   const meta_description = `Our consultancy is more than just a service provider; we're your trusted partner in navigating the complexities of global business.`
   onNavigate((navigation) => {
       if (!document.startViewTransition) return;
-
       return new Promise((resolve) => {
         document.startViewTransition(async () => {
           resolve();
           await navigation.complete;
+          document.endViewTransition();
         });
       });
     });

@@ -96,8 +96,8 @@
 </script>
 
 <div class="min-h-screen h-full flex relative justify-center items-center">
-	<video src="/videoplayback.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
-	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
+	<video src="/1.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
+	<div class="absolute top-0 w-full bg-black/60 h-full z-20"></div>
 	<div class="flex flex-col gap-4 items-center z-40">
 		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28 overflow-hidden">
 				<div class="flex flex-col w-full">

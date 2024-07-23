@@ -4,12 +4,16 @@
 	import Conctact from './../../../lib/components/Conctact.svelte';
 	import Button from './../../../lib/components/Button.svelte';
 	import Title from './../../../lib/components/Title.svelte';
-	import ImageTwo from '$lib/images/2.png';
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
-	import imgeFive from '$lib/images/6.png';
 	import Card from '../Card.svelte';
 	import Carousel from '../Carousel.svelte';
+	import { afterNavigate } from '$app/navigation';
+
+	afterNavigate(() => {
+		window.location.reload();
+	});
 	export let data;
+
 
 	const badData = data.blogs;
 
