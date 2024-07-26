@@ -69,21 +69,41 @@
 					{#each menu as item}
 						{#if item.name === 'Services'}
 							<div class="relative group py-5">
-								<a href={item.href} class="capitalize">{item.name}</a>
+								<div class="flex items-center gap-2">
+									<a href={item.href} class="capitalize">{item.name}</a>
+									<span class="mt-1 group-hover:rotate-180 transition-all duration-300">
+										<svg
+										width="12"
+										height="6"
+										viewBox="0 0 14 8"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
+											stroke={isColored ? 'black' : y > 50 ? 'black' : 'white'}
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+									</span>
+								</div>
 								<div
-									class="absolute left-1/2 z-10 mt-5 w-screen max-w-max h-[500px] overflow-auto rounded-3xl -translate-x-1/2 px-4 group-hover:block hidden"
+									class="absolute left-1/2 z-10 mt-5 w-screen max-w-max h-[590px] overflow-auto rounded-3xl -translate-x-1/2 px-4 group-hover:block hidden"
 								>
 									<div
-										class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5"
+										class="w-screen max-w-[800px] flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5"
 									>
-										<div class="p-4">
-											{#each DATA as item}
-												{#if item.title === 'Audit & Assurance' || item.title === 'Tax Advisory Services' || item.title === 'Management Consulting Services' || item.title === 'Climate Change Management Advisory Services' || item.title === 'ESG & Sustainability Advisory Services'}
-													<div
-														class="group relative flex gap-x-6 items-center rounded-lg p-4 hover:bg-gray-50"
+										<h1 class="text-black px-4 pt-4 text-lg font-semibold">Our Services</h1>
+										<div class="px-4 grid sm:grid-cols-2  py-4">
+											{#each DATA.slice(8, 14) as item}
+													<a
+													    href="{basePath}/services/{item.icon}"
+														class="group relative flex gap-x-6 items-start rounded-lg p-4 hover:bg-gray-50 cursor-pointer"
 													>
 														<div
-															class="mt-1 flex h-6 w-6 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white"
+															class="mt-1 flex h-8 w-8 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white"
 														>
 															<img
 																src={item.images[0]}
@@ -92,19 +112,14 @@
 															/>
 														</div>
 														<div class="flex flex-col">
-															<a
-																href="{basePath}/services/{item.icon}"
-																class="font-semibold text-gray-900"
+															<span
+																class="font-semibold text-gray-900 truncate"
 															>
 																{item.title}
-																<span class="absolute inset-0"></span>
-															</a>
-															<!-- <p class="mt-1 text-gray-600 line-clamp-1">
-												{item.description}
-										</p> -->
+															</span>
+															<div class="text-gray-500 text-sm line-clamp-2">{item.description}</div>
 														</div>
-													</div>
-												{/if}
+													</a>
 											{/each}
 										</div>
 									</div>

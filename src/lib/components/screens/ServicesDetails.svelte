@@ -47,6 +47,7 @@
 	let controller;
 	let timer;
 	const dispatch = createEventDispatcher();
+	let functionOpen = false;
 	let currentIndex = 0;
 	function handleChange(event) {
 		currentIndex = controller.currentSlide;
@@ -145,10 +146,10 @@
 			</div>
 		</div>
 
-		{#if data.service?.functionalServices}	
+		{#if data.service?.functionalServices || data.service?.keyComponents}	
 		<div class="flex flex-col gap-2 items-start justify-start w-full mt-10">
-			<h2 class="text-[#083867] font-semibold text-2xl mb-3">Functional Services</h2>
-			<div class="-m-1.5 overflow-auto w-full">
+			<h2 class="text-[#083867] font-semibold text-2xl mb-3">{ data.service?.functionalServices ? "Functional Services" : data.service?.keyComponentsName ||  "Key Components"}</h2>
+			<div class="-m-1.5 overflow-auto w-full {functionOpen ? "h-auto" : "h-[200px]"}">
 				<div class="p-1.5 min-w-full inline-block align-middle w-full">
 				  <div class="overflow-hidden w-full">
 					<div class="table border-collapse table-auto w-full divide-y divide-gray-200">
@@ -159,7 +160,7 @@
 						</div>
 					  </div>
 					  <div class="table-row-group divide-y divide-gray-200 bg-white">
-						{#each data.service?.functionalServices as item }		
+						{#each (data.service?.functionalServices || data.service?.keyComponents) as item }		
 						<div class="table-row">
 						  <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
 							{item.service}
@@ -174,42 +175,25 @@
 					</div>
 				  </div>
 				</div>
-			  </div>
+			</div>
+			<div class="flex items-center flex-col w-full justify-center -mt-10">
+				<div class="w-full text-center items-center h-[40px] bg-gradient-to-t {functionOpen ? "" : "from-slate-50/90"} flex justify-center">
+				</div>
+				<button type="button"
+				on:click={() => functionOpen = !functionOpen}
+				class="flex -mt-4 bg-white items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-4 w-4 {functionOpen ? "rotate-180" :"rotate-0"} transition-all duration-300 ">
+					<path fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd" />
+				</svg>
+				View {functionOpen ? "Less" : "More"}
+			</button>
+			</div>
 		</div>
 		{/if}
 
-		{#if data.service?.keyComponents}	
-		<div class="flex flex-col gap-2 items-start justify-start w-full mt-10">
-			<h2 class="text-[#083867] font-semibold text-2xl mb-3">{data.service?.keyComponentsName ||  "Key Components"}</h2>
-			<div class="-m-1.5 overflow-auto w-full">
-				<div class="p-1.5 min-w-full inline-block align-middle w-full">
-				  <div class="overflow-hidden w-full">
-					<div class="table border-collapse table-auto w-full divide-y divide-gray-200">
-					  <div class="table-header-group">
-						<div class="table-row">
-						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Service</div>
-						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Description of Service</div>
-						</div>
-					  </div>
-					  <div class="table-row-group divide-y divide-gray-200 bg-white">
-						{#each data.service?.keyComponents as item }		
-						<div class="table-row">
-						  <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-							{item.service}
-						  </div>
-						  <div class="table-cell px-6 py-4 text-sm text-gray-800">
-							{item.description}
-						  </div>
-						</div>
-						{/each}
-				
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-		</div>
-		{/if}
+
 
 		<div class="w-full text-start mt-10 flex flex-col gap-8">
 			<div class="sm:grid-cols-2 grid items-center gap-10">
@@ -258,12 +242,12 @@
 				</p>
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
-				<ServicesCard isHome expctedId={data.service.icon} />
+				<ServicesCard isHome expctedId={data.service.icon} baseNumber={17} endNumber={21} />
 			</div>
 		</div>
 	</div>
 
-	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
+	<!-- <div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="flex flex-col items-center gap-4">
 			<Button>insights</Button>
 			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
@@ -303,7 +287,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<Conctact />
 </section>
