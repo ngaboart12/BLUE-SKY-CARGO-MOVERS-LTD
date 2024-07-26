@@ -1,5 +1,5 @@
 <div class="carousel">
-	<div class="slides" bind:this={siema}>
+	<div class="slides {className}" bind:this={siema}>
 		<slot></slot>
 	</div>
 	{#if controls}
@@ -21,6 +21,7 @@
 </div>
 
 <style>
+
 	.carousel {
 		position: relative;
 		width: 100%;
@@ -80,6 +81,7 @@
 	import { onMount, createEventDispatcher } from 'svelte'
 	
 	export let perPage = 1
+	export let className = ""
 	export let loop = true
 	export let autoplay = 2000
 	export let duration = 200
@@ -110,6 +112,7 @@
   			duration,
   			easing,
   			startIndex,
+			  threshold: 20,
   			draggable,
  			multipleDrag,
   			threshold,

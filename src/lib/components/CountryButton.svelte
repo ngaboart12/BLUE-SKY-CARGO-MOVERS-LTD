@@ -1,11 +1,13 @@
 <script>
 	import AllCountrySvg from './AllCountrySVG.svelte';
     export let onHome = false;
+	export let gap = false;
+	console.log(gap,"gapgapgap-")
 </script>
 {#if !onHome}    
 <a
 	href="/"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<AllCountrySvg />
 	<span class="font-medium capitalize">Global Network</span>
@@ -13,7 +15,7 @@
 {/if}
 <a
 	href="/rw"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +48,7 @@
 </a>
 <a
 	href="/bi"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +102,7 @@
 
 <a
 	href="/en"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +175,7 @@
 </a>
 <a
 	href="/za"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +209,7 @@
 </a>
 <a
 	href="/sa"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg
@@ -248,7 +250,7 @@
 </a>
 <a
 	href="/ke"
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 >
 	<span>
 		<svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -304,7 +306,7 @@
 	<span class="font-medium capitalize">Kenya</span>
 </a>
 <a
-	class="py-3 px-6 w-full bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 	href="/ug"
 >
 	<span class="w-8 h-8 rounded-full overflow-hidden">

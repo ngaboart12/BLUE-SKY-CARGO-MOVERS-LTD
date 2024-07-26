@@ -10,6 +10,8 @@
 	import RDB1 from '$lib/images/rdb.png';
 
 	let whichOneIsActive;
+	let functionOpen = false;
+
 	const Partnes = [
 		{
 			id: 1,
@@ -87,11 +89,16 @@
 		Our company, Your Gateway to Global Business Success, provides unparalleled expertise and innovative solutions tailored to your needs. We empower your vision and drive global success, helping you navigate international markets with confidence. With our support, you can unlock new opportunities and expand your reach.
 	</p>
 
-	<div class="grid sm:grid-cols-2 gap-x-6 mt-4 w-full cursor-pointer">
+	<div class="grid sm:grid-cols-2 gap-x-6 mt-4 w-full cursor-pointer {functionOpen ? "h-auto" : "h-[250px]"} overflow-hidden">
 		{#each Partnes as item}
 			<button
 				class="flex flex-col transition-all duration-300 w-full"
-				on:click={() => handleOnClick(item.id)}
+				on:click={() => {
+					if(whichOneIsActive === item.id){
+						return handleOnClick(null);
+					}
+					handleOnClick(item.id);
+				}}
 			>
 				<div
 					class="py-4 px-4 transition-all duration-300 w-full {whichOneIsActive === item.id
@@ -153,6 +160,16 @@
 			</button>
 		{/each}
 	</div>
+	<button type="button"
+				on:click={() => functionOpen = !functionOpen}
+				class="flex -mt-4 mx-auto bg-white items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-4 w-4 {functionOpen ? "rotate-180" :"rotate-0"} transition-all duration-300 ">
+					<path fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd" />
+				</svg>
+				View {functionOpen ? "Less" : "More"}
+	</button>
 
 </div>
 

@@ -177,9 +177,9 @@
 </div>
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
 	<h2 class="text-xl mb-6 sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Network</h2>
-	<div class="grid grid-cols-6 gap-6"> 
-		<CountryButton onHome />
-	</div>
+	<Carousel perPage={5}> 
+		<CountryButton  gap={true} onHome />
+	</Carousel>
 </div>
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-10">
