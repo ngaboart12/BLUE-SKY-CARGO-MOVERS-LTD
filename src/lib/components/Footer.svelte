@@ -27,9 +27,35 @@
 		//     href:"/global"
 		// }
 	];
+	$: isUrlOnServicesPage = $page.url.pathname.includes('services');
 </script>
 
-<footer class="mt-24 bg-[#083867] text-white">
+
+{#if isUrlOnServicesPage}	
+	<div class="max-w-7xl mx-auto mt-24 ">
+		<div class="items-center flex gap-4"> 
+			<img src="https://cdn.sanity.io/images/f3af10kw/dnr-data-set/f16cb5e21da45d09d1d59718052ca9b357965d07-1919x2560.jpg" class="w-[100px] h-[100px] rounded-md object-cover" alt="" />
+			<div class="flex flex-col gap-0">
+				<p class="text-lg font-medium">Miss Clarisse Ishimwe</p>
+				<p class="text-sm font-light">
+					Managing Partner & Senior Consultant
+				</p>
+				<p>
+					<a href="tel:+250788386136" class="text-sm font-light mt-2 flex flex-col gap-2 capitalize">
+						Tel: +250 788 386 136 / +250 788 386 134
+					</a>
+				</p>
+				<p>
+					<a href="mailto:info@rw.dnrpartners.com" class="text-sm font-light flex flex-col gap-2 capitalize">
+						info@rw.dnrpartners.com
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{/if}
+
+<footer class="mt-10 bg-[#083867] text-white">
 	<div
 		class="sm:mx-10 lg:max-w-6xl relative xl:max-w-7xl z-40 md:px-[20px] px-[40px] sm:rounded-xl lg:mx-auto sm:mt-6 w-full"
 	>

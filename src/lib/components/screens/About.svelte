@@ -9,6 +9,7 @@
 	import { browser } from '$app/environment';
 	import CONTENT from '../../../data/images.json'
 	import BG_IMAGE from '$lib/images/bg.1.jpeg'
+	import BG_IMAGE_1 from '$lib/images/1.1.111.png'
 	import { page } from '$app/stores';
 	import ModelPersonDetail from '../ModelPersonDetail.svelte';
 	import ModalTwo from '../ModalTwo.svelte';
@@ -108,7 +109,7 @@
 		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 			<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 				<div class="">
-					<img src={findContenent.images[2]} alt="" class="w-[460px] h-full object-cover" />
+					<img src={BG_IMAGE_1} alt="" class="w-[460px] h-full object-cover" />
 				</div>
 				<div class="flex flex-col gap-3">
 					<div class="w-fit">
