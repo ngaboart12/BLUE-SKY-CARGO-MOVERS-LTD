@@ -95,20 +95,20 @@
 
 </script>
 
-<div class="min-h-screen h-full flex relative justify-center items-center">
+<div class="min-h-[75vh] h-full flex relative justify-start items-end">
 	<video src="/1.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
-	<div class="absolute top-0 w-full bg-black/60 h-full z-20"></div>
-	<div class="flex flex-col gap-4 items-center z-40">
-		<div class="text-white text-center max-w-4xl sm:mt-0 mt-28 overflow-hidden">
+	<div class="absolute top-0 w-full bg-black/40 h-full z-20"></div>
+	<div class="flex flex-col gap-4 items-start z-40 bg-[#14375a] px-12 py-12 pb-20">
+		<div class="text-white text-start max-w-4xl sm:mt-0 mt-28 overflow-hidden">
 				<div class="flex flex-col w-full">
-					<p class="text-xl font-light mb-10">
+					<p class="text-xl f font-medium mb-10">
 						{HERO_CONTENT[0].title}
 					</p>
-					<p class="text-[24px] sm:text-[44px] font-medium leading-none mt-2">
+					<p class="text-[24px] sm:text-[24px] font-light leading-7 mt-2">
 						{HERO_CONTENT[0].subTitle}
 					</p>
 				</div>
-			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap mx-auto w-fit mt-10">
+			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap w-fit mt-10">
 				<a
 					href="/contact"
 					class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
@@ -246,7 +246,7 @@
 				</div>
 			</div>
 			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
-				<ServicesCard isHome={true} baseNumber={16} endNumber={21} />
+				<ServicesCard isHome={true} baseNumber={8} endNumber={21} />
 			</div>
 		</div>
 		<div class="relative h-[250px] mt-10 flex items-center justify-center">
@@ -394,5 +394,36 @@
 	<!-- <FQs /> -->
 	<!-- <Testimonials /> -->
 	<!-- <Event /> -->
+	<div class="w-full text-start mt-10 flex flex-col gap-8 max-w-7xl mx-auto">
+		<div class="sm:grid-cols-2 grid items-center gap-10">
+			<div class="flex flex-col gap-2,5">
+				<h2 class="text-[#083867] font-semibold text-2xl mb-3">Why Choose DNR Partners?</h2>
+				<ul class="flex flex-col gap-2 list-disc ml-8">
+						<li class="text-[#595959] font-light">
+							DNR is a TIER 1 Accredited Audit Firm
+						</li>
+						<li class="text-[#595959] font-light">
+							DNR leverages on a Global Network of Experts
+						</li>
+						<li class="text-[#595959] font-light">
+							DNR is an ACCA-UK Approved Employer
+						</li>
+						<li class="text-[#595959] font-light">
+							DNR is in the first category of ICPAR’s Quality Assurance Ranking
+						</li>
+						<li class="text-[#595959] font-light">
+							DNR signed an MoU with Global University of Sciences and Technology, USA, on the implementation of SDGs across Africa
+						</li>
+				</ul>
+			</div>
+			<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
+				<img
+					src={"/new/11.jpg"}
+					alt={""}
+					class="w-full object-cover h-full"
+				/>
+			</div>
+		</div>
+	</div>
 	<Conctact />
 </div>

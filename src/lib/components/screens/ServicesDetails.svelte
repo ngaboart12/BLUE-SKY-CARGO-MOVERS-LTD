@@ -5,9 +5,11 @@
 	import Button from './../../../lib/components/Button.svelte';
 	import Title from './../../../lib/components/Title.svelte';
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
-	import Card from '../Card.svelte';
+	import { LinkedIn, Pinterest, Telegram, Facebook, X } from 'svelte-share-buttons-component';
 	import Carousel from '../Carousel.svelte';
 	import { afterNavigate } from '$app/navigation';
+	import { copyText } from 'svelte-copy';
+
 
 	afterNavigate(() => {
 		window.location.reload();
@@ -56,6 +58,9 @@
 			slideCount: controller.innerElements.length
 		});
 	}
+	const url = `https://dnr-gamma.vercel.app/services/${data.service.icon}`;
+	const title = data.service.title;
+	let isLoadingCopy = false;
 
 	onMount(() => {
 		controller = new Siema({
@@ -75,7 +80,7 @@
 	});
 </script>
 
-<div class="min-h-[70vh] flex relative justify-center items-center">
+<div class="min-h-[70vh] flex relative justify-start items-end">
 	<div class="absolute top-0 w-full h-full z-10 object-cover overflow-hidden">
 		<Carousel dots={false}>
 			{#each data.service.images as item}
@@ -83,17 +88,57 @@
 			{/each}
 		</Carousel>
 	</div>
-	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
-	<div class="flex flex-col gap-4 items-center z-40">
-		<div class="text-white text-center max-w-3xl sm:mt-0 mt-28">
+	<div class="absolute top-0 w-full bg-black/50 h-full z-20"></div>
+	<div class="flex flex-col gap-4 items-center z-40 bg-[#14375a] px-12 py-12">
+		<div class="text-white text-start max-w-3xl sm:mt-0 mt-28">
 			<p class="text-2xl font-light mb-10 capitalize">{data.service?.title}</p>
 			<p class="text-[24px] sm:text-[24px] font-medium mt-2">
 				{data.service?.description}
 			</p>
-			<a
+			<div class="flex gap-2 mt-8">
+				<div class="w-10 h-10 rounded-full overflow-hidden">
+					<div class="relative bottom-0.5">
+						<LinkedIn text={title} {url} />
+					</div>
+				</div>
+				<div class="w-10 h-10 rounded-full overflow-hidden">
+					<div class="relative bottom-0.5">
+						<Pinterest {url} description={title} />
+					</div>
+				</div>
+				<div class="w-10 h-10 rounded-full overflow-hidden">
+					<div class="relative bottom-0.5">
+						<Telegram text={title} {url} />
+					</div>
+				</div>
+				<div class="w-10 h-10 rounded-full overflow-hidden">
+					<div class="relative bottom-0.5">
+						<Facebook quote={title} {url} />
+					</div>
+				</div>
+				<div class="w-10 h-10 rounded-full overflow-hidden">
+					<div class="relative bottom-0.5">
+						<X text={title} {url} />
+					</div>
+				</div>
+				<button on:click={() => {
+					copyText(url);
+					isLoadingCopy = true;
+					setTimeout(() => {
+						isLoadingCopy = false;
+					}, 2000);
+				}} class="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden bg-white text-black">
+					{#if isLoadingCopy}
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader animate-spin"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+					{:else}
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+					{/if}
+				</button>
+			</div>
+			<!-- <a
 				href="#anchor-sectiion"
 				on:click={handleAnchorClick}
-				class="bg-[#D71B30] text-white flex items-center justify-center w-[50px] h-[50px] mx-auto mt-10 rounded-full"
+				class="bg-[#D71B30] text-white flex items-center justify-center w-[50px] h-[50px] mt-10 rounded-full"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -108,41 +153,35 @@
 					class="feather feather-arrow-down"
 					><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg
 				>
-			</a>
+			</a> -->
 		</div>
 	</div>
 </div>
 <section class="flex flex-col gap-6 sm:gap-10 pt-20" id="anchor-sectiion">
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-center">
-		<div class="flex items-center justify-between w-full sm:flex-nowrap flex-wrap">
-			<div class="flex flex-col gap-2">
-				<h1
-					class="text-xl capitalize sm:text-2xl md:text-5xl font-bold text-[#C43228] md:leading-[48px]"
-				>
-					{data.service?.title}
-				</h1>
-				<h2 class=" font-semibold text-[#083867] text-sm">Service DRN provides to the customers</h2>
-			</div>
-			<div class="sm:w-[50%]">
-				<p class="text-[#595959] font-light text-sm">
-					{data.service?.description}
-				</p>
-			</div>
-		</div>
 		<div
-			class="w-full mt-10 h-[400px] overflow-hidden rounded-2xl grid grid-cols-2 items-center gap-10"
+			class="w-full h-[400px] overflow-hidden rounded-2xl grid grid-cols-2 items-center gap-10"
 		>
 			<img
 				src={data.service.images[0]}
 				alt={data.service?.title}
-				class="w-full object-cover h-full"
+				class="w-full object-cover h-full shadow-sm border border-slate-50 overflow-hidden rounded-[20px]"
 			/>
-			<div class="flex flex-col gap-5">
-				{#each paragraphsPartOne || [] as item}
-					<p class="text-[#595959] font-light">
-						{item}
-					</p>
-				{/each}
+			<div class="flex flex-col gap-2">
+				<div class="flex flex-col gap-2">
+					<h1
+						class="text-xl capitalize sm:text-2xl md:text-3xl font-bold text-[#C43228] md:leading-[48px]"
+					>
+						{data.service?.title}
+					</h1>
+				</div>
+				<div class="flex flex-col gap-5">
+					{#each paragraphsPartOne || [] as item}
+						<p class="text-[#595959] font-light">
+							{item}
+						</p>
+					{/each}
+				</div>
 			</div>
 		</div>
 
@@ -155,17 +194,17 @@
 					<div class="table border-collapse table-auto w-full divide-y divide-gray-200">
 					  <div class="table-header-group">
 						<div class="table-row">
-						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Service</div>
-						  <div class="table-cell px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Description of Service</div>
+						  <div class="table-cell px-6 py-3 text-start text-base font-medium text-gray-500 uppercase">Service</div>
+						  <div class="table-cell px-6 py-3 text-start text-base font-medium text-gray-500 uppercase">Description of Service</div>
 						</div>
 					  </div>
 					  <div class="table-row-group divide-y divide-gray-200 bg-white">
 						{#each (data.service?.functionalServices || data.service?.keyComponents) as item }		
 						<div class="table-row">
-						  <div class="table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+						  <div class="table-cell px-6 py-4 whitespace-nowrap text-base font-medium text-gray-800">
 							{item.service}
 						  </div>
-						  <div class="table-cell px-6 py-4 text-sm text-gray-800">
+						  <div class="table-cell px-6 py-4 text-base text-gray-800">
 							{item.description}
 						  </div>
 						</div>
@@ -192,37 +231,6 @@
 			</div>
 		</div>
 		{/if}
-
-
-
-		<div class="w-full text-start mt-10 flex flex-col gap-8">
-			<div class="sm:grid-cols-2 grid items-center gap-10">
-				<div class="flex flex-col gap-2,5">
-					<h2 class="text-[#083867] font-semibold text-2xl mb-3">Why Choose DNR Partners?</h2>
-					<div class="flex flex-col gap-2">
-							<p class="text-[#595959] font-light">
-							  <b class="text-[#083867] underline">Expertise and Insight:</b> Our tax advisors possess extensive knowledge of tax regulations and strategies, delivering tailored solutions to meet your specific needs
-							</p>
-							<p class="text-[#595959] font-light">
-								<b class="text-[#083867] underline">Global Reach with Local Expertise:</b> We offer global tax advisory services with an in-depth understanding of local regulations, ensuring comprehensive and compliant solutions.
-							</p>
-							<p class="text-[#595959] font-light">
-								<b class="text-[#083867] underline">Proactive Approach:</b> We anticipate potential tax challenges and opportunities, providing forward-thinking advice to optimize your tax position.
-							</p>
-							<p class="text-[#595959] font-light">
-								<b class="text-[#083867] underline">Commitment to Excellence:</b> Our focus on quality and client satisfaction ensures that we deliver reliable, actionable advice and support.
-							</p>
-					</div>
-				</div>
-				<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
-					<img
-						src={data.service.images[1]}
-						alt={data.service?.title}
-						class="w-full object-cover h-full"
-					/>
-				</div>
-			</div>
-		</div>
 	</div>
 	<div class="bg-[#F0F8FF] pt-6 pb-10">
 		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
@@ -246,48 +254,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- <div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
-		<div class="flex flex-col items-center gap-4">
-			<Button>insights</Button>
-			<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
-				{#each blog as item}
-					<Card
-						title={item.title}
-						desc={item.description}
-						createdAt={item.publishedAt}
-						imgUrl={item.mainImage}
-						id={item._id}
-					/>
-				{/each}
-			</div>
-			<div class="flex items-end justify-end w-full">
-				<a
-					href="/insights"
-					class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-6"
-				>
-					<span>View more News</span>
-					<span>
-						<svg
-							width="10"
-							height="16"
-							viewBox="0 0 10 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M1.5 1L8.5 8L1.5 15"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</span>
-				</a>
-			</div>
-		</div>
-	</div> -->
 
 	<Conctact />
 </section>

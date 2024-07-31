@@ -4,7 +4,7 @@
 	let showModal = false;
 	let data = DATA;
 	export let expctedId: number = null;
-	export let baseNumber:number = 8;
+	export let baseNumber:number = 0;
 	export let endNumber:number = 16;
 	export let isHome = false;
 	const filteredData = data.filter((item) => item.icon !== expctedId);

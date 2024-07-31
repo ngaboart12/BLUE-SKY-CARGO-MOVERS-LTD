@@ -37,7 +37,7 @@
 		}
 	];
 
-	isColored = false;
+	$: isColored = $page.url.pathname.includes("insights") && $page.url.pathname.split("/").length > 2;
 </script>
 
 <div
@@ -97,7 +97,7 @@
 									>
 										<h1 class="text-black px-4 pt-4 text-lg font-semibold">Our Services</h1>
 										<div class="px-4 grid sm:grid-cols-2  py-4">
-											{#each DATA.slice(8, 14) as item}
+											{#each DATA as item}
 													<a
 													    href="{basePath}/services/{item.icon}"
 														class="group relative flex gap-x-6 items-start rounded-lg p-4 hover:bg-gray-50 cursor-pointer"
@@ -117,7 +117,7 @@
 															>
 																{item.title}
 															</span>
-															<div class="text-gray-500 text-sm line-clamp-2">{item.description}</div>
+															<div class="text-gray-500 text-sm line-clamp-1">{item.description}</div>
 														</div>
 													</a>
 											{/each}
@@ -463,9 +463,9 @@
 								</svg>
 							</button>
 						</PopoverButton>
-						<PopoverPanel style="position: absolute; z-index: 10; width:250px; right: 0;">
+						<PopoverPanel style="position: absolute; z-index: 10; width:650px; right: 0;">
 							<div
-								class=" grid sm:grid-cols-1 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[250px] text-black"
+								class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[650px] text-black"
 							>
 								<CountryButton />
 							</div>

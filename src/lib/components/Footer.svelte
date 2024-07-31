@@ -182,27 +182,19 @@
 					</div>
 				</div>
 				<div class="flex flex-col gap-6">
-					<p class="font-medium capitalize">dnr campanies</p>
-					<div class="flex flex-col gap-4 font-light">
-						<!-- {#each ["DNR Consulting International","DNR Business Group LTD","DNR Global Trading LTD"] as item }
-                            <a href={item}
-                             class="text-base flex flex-col gap-2 capitalize">{item}</a>
-                        {/each} -->
-						<a
-							href={'https://www.dnrpropertiesltd.com/'}
-							target="_blank"
-							class="text-base flex flex-col gap-2 capitalize">DNR PROPERTIES LTD</a
-						>
-						<a
-							href={'https://www.dnrbusinessgroup.com/'}
-							target="_blank"
-							class="text-base flex flex-col gap-2 capitalize">DNR BUSINESS GROUP LTD</a
-						>
-						<a
-							href={'https://www.dnrglobaltrading.com/'}
-							target="_blank"
-							class="text-base flex flex-col gap-2 capitalize">DNR GLOBAL TRADING LTD</a
-						>
+					<p class="font-medium capitalize">Key Clients</p>
+					<div class="flex flex-col gap-2 font-light">
+						{#each ["World Bank Projects AFDB Projects USAID Projects",
+						"SIDA",
+						"Save the Children",
+						"Swiss Corporation",
+						"Banks and other Financial Institutions Agriculture Sector Projects",
+						"ICT Companies Projects",
+						"Faith based Organizations",
+						"Energy Sector Projects"] as item}
+							<p class="text-base flex flex-col gap-2 capitalize">{item}</p>
+						{/each}
+					
 					</div>
 				</div>
 			</div>
