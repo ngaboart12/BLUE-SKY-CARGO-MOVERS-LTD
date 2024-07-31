@@ -27,6 +27,37 @@
 		//     href:"/global"
 		// }
 	];
+	const country = [
+		{
+			country: 'en',
+			email: 'england@dnrpartners.com'
+		},
+		{
+			country: 'rw',
+			email: 'rwanda@dnrpartners.com'
+		},
+		{
+			country: 'bi',
+			email: 'burundi@dnrpartners.com'
+		},
+		{
+			country: 'za',
+			email: 'zambia@dnrpartners.com'
+		},
+		{
+			country: 'ke',
+			email: 'kenya@dnrpartners.com'
+		},
+		{
+			country: 'sa',
+			email: 'southafrica@dnrpartners.com'
+		},
+		{
+			country: 'ug',
+			email: 'uganda@dnrpartners.com'
+		}
+	];
+	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
 	$: isUrlOnServicesPage = $page.url.pathname.includes('services');
 </script>
 
@@ -38,7 +69,7 @@
 			<div class="flex flex-col gap-0">
 				<p class="text-lg font-medium">Miss Clarisse Ishimwe</p>
 				<p class="text-sm font-light">
-					Managing Partner & Senior Consultant
+					Senior Audit
 				</p>
 				<p>
 					<a href="tel:+250788386136" class="text-sm font-light mt-2 flex flex-col gap-2 capitalize">
@@ -46,8 +77,8 @@
 					</a>
 				</p>
 				<p>
-					<a href="mailto:info@rw.dnrpartners.com" class="text-sm font-light flex flex-col gap-2 capitalize">
-						info@rw.dnrpartners.com
+					<a href={`mailto:${email}`} class="text-sm font-light flex flex-col gap-2">
+						{email}
 					</a>
 				</p>
 			</div>
@@ -194,8 +225,8 @@
 
 
 						
-						<a href="mailto:info@rw.dnrpartners.com" class="text-base flex flex-col gap-2">
-							info@rw.dnrpartners.com</a
+						<a href={`mailto:${email}`} class="text-base flex flex-col gap-2">
+							{email}</a
 						>
 					</div>
 				</div>

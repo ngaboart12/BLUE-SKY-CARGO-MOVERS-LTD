@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import { createClient } from '@sanity/client';
-
+	import { page } from '$app/stores';
 	import Button from './Button.svelte';
 	let nameValue;
 	let emailValue;
@@ -10,6 +10,36 @@
 	let messageValue;
 	let isLoading = false;
 	let success = false;
+	const country = [
+		{
+			country: 'en',
+			email: 'england@dnrpartners.com'
+		},
+		{
+			country: 'rw',
+			email: 'rwanda@dnrpartners.com'
+		},
+		{
+			country: 'bi',
+			email: 'burundi@dnrpartners.com'
+		},
+		{
+			country: 'za',
+			email: 'zambia@dnrpartners.com'
+		},
+		{
+			country: 'ke',
+			email: 'kenya@dnrpartners.com'
+		},
+		{
+			country: 'sa',
+			email: 'southafrica@dnrpartners.com'
+		},
+		{
+			country: 'ug',
+			email: 'uganda@dnrpartners.com'
+		}
+	];
 
 	async function submitForm() {
 		const client = createClient({
@@ -37,6 +67,8 @@
 			isLoading = false;
 		}
 	}
+
+	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
 </script>
 
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
@@ -123,7 +155,9 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<span class="font-light text-sm text-[#606060]">Email Us</span>
-						<span class="font-m">info@rw.dnrpartners.com</span>
+						<span class="font-m">
+							{email}
+						</span>
 					</div>
 				</a>
 			</div>
