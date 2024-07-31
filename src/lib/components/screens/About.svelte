@@ -23,6 +23,7 @@
 
 	const typeJob = data.organizationTypes;
 	let whichIsActive = typeJob[1]._id;
+	const typeJobs = typeJob.reverse();
 
 
 	const youtubeUpdates = data.youtubeUpdates.map((item: any) => {
@@ -136,7 +137,7 @@
 				<Title name="Meet The Team" />
 			</div>
 			<div class="flex items-center flex-wrap sm:w-auto w-full mt-4">
-				{#each typeJob.reverse() as item}
+				{#each typeJobs as item}
 					<button
 						on:click={() => {
 							whichIsActive = item._id;

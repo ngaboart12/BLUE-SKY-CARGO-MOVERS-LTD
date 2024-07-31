@@ -8,6 +8,7 @@ const client = createClient({
 });
 
 export async function load({}) {
+	// update by add  sort(_createdAt desc) to the query
 	const membersTeams = await client.fetch(
 		`*[_type == "membersTeam" && (country == "rw" || country == "all")]`
 	);
@@ -32,10 +33,20 @@ export async function load({}) {
 	const result = organizationTypes.map((organizationType: { _id: any }) => {
 		return {
 			...organizationType,
-			membersTeams: membersTeamsWithImages.filter(
-				(membersTeam: { organizationType: { _ref: any } }) =>
-					membersTeam.organizationType._ref === organizationType._id
-			)
+			membersTeams: membersTeamsWithImages
+				.filter(
+					(membersTeam: { organizationType: { _ref: any } }) =>
+						membersTeam.organizationType._ref === organizationType._id
+				)
+				.sort((a: { name: string }, b: { name: string }) => {
+					if (a.name.toLowerCase().startsWith('d') && !b.name.toLowerCase().startsWith('d')) {
+						return -1;
+					}
+					if (!a.name.toLowerCase().startsWith('d') && b.name.toLowerCase().startsWith('d')) {
+						return 1;
+					}
+					return 0;
+				}),
 		};
 	});
 
