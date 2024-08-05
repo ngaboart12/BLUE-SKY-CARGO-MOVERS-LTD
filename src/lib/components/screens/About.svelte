@@ -46,10 +46,6 @@
 	let modelDataTwo: any;
 	let vidioLink = '';
 
-	console.log(typeJob,"----...k,,,")
-
-
-
 </script>
 
 {#if !browser}
@@ -167,15 +163,12 @@
 				{#each typeJob.find((item) => item._id === whichIsActive).membersTeams as item}
 					<div class="flex flex-col overflow-hidden">
 						<div class="relative overflow-hidden group">
-							<button on:click={() => {
-								showModaltwo = true;
-								modelDataTwo = item;
-							}} class="absolute group-hover:opacity-100 opacity-0 duration-200 transition-all cursor-pointer top-0 flex flex-col items-center justify-center rounded-2xl left-0 bg-black/60 w-full h-full text-white px-2 py-1 rounded-tr-lg rounded-bl-lg">
+							<a target="_blank" href={item?.linkedin} class="absolute group-hover:opacity-100 opacity-0 duration-200 transition-all cursor-pointer top-0 flex flex-col items-center justify-center rounded-2xl left-0 bg-black/60 w-full h-full text-white px-2 py-1 rounded-tr-lg rounded-bl-lg">
 								<h3 class="font-semibold">Meet {item.name}</h3>
 								<p class="text-sm text-center">
 									{item?.bio}
 								</p>
-							</button>
+							</a>
 							<img src={item.mainImage} alt="" class="w-full h-[300px] object-cover rounded-2xl" />
 						</div>
 						<span class="font-light mt-2 capitalize">{item.name}</span>
@@ -185,14 +178,6 @@
 								<a target="_blank" href={item?.linkedin}>
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
 								</a>
-								<button 
-								on:click={() => {
-									showModaltwo = true;
-									modelDataTwo = item;
-								}}
-								>
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-								</button>
 							</div>
 						</div>
 					</div>
