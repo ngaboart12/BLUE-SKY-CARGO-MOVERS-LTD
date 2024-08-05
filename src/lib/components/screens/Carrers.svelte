@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import Conctact from '$lib/components/Conctact.svelte';
-	import BG_IMAGE from '$lib/images/bg-2.jpeg'
+	import BG_IMAGE from '$lib/images/bg-2.jpeg';
 	import empty from '$lib/images/empty.png';
 	import CountryButtonSelect from '../CountryButtonSelect.svelte';
 	import Modal from '../Modal.svelte';
@@ -191,9 +191,6 @@
 
 	let show = false;
 
-
-
-
 	const allOurRoles = data.openRoles.map((item: any) => {
 		return {
 			_id: item._id,
@@ -238,32 +235,30 @@
 			}
 			isLoadingRole = false;
 		}, 1000);
-
 	}
 </script>
 
 <div class="min-h-[70vh] flex relative justify-center items-center">
-	<img
-	   src={BG_IMAGE}
-	   alt="logo"
-	   class="absolute top-0 w-full h-full z-10 object-cover"
-   />
-   
-   <div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
-   
-   <div class="flex flex-col gap-4 items-center z-40">
-	   <div class="text-white text-center max-w-3xl sm:mt-0 mt-28">
-		   <p class="mb-10 capitalize text-xl sm:text-2xl md:text-5xl font-bold text-white md:leading-[48px]">
-			Carrers
-		   </p>
-		   <h2 class=" font-semibold text-white/90 capitalize text-sm sm:mt-3">
-			Would you like to build a rewarding career with DNR Partners International?
-		</h2>
-		   <p class="text-[24px] text-white/90 sm:text-[20px] font-medium mt-2">
-			Join our team of experts and contribute to the success of our clients while advancing your professional journey
-		   </p>
-	   </div>
-   </div>
+	<img src={BG_IMAGE} alt="logo" class="absolute top-0 w-full h-full z-10 object-cover" />
+
+	<div class="absolute top-0 w-full bg-black/80 h-full z-20"></div>
+
+	<div class="flex flex-col gap-4 items-center z-40">
+		<div class="text-white text-center max-w-3xl sm:mt-0 mt-28">
+			<p
+				class="mb-10 capitalize text-xl sm:text-2xl md:text-5xl font-bold text-white md:leading-[48px]"
+			>
+				Carrers
+			</p>
+			<h2 class=" font-semibold text-white/90 capitalize text-sm sm:mt-3">
+				Would you like to build a rewarding career with DNR Partners International?
+			</h2>
+			<p class="text-[24px] text-white/90 sm:text-[20px] font-medium mt-2">
+				Join our team of experts and contribute to the success of our clients while advancing your
+				professional journey
+			</p>
+		</div>
+	</div>
 </div>
 <div class="flex flex-col gap-6 sm:gap-4">
 	<div class="bg-[#F0F8FF] py-10">
@@ -315,45 +310,50 @@
 								placeholder="search openings"
 							/>
 							<div class="flex items-end justify-end gap-2">
-								<CountryButtonSelect handleFilterChange={handleFilterChange} />
+								<CountryButtonSelect {handleFilterChange} />
 							</div>
 						</div>
 					</div>
 					<div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
 						{#if isLoadingRole}
-						<div class="flex items-center justify-center col-span-2 w-[80%] h-[250px]">
-							<div class="animate-spin">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="feather feather-loader"
-									><line x1="12" y1="2" x2="12" y2="6" /><line x1="12" y1="18" x2="12" y2="22" /><line
-										x1="4.93"
-										y1="4.93"
-										x2="7.76"
-										y2="7.76"
-									/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07" /><line
-										x1="2"
-										y1="12"
-										x2="6"
-										y2="12"
-									/><line x1="18" y1="12" x2="22" y2="12" /><line
-										x1="4.93"
-										y1="19.07"
-										x2="7.76"
-										y2="16.24"
-									/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg
-								>
+							<div class="flex items-center justify-center col-span-2 w-[80%] h-[250px]">
+								<div class="animate-spin">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="black"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="feather feather-loader"
+										><line x1="12" y1="2" x2="12" y2="6" /><line
+											x1="12"
+											y1="18"
+											x2="12"
+											y2="22"
+										/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76" /><line
+											x1="16.24"
+											y1="16.24"
+											x2="19.07"
+											y2="19.07"
+										/><line x1="2" y1="12" x2="6" y2="12" /><line
+											x1="18"
+											y1="12"
+											x2="22"
+											y2="12"
+										/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24" /><line
+											x1="16.24"
+											y1="7.76"
+											x2="19.07"
+											y2="4.93"
+										/></svg
+									>
+								</div>
 							</div>
-						</div>
-							{:else}
+						{:else}
 							{#if ourRoles.length === 0}
 								<div class="w-full flex flex-col items-center justify-center col-span-2 h-[250px]">
 									<img src={empty} alt="drn rwanda" class="w-[80px] h-[80px] object-cover" />
@@ -424,10 +424,151 @@
 			</div>
 		</div>
 	</div>
+	<div class="grid grid-cols-2 gap-20 max-w-6xl my-10 mx-auto w-full">
+		<form class="flex flex-col gap-2 w-full">
+			<h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[#083867] capitalize">
+				Become a DNR Representative
+			</h2>
+			<div class="flex flex-col sm:grid sm:grid-cols-2 gap-5 h-fit font-light mt-3">
+				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
+					<input
+						type="text"
+						bind:value={nameValue}
+						required
+						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+						placeholder="enter your title"
+					/>
+				</div>
+				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
+					<input
+						type="text"
+						required
+						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+						placeholder="enter your name"
+					/>
+				</div>
+				<div class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full">
+					<select class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full">
+						{#each ["Rwanda", "burundi", "England","zambia","South Africa","Kenya","Uganda"] as item}
+							<option value={item}>{item}</option>
+						{/each}
+					</select>
+				</div>
+				<div
+					class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+				>
+					<input
+						type="email"
+						required
+						bind:value={emailValue}
+						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+						placeholder="enter your profession"
+					/>
+				</div>
+				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
+					<input
+						type="text"
+						required
+						bind:value={phoneValue}
+						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+						placeholder="enter your Company"
+					/>
+				</div>
+				<div
+					class="rounded-lg col-span-2 bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
+					data-svelte-h="svelte-1y98z1w"
+				>
+					<input
+					type="text"
+					required
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="enter your website"
+					/>
+				</div>
+				<div class="col-span-2">
+					<div class="flex flex-col gap-2">
+						<button
+							disabled={isLoading}
+							on:click={(event) => {
+								event.preventDefault();
+								submitForm();
+							}}
+							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+						>
+							<span>Send Message</span>
+							<span>
+								{#if isLoading}
+									<div class="animate-spin">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="24"
+											height="24"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="feather feather-loader"
+											><line x1="12" y1="2" x2="12" y2="6" /><line
+												x1="12"
+												y1="18"
+												x2="12"
+												y2="22"
+											/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76" /><line
+												x1="16.24"
+												y1="16.24"
+												x2="19.07"
+												y2="19.07"
+											/><line x1="2" y1="12" x2="6" y2="12" /><line
+												x1="18"
+												y1="12"
+												x2="22"
+												y2="12"
+											/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24" /><line
+												x1="16.24"
+												y1="7.76"
+												x2="19.07"
+												y2="4.93"
+											/></svg
+										>
+									</div>
+								{:else}
+									<svg
+										width="10"
+										height="16"
+										viewBox="0 0 10 16"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M1.5 1L8.5 8L1.5 15"
+											stroke="white"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								{/if}
+							</span>
+						</button>
+						{#if success}
+							<p class="text-green-600">Message sent successfully</p>
+						{/if}
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
+			<img
+				src={"/new/11.jpg"}
+				alt={""}
+				class="w-full object-cover h-full"
+			/>
+		</div>
+	</div>
 	<Conctact />
 </div>
-
-
 
 {#if showModal}
 	<Modal bind:showModal>
