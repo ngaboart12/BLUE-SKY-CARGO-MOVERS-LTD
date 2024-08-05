@@ -326,6 +326,24 @@
 						/>
 					</span>
 					{/if}
+					{#if selectedCountry === "tz"}
+					<span class="w-8 h-8 rounded-full overflow-hidden">
+						<img
+							class="object-cover w-6 h-6  rounded-full"
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/800px-Flag_of_Tanzania.svg.png?20221207005450"
+							alt="tanzania"
+						/>
+					</span>
+					{/if}
+					{#if selectedCountry === "ca"}
+					<span class="w-8 h-8 rounded-full overflow-hidden">
+						<img
+							class="object-cover w-6 h-6  rounded-full"
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/800px-Flag_of_Cameroon.svg.png?20221207005450"
+							alt="cameroon"
+						/>
+					</span>
+					{/if}
 					{#if selectedCountry === ''}
 						<AllCountrySvg />
 					{/if}
@@ -338,6 +356,8 @@
 					{selectedCountry === 'sa' ? 'south africa': ""}
 					{selectedCountry === 'rw' ? 'rwanda': ""}
 					{selectedCountry === 'ug' ? 'uganda': ""}
+					{selectedCountry === 'tz' ? 'Tanzania': ""}
+					{selectedCountry === 'ca' ? 'Cameroon': ""}
 					{selectedCountry === '' ? 'global network': ""}
 				</span>
 				<svg
@@ -673,6 +693,31 @@
 			</span>
 			<span class="font-medium capitalize"> Uganda </span>
 		</PopoverButton>
+		<PopoverButton 
+		on:click={() => selectedCountry = 'tz'}
+		class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent">
+			<span class="w-8 h-8 rounded-full overflow-hidden">
+				<img
+					class="w-full h-full object-cover"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/800px-Flag_of_Tanzania.svg.png?20221207005450"
+					alt="tanzania"
+				/>
+			</span>
+			<span class="font-medium capitalize"> Tanzania </span>
+		</PopoverButton>
+		<PopoverButton 
+		on:click={() => selectedCountry = 'ca'}
+		class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent">
+			<span class="w-8 h-8 rounded-full overflow-hidden">
+				<img
+					class="w-full h-full object-cover"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/800px-Flag_of_Cameroon.svg.png?20221207005450"
+					alt="cameroon"
+				/>
+			</span>
+			<span class="font-medium capitalize"> Cameroon </span>
+		</PopoverButton>
+		 	
 			</div>
 		</PopoverPanel>
 	</Popover>
