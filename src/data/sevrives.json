@@ -1,11 +1,9 @@
 [
     {
-		"title": "Audit & Assurance Services",
+		"title": "Audit & Assurance",
 		"description": "Our commitment to quality and integrity ensures better decision-making and operational excellence",
 		"paragraphs": [
-			"At DNR Partners International, our Audit & Assurance Services are designed to provide comprehensive, independent evaluations that enhance transparency, trust, and accountability. We leverage our deep expertise and rigorous methodologies to deliver reliable, insightful audits that meet the highest international standards. Our services are tailored to support businesses in managing risks, complying with regulatory requirements, and achieving their strategic objectives.",
-			"Our commitment to quality and integrity ensures that our clients receive not only accurate assessments but also actionable insights that drive better decision-making and operational excellence. Whether for financial reporting, internal controls, or regulatory ",
-			"compliance, our audit and assurance services are geared to support your business in navigating complex environments with confidence."
+			"DNR Partners International comprehensive audit methodologies provide the foundation for audit opinion backed by sufficient and appropriate audit evidence. With a deep understanding of global and local regulatory landscapes, we deliver precise financial insights. Our expert team ensures your financial statements are accurate, reliable, and compliant, empowering you to build trust with stakeholders."
 		],
 		"images": ["/new/1.jpg", "/new/13.jpg"],
 		"functionalServices":[
@@ -46,14 +44,36 @@
 				"description":"It involves detailed review and assessment of financial, operational, and compliance aspects during mergers, acquisitions, or other significant business transactions. We support informed decision-making in transactions by providing an in-depth analysis of potential risks and opportunities"
 			}
 		],
+		"subTitles":[
+			"Statutory Audits",
+			"Performance audits",
+			"Compliance audits",
+			"Internal audits",
+			"IT audits",
+			"Forensic Audits",
+			"Due diligence (Financial,HR, Legal, IT and operations)"
+		],
 		"icon": 1
 	},
 	{
 		"title": "Tax & Accounting Services",
 		"description": "We support you in minimizing tax liabilities, maximizing tax efficiencies, and mitigating risks",
 		"paragraphs": [
-			"At DNR Partners International, our Tax Advisory Services are designed to help businesses navigate the complex and ever-changing landscape of tax regulations. We offer expert guidance on tax planning, compliance, and strategy to optimize your tax position and ensure adherence to local and international tax laws. Our dedicated team of tax professionals combines deep industry knowledge with practical insights to deliver tailored solutions that align with your business objectives and enhance overall financial efficiency.",
-			"Our goal is to support you in minimizing tax liabilities, maximizing tax efficiencies, and mitigating risks, while ensuring compliance with regulatory requirements. Whether you are looking to streamline your tax processes, navigate cross-border tax issues, or leverage tax incentives, our services are structured to address your specific needs and add strategic value to your business."
+			"Our comprehensive tax and accounting services provide clarity and efficiency. We offer expert guidance on preparation, tax planning, compliance, and optimization, while delivering precise financial reporting. Our tailored solutions empower businesses to make informed decisions and achieve long-term financial success."
+		],
+		"subTitles":[
+			"Tax",
+			"Accounting"
+		],
+		"list":[
+			{
+				"title":"Tax",
+				"list":["Direct and indirect tax", "Corporate tax","International tax","Tax planning and compliance"]
+			},
+			{
+				"title":"Accounting",
+				"list":["Outsourced accounting and payroll services ranging", "IFRS based financial reporting","ESG & sustainability reporting","Accounting software installation and data migration"]
+			}
 		],
 		"images": ["/new/2.jpg", "/new/12.jpg"],
 		"functionalServices":[
@@ -101,385 +121,42 @@
 		"icon": 2
 	},
     {
-        "title":"Risk & Compliance Services",
+        "title":"Advisory",
         "description":"Our risk and compliance services are designed to help organizations identify, assess, and mitigate risks, and ensure adherence to regulatory requirements",
         "paragraphs":[
-            "At DNR Partners International, our Risk & Compliance Services are designed to help organizations navigate the complex landscape of risks and regulatory requirements. We offer comprehensive solutions to identify, assess, and mitigate risks, and ensure compliance with local and international regulations. Our team of risk and compliance experts combines deep industry knowledge with practical insights to deliver tailored solutions that address your specific needs and enhance overall organizational resilience.",
-            "Our services are designed to support businesses in managing risks effectively, enhancing governance structures, and ensuring compliance with regulatory requirements. Whether you are looking to strengthen your risk management processes, implement robust compliance programs, or navigate regulatory changes, our services are structured to help you achieve your strategic objectives and drive sustainable growth."
+            "Our advisory services encompass a wide range of strategic solutions designed to drive business growth and enhance operational efficiency and compliance. From financial advisory and business valuation to risk management, legal compliance, and M&A transactions, we provide expert guidance to navigate complex challenges and seize opportunities."
         ],
 		"images": ["/new/3.jpg", "/new/11.jpg"],
-        "functionalServices":[
-            {
-                "service":"Risk Assessment and Management",
-                "description":"Involves identification, evaluation, and mitigation of risks that could impact business operations, financial performance, or reputation. We develop risk management strategies, implement risk mitigation measures, and enhance organizational resilience to potential threats. "
-            },
-            {
-                "service":"Compliance Program Development",
-                "description":"Involves the design and implementation of compliance programs to ensure adherence to regulatory requirements, industry standards, and internal policies. We develop tailored compliance frameworks, monitor compliance activities, and support effective governance and risk management. "
-            },
-            {
-                "service":"Regulatory Compliance",
-                "description":"It involves support with understanding and complying with local and international regulations affecting the business. We provide guidance on regulatory requirements, monitor compliance activities, and ensure adherence to laws and standards to mitigate legal and financial risks. "
-            },
-            {
-                "service":"Anti-Money Laundering (AML) and Counter-Terror",
-                "description":"It involves the development and implementation of AML and CTF programs to prevent money laundering"
-            }
-        ],
+		"subTitles":[
+			"Risk & Legal Compliance",
+			"Mergers & Acquisitions M&A",
+			"Business / Share Valuation",
+			"Financial advisory"
+		],
         "icon": 3
     },
 	{
-		"title": "IT Consulting",
+		"title": "Management Consulting",
 		"description": "We work closely with clients to understand their needs, analyze their business processes, and implement practical solutions….",
 		"paragraphs": [
-			"At DNR Partners International, our Management Consulting Services are designed to provide strategic solutions and operational improvements that drive business success. Our consultancy services are tailored to address the unique challenges and opportunities faced by organizations in today’s competitive landscape. By leveraging our deep industry knowledge and innovative methodologies, we help businesses optimize their operations, enhance their strategic positioning, and achieve their long-term goals.",
-			"Our experienced consultants work closely with clients to understand their needs, analyze their business processes, and implement practical solutions that deliver measurable results. Whether you are seeking to refine your strategy, improve operational efficiency, or navigate complex change initiatives, our Management Consulting Services offer the expertise and support necessary to drive transformation and achieve sustainable success."
+			"Management consulting services cover a broad spectrum of activities aimed at improving the overall performance and efficiency of organizations"
 		],
 		"images": ["/new/4.webp", "/new/10.jpg"],
-		"functionalServices":[
-			{
-				"service":"Strategic Planning and Development",
-				"description":"It involves crafting and implementing strategic plans that align with your business goals and market opportunities. We develop actionable strategies to guide business growth, competitive positioning, and long-term success"
-			},
-			{
-				"service":"Operational Excellence",
-				"description":"It involves analyzing and optimizing business processes to improve efficiency, productivity, and cost-effectiveness. We help streamline operations, reduce waste, and enhance overall performance through process improvements and best practices."
-			},
-			{
-				"service":"Organizational Design and Development",
-				"description":"It involves designing and implementing organizational structures and systems that support business strategy and improve performance. We create an effective organizational framework that enhances communication, collaboration, and operational efficiency. "
-			},
-			{
-				"service":"Change Management",
-				"description":"Involves managing organizational change initiatives to ensure successful implementation and minimize disruption. We facilitate smooth transitions during mergers, acquisitions, restructuring, or other significant changes, ensuring stakeholder buy-in and effective change adoption."
-			},
-			{
-				"service":"Financial Management and Performance Improvement",
-				"description":"Involves enhancing financial planning, budgeting, and performance measurement to improve financial health and decision-making. We help in strengthen financial management practices, optimize resource allocation, and drive financial performance"
-			},
-			{
-				"service":"Market Entry and Expansion",
-				"description":"Involves developing strategies for entering new markets or expanding existing operations, including market research and feasibility analysis. We help identify and capitalize on growth opportunities, navigate market dynamics, and achieve successful market entry or expansion"
-			},
-			{
-				"service":"Risk Management and Compliance",
-				"description":"It involves identifying, assessing, and managing risks to ensure regulatory compliance and protect business interests. We develop robust risk management frameworks, enhance compliance practices, and mitigate potential risks"
-			},
-			{
-				"service":"Technology and Digital Transformation",
-				"description":"It involves advising on the adoption and integration of technology solutions to drive digital transformation and innovation. We leverage technology to enhance business processes, improve customer experiences, and achieve strategic objectives. "
-			},
-			{
-				"service":"Human Resources and Talent Management",
-				"description":"It involved improving HR practices, talent acquisition, and employee development to build a high-performing workforce. We optimize HR functions, attract and retain top talent, and foster a productive and engaged workforce"
-			},
-			{
-				"service":"Customer Experience and Service Excellence",
-				"description":"Involves enhancing customer experience strategies and service delivery to increase satisfaction and loyalty. We implement customer-centric approaches, improve service quality, and drive customer satisfaction and retention. "
-			},
-			{
-				"service":"Project Management ",
-				"description":"It involves providing expertise in managing projects to ensure they are delivered on time, within budget, and to the required quality standards. We effectively plan, execute, and monitor projects, achieving successful outcomes and alignment with business objectives"
-			},
-			{
-				"service":"Supply Chain Management",
-				"description":"It involves optimizing supply chain processes to improve efficiency, reduce costs, and enhance supply chain performance. We streamline supply chain operations, enhance logistics, and manage supplier relationships to drive value"
-			}
+		"subTitles":[
+			"Strategy Consulting",
+			"Operations Consulting",
+			"Technology Consulting",
+			"Human Resources Consulting",
+			"Business performance and growth",
+			"Corporate Trainings"
+		],
+		"nb":[
+			"I propose to reduce the services  to 8 categorized services",
+			"We remove the word “Services”",
+			"We remove the Section “Functional Services” on each page",
+			"Remove the Section “More Services",
+			"Remove Team Profile on Services Section"
 		],
 		"icon": 4
-	},
-    {
-        "title":"Merger & Acquisition",
-        "description":"Our M&A services are designed to support clients in navigating the complexities of mergers, acquisitions, and divestitures",
-        "paragraphs":[
-            "At DNR Partners International, our Merger & Acquisition (M&A) Advisory Services are designed to support clients in navigating the complexities of mergers, acquisitions, and divestitures. We offer comprehensive guidance and strategic insights to help organizations achieve their growth and expansion objectives through successful M&A transactions. Our team of experienced professionals combines deep industry knowledge with practical expertise to deliver tailored solutions that address the unique needs and challenges of each transaction.",
-            "Our M&A services cover the entire deal lifecycle, from strategy development and target identification to due diligence, negotiation, and post-merger integration. Whether you are looking to acquire a new business, divest non-core assets, or explore strategic partnerships, our services are structured to help you maximize value, minimize risks, and achieve your strategic objectives."
-        ],
-		"images": ["/new/5.jpeg", "/new/9.jpg"],
-        "icon":5
-    },
-    {
-		"title":"Corporate Training Services",
-		"description":"Our corporate training services are built on a foundation of industry expertise and practical experience...",
-		"paragraphs":[
-			"At DNR Partners, our Corporate Training Services are designed to enhance the skills and capabilities of your workforce, driving organizational success through targeted learning and development programs. We offer a comprehensive range of training solutions tailored to meet the specific needs of your business, fostering a culture of continuous improvement and excellence.",
-			"Our training services are built on a foundation of industry expertise and practical experience, ensuring that our programs are relevant, engaging, and impactful. By investing in employee development, you can empower your team to excel in their roles, adapt to changing business environments, and contribute to your organization's strategic objectives."
-		],
-		"functionalServices":[
-			{
-				"service":"Leadership and Management Training",
-				"description":"Our programs are focused on developing leadership skills, managerial competencies, and effective team management practices. We equip leaders and managers with the tools and techniques to lead effectively, inspire teams, and drive organizational performance. "
-			},
-			{
-				"service":"Professional Skills Development",
-				"description":"We offer training in essential professional skills such as communication, negotiation, problem-solving, and time management. We enhance individual capabilities and productivity, enabling employees to perform their roles more effectively and contribute to organizational success. "
-			},
-			{
-				"service":"Technical and Functional Training",
-				"description":"Involves specialized training in technical skills and functional areas relevant to your industry, including software, systems, and operational procedures. We ensure employees possess the technical expertise and functional knowledge required to excel in their specific roles and responsibilities. "
-			},
-			{
-				"service":"Compliance and Regulatory Training",
-				"description":"Involves training programs focused on understanding and adhering to industry regulations, legal requirements, and organizational policies. We ensure compliance with relevant regulations, minimize risk, and maintain high standards of ethical and legal conduct. "
-			},
-			{
-				"service":"Sales and Customer Service Training",
-				"description":"Our programs are designed to improve sales techniques, customer service skills, and client relationship management. We enhance sales performance, deliver exceptional customer service, and build strong, lasting relationships with clients. "
-			},
-			{
-				"service":"Change Management Training",
-				"description":"Involves training to support employees through organizational change, including change management strategies, communication, and adaptation techniques. We facilitate smooth transitions during periods of change, reduce resistance, and enhance employee engagement and resilience. "
-			},
-			{
-				"service":"Diversity, Equity, and Inclusion (DEI) Training",
-				"description":"Involves programs aimed at promoting diversity, equity, and inclusion in the workplace, including unconscious bias training and cultural competence. We foster an inclusive work environment, enhance cultural awareness, and support diverse perspectives and practices"
-			},
-			{
-				"service":"Project Management Training",
-				"description":"We undertake training on project management methodologies, tools, and best practices, including agile and traditional project management approaches. We improve project management skills, enhance project delivery, and achieve successful project outcomes. "
-			},
-			{
-				"service":"Health and Safety Training",
-				"description":"Involves programs focused on health and safety practices, including workplace safety, emergency response, and risk management. We ensure a safe working environment, reduce workplace accidents, and comply with health and safety regulations. "
-			},
-			{
-				"service":"Customer Experience and Service Excellence Training",
-				"description":"We conduct training to enhance customer experience strategies and service delivery, including customer engagement, feedback management, and service improvement techniques. We strive to improve customer satisfaction, loyalty, and service quality, leading to better business outcomes and competitive advantage. "
-			},
-			{
-				"service":"Executive Coaching",
-				"description":"One-on-one coaching for senior executives to develop leadership skills, strategic thinking, and personal effectiveness. We provide tailored support to executives, helping them achieve their leadership goals and drive organizational success. "
-			},
-			{
-				"service":"Team Building and Development",
-				"description":"There are interactive workshops and activities designed to strengthen team dynamics, improve collaboration, and enhance team performance. We aim to build stronger, more cohesive teams, foster effective communication, and boost overall team effectiveness."
-			},
-			{
-				"service":"Innovation and Creativity Training",
-				"description":"Programs focused on fostering creativity, encouraging innovation, and developing problem-solving skills. We drive innovation within the organization, enhance creative thinking, and develop solutions to complex business challenges. "
-			},
-			{
-				"service":"Financial and Budgeting Training",
-				"description":"This is a training on financial management, budgeting techniques, and financial analysis skills. We undertake this to improve financial acumen, enhance budgeting practices, and support informed financial decision-making"
-			}
-		],
-		"images": ["/new/6.jpg", "/new/8.webp"],
-		"icon": 6
-	},
-    {
-		"title":"ESG & Sustainability Advisory",
-		"description":"Our services are rooted in a deep understanding of global sustainability trends, regulatory frameworks, and best practices",
-		"paragraphs":[
-			"At DNR Partners International, our ESG (Environmental, Social, and Governance) & Sustainability Advisory Services are designed to help organizations integrate sustainable practices into their core strategies and operations. We offer comprehensive guidance on Environmental, Social, and Governance (ESG) issues to drive long-term value, improve stakeholder relationships, and ensure compliance with evolving regulations and standards.",
-			"Our services are grounded in a deep understanding of global sustainability trends, regulatory frameworks, and best practices. We work closely with clients to develop and implement effective ESG strategies that not only enhance sustainability performance but also align with business goals and stakeholder expectations. Our objective is to support organizations in becoming leaders in sustainability and responsible governance, ultimately contributing to their success and resilience in a rapidly changing world."
-		],
-		"images": ["/new/7.webp", "/new/8.webp"],
-		"functionalServices":[
-			{
-				"service":"ESG Strategy Development",
-				"description":"Involves formulation of comprehensive ESG strategies that align with business objectives and address environmental, social, and governance issues. We develop actionable ESG strategies that integrate with overall business plans, enhance sustainability performance, and meet stakeholder expectations. "
-			},
-			{
-				"service":"Sustainability Reporting and Disclosure",
-				"description":"We offer assistance with preparing sustainability reports and disclosures in accordance with global standards such as the Global Reporting Initiative (GRI), Sustainability Accounting Standards Board (SASB), and Task Force on Climate-related Financial Disclosures (TCFD). We provide transparent and accurate reporting on ESG performance, ensuring compliance with standards and improving stakeholder communication. "
-			},
-			{
-				"service":"ESG Risk and Opportunity Assessment",
-				"description":"We undertake evaluation of ESG risks and opportunities that could impact business performance, including environmental impacts, social issues, and governance practices. We identify and assess potential ESG-related risks and opportunities, enabling informed decision-making and proactive risk management. "
-			},
-			{
-				"service":"Sustainable Supply Chain Management",
-				"description":"Involves integration of sustainability criteria into supply chain management, including supplier assessments, risk management, and sustainability performance monitoring. We enhance the sustainability of supply chains, reduce environmental and social impacts, and build resilience across the value chain. "
-			},
-			{
-				"service":"Climate Change Strategy and Management",
-				"description":"Involves the development of strategies to address climate change, including carbon footprint analysis, reduction targets, and climate adaptation plans. We manage climate-related risks and opportunities, reduce carbon emissions, and enhance organizational resilience to climate impacts"
-			},
-			{
-				"service":"Social Impact and Community Engagement",
-				"description":"It involves advising on strategies to enhance social impact and engage with communities, including corporate social responsibility (CSR) programs and stakeholder engagement. We strengthen social responsibility initiatives, build positive community relations, and address social issues effectively. "
-			},
-			{
-				"service":"Governance and Ethics Advisory",
-				"description":"Involves guidance on improving governance structures, ethical practices, and compliance with regulatory requirements. We enhance governance frameworks, ensure ethical behavior, and achieve compliance with relevant laws and regulations. "
-			},
-			{
-				"service":"Green Finance and Investment Advisory",
-				"description":"Involves support in identifying and securing green finance and investment opportunities, including green bonds, sustainability-linked loans, and funding for sustainable projects. We facilitate access to finance for sustainability initiatives and drive investment in environmentally and socially responsible projects. "
-			},
-			{
-				"service":"Sustainability Performance Measurement",
-				"description":"Involves development of metrics and Key Performance Indicators (KPIs) to measure and track sustainability performance, including environmental, social, and governance aspects. We implement effective performance measurement systems to monitor progress, drive improvements, and report on ESG outcomes. "
-			},
-			{
-				"service":"Employee Training and Engagement",
-				"description":"We undertake design and delivery of training programs to raise awareness and build skills related to ESG and sustainability. We equip employees with the knowledge and tools to support ESG initiatives and foster a culture of sustainability within the organization. "
-			},
-			{
-				"service":"ESG Integration in Business Strategy",
-				"description":"Involves advising on the integration of ESG considerations into overall business strategy and operations. We ensure that ESG factors are embedded in business strategy, decision-making processes, and operational practices. "
-			},
-			{
-				"service":"Stakeholder Engagement and Communication",
-				"description":"Involves strategies and support for effective communication and engagement with stakeholders on ESG matters. We build strong relationships with stakeholders through transparent communication and active engagement on ESG issues. "
-			}
-		],
-		"icon": 7
-	},
-    {
-		"title":"Climate Change Management Advisory Services",
-		"description":"Our services are designed to help organizations navigate the complexities of climate change and achieve their sustainability goals...",
-		"paragraphs":[
-			"We specialize in Climate Change Management Advisory Services designed to help organizations navigate the complexities of climate change and achieve their sustainability goals. Our expert team provides strategic guidance, actionable insights, and practical solutions to address climate-related risks, capitalize on opportunities, and drive meaningful environmental impact.",
-			"Climate change presents significant challenges and opportunities for businesses across industries. Our services are rooted in a deep understanding of climate science, regulatory requirements, and industry best practices. By leveraging this expertise, we help organizations develop robust climate strategies, enhance sustainability, and achieve their environmental goals. Our goal is to support clients in building climate resilience, reducing carbon emissions, and contributing to a more sustainable future."
-		],
-		"keyComponentsName":"Climate Change Management Advisory Services",
-		"keyComponents":[
-			{
-				"service":"Climate Strategy Development",
-				"description":"including: Climate Risk Assessment and Climate Action Planning"
-			},
-			{
-				"service":"Carbon Footprint Measurement and Management",
-				"description":"including: GHG Inventory and Carbon Management Strategy"
-			},
-			{
-				"service":"Climate Risk and Resilience Planning including",
-				"description":"Vulnerability Assessment and Scenario Analysis"
-			},
-			{
-				"service":"Sustainability Reporting and Compliance",
-				"description":"including: Reporting Frameworks and communication"
-			},
-			{
-				"service":"Innovation and Technology Integration",
-				"description":"including: Technology Assessment and Best Practices and Benchmarking"
-			}
-		],
-		"images": ["/new/1.jpg", "/new/13.jpg"],
-		"icon": 8
-	},
-    {
-		"title":"Corporate & Investment Advisory",
-		"description":"Advanced financial modeling involves creating complex financial models to analyze and forecast the financial performance of a business or investment. These models use advanced techniques and assumptions to simulate different scenarios and make informed decisions.",
-		"paragraphs":[
-			"Advanced financial modeling involves creating complex financial models to analyze and forecast the financial performance of a business or investment. These models use advanced techniques and assumptions to simulate different scenarios and make informed decisions.",
-			"Financial models are used to project future cash flows, assess investment opportunities, and evaluate the financial health of a business. Advanced financial modeling goes beyond basic calculations to incorporate detailed assumptions, sensitivity analyses, and scenario planning.",
-			"Advanced financial modeling requires expertise in financial analysis, accounting principles, and quantitative methods. It involves building dynamic models that can adapt to changing market conditions, regulatory requirements, and business strategies. These models help organizations make strategic decisions, optimize resource allocation, and manage risks effectively.",
-			"Advanced financial modeling is essential for strategic planning, investment analysis, and risk management. By using sophisticated modeling techniques, organizations can gain deeper insights into their financial performance, identify growth opportunities, and make informed decisions that drive long-term success."
-		],
-		"images": ["/new/6.jpg", "/new/8.webp"],
-		"icon": 9
-	},
-    {
-		"title":"Business Valuation",
-		"description":"Our solutions ensure that organizations can measure progress accurately, identify areas for improvement, strategic objectives...",
-		"paragraphs":[
-			"Monitoring and Evaluation (M&E) Tools at DNR Partners are designed to provide organizations with the frameworks and methodologies needed to assess the effectiveness, efficiency, and impact of their projects and programs. Our M&E tools facilitate systematic tracking of performance metrics, outcomes, and goals, enabling businesses and institutions to make data-driven decisions and enhance overall performance.",
-			"We offer a range of tools and techniques to support the design, implementation, and review of monitoring and evaluation processes. Our solutions ensure that organizations can measure progress accurately, identify areas for improvement, and achieve their strategic objectives with greater clarity and confidence."
-		],
-		"keyComponents":[
-			{
-				"service":"Performance Indicators Development Tool ",
-				"description":"Developing key performance indicators (KPIs) that align with organizational goals and objectives, enabling effective monitoring and evaluation of performance."
-			},
-			{
-				"service":"Data Collection and Management Systems.",
-				"description":"Establishing data collection methods, tools, and systems to gather relevant information for monitoring and evaluation purposes, ensuring data accuracy and integrity."
-			},
-			{
-				"service":"Evaluation Frameworks",
-				"description":"Designing evaluation frameworks that outline the criteria, methods, and processes for assessing the impact and effectiveness of projects and programs."
-			},
-			{
-				"service":"Strategic Roadmap Creation",
-				"description":"Developing a detailed action plan outlining the steps, resources, and timelines required to achieve strategic objectives."
-			},
-			{
-				"service":"Progress Tracking Tools",
-				"description":"Implementing tools and systems to track progress, milestones, and outcomes, enabling real-time monitoring and adjustment of strategies as needed."
-			},
-			{
-				"service":"Impact Assessment Tools",
-				"description":"Utilizing impact assessment tools to measure the social, economic, and environmental impact of projects and programs, providing insights into outcomes and effectiveness."
-			},
-			{
-				"service":"Feedback Mechanisms",
-				"description":"Establishing feedback mechanisms and channels to gather input from stakeholders, beneficiaries, and partners, enhancing transparency and accountability in monitoring and evaluation processes."
-			},
-			{
-				"service":"Risk and Issue Tracking",
-				"description":"Developing a detailed action plan outlining the steps, resources, and timelines required to achieve strategic objectives."
-			},
-			{
-				"service":"Baseline and Endline Surveys",
-				"description":"Conducting baseline and endline surveys to establish benchmarks, measure progress, and evaluate the impact of interventions over time."
-			},
-
-			{
-				"service":"Capacity Building and Training",
-				"description":"Providing training and capacity-building support to staff and stakeholders on monitoring and evaluation tools, methodologies, and best practices."
-			}
-		],
-		"images": ["/new/2.jpg", "/new/12.jpg"],
-		"icon": 10
-	},
-    {
-		"title": "Management Consulting Services",
-		"description": "offers sharpened financial advisory backed by thorough financial and non- financial data analysis of the client as well as these of the market. Our experts analyze both short and long term trends to appreciate possible opportunities in stock market,",
-		"paragraphs": [
-			"Immerse yourself in a realm of refined financial advisory services, meticulously honed to elevate your financial standing. Our consultancy not only delves into the intricacies of financial data but also conducts comprehensive analyses of non-financial factors, providing a holistic perspective that informs sound decision-making. With a keen eye for detail, our experts scrutinize both short-term fluctuations and long-term trends, enabling you to seize opportunities within the dynamic stock market landscape.",
-			"At the heart of our financial advisory approach lies a commitment to harnessing the power of data. Through rigorous analysis of client-specific financial metrics alongside market dynamics, we uncover valuable insights that drive strategic action. By synthesizing quantitative data with qualitative observations, we empower you to make informed investment decisions that align with your goals and risk appetite.",
-			"Furthermore, our consultancy services extend beyond mere number-crunching; we prioritize understanding the broader context in which financial decisions are made. By considering socio-economic factors, regulatory changes, and industry trends, we offer nuanced perspectives that transcend conventional wisdom. This holistic approach ensures that your financial strategies are not only robust but also adaptable to evolving market conditions.",
-			"In navigating the intricacies of the stock market, timing is everything. That's why our experts meticulously analyze both short-term fluctuations and long-term trajectories, identifying windows of opportunity amidst volatility. Whether you're a seasoned investor seeking to capitalize on market trends or a novice exploring investment options, our consultancy services provide the insights and guidance needed to navigate the complexities of the financial landscape with confidence.",
-			"Moreover, our commitment to your financial success goes beyond mere analysis; we serve as trusted partners on your journey towards wealth accumulation and preservation. From crafting personalized investment strategies to offering ongoing portfolio management, we remain by your side every step of the way. Our goal is not just to maximize returns in the short term but to cultivate sustainable growth and resilience over the long term.",
-			"In essence, partnering with our consultancy services isn't just about accessing financial expertise—it's about gaining a strategic advantage in the ever-evolving world of finance. It's about leveraging data-driven insights to unlock new opportunities and mitigate risks effectively. So why settle for conventional wisdom when you can harness the power of informed decision-making? Take the leap towards financial prosperity with our sharpened financial advisory services and experience the difference for yourself."
-		],
-		"images": ["/new/3.jpg", "/new/11.jpg"],
-		"icon": 11
-	},
-	{
-		"title":"IPO Transactions Advisory",
-		"description":"Our IPO advisory services are designed to support companies in navigating the complexities of the IPO process and achieving a successful listing on the stock exchange.",
-		"paragraphs":[
-			"At DNR Partners International, our IPO Advisory Services are designed to support companies in navigating the complexities of the Initial Public Offering (IPO) process and achieving a successful listing on the stock exchange. We offer comprehensive guidance and strategic insights to help organizations prepare for and execute a successful IPO, from initial planning to post-listing activities.",
-			"An IPO is a significant milestone for any company, marking its transition from private ownership to public trading. Our team of experienced professionals combines deep industry knowledge with practical expertise to deliver tailored solutions that address the unique needs and challenges of each IPO transaction. Whether you are looking to raise capital, enhance visibility, or unlock new growth opportunities, our services are structured to help you achieve your strategic objectives and maximize value for stakeholders."
-		],
-		"functionalServices":[
-			{
-				"service":"IPO Readiness Assessment",
-				"description":"Involves evaluating the company’s readiness for an IPO, including financial performance, governance structures, and compliance with regulatory requirements. We assess the company’s preparedness for the IPO process, identify areas for improvement, and develop a roadmap for successful listing."
-			},
-			{
-				"service":"Pre-IPO Planning and Strategy",
-				"description":"It involves developing a comprehensive plan and strategy for the IPO process, including timeline, valuation, investor targeting, and marketing activities. We create a roadmap for the IPO, set clear objectives, and align strategies with business goals and market conditions."
-			},
-			{
-				"service":"Financial Due Diligence",
-				"description":"Involves conducting detailed financial analysis and due diligence to ensure accurate financial reporting and compliance with regulatory requirements. We review financial statements, assess financial performance, and identify potential risks or issues that may impact the IPO process."
-			},
-			{
-				"service":"Valuation and Pricing Strategy",
-				"description":"It involves determining the company’s valuation and pricing strategy for the IPO, taking into account market conditions, industry benchmarks, and investor expectations. We provide guidance on valuation methodologies, pricing considerations, and strategies to maximize value for stakeholders."
-			},
-			{
-				"service":"Regulatory Compliance and Governance",
-				"description":"Involves ensuring compliance with regulatory requirements, governance standards, and listing rules for the stock exchange. We support companies in meeting regulatory obligations, enhancing governance practices, and maintaining transparency and accountability throughout the IPO process."
-			},
-			{
-				"service":"Investor Relations and Marketing",
-				"description":"It involves developing an investor relations strategy and marketing plan to attract potential investors and build relationships with stakeholders. We create compelling investor presentations, engage with investors, and promote the company’s value proposition to the market."
-			},
-			{
-				"service":"Post-IPO Support and Advisory",
-				"description":"Involves providing ongoing support and advisory services after the IPO, including investor communications, financial reporting, and compliance with listing requirements. We help companies navigate the post-listing environment, manage stakeholder expectations, and sustain long-term value creation."
-			},
-			{
-				"service":"Listing Process Management",
-				"description":"It involves managing the IPO listing process, coordinating activities with underwriters, legal advisors, auditors, and other stakeholders. We ensure a smooth and efficient listing process, from filing the prospectus to trading on the stock exchange, and support companies in achieving a successful IPO."
-			}
-		],
-		"images": ["/new/4.webp", "/new/10.jpg"],
-		"icon": 12
 	}
 ]

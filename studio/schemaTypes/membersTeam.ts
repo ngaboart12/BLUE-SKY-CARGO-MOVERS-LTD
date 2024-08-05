@@ -40,6 +40,11 @@ export default defineType({
       type:"text",
     }),
     defineField({
+      name:"linkedin",
+      title:"linkedin",
+      type:"url"
+    }),
+    defineField({
       name: 'country',
       title: 'Country',
       type: 'string',

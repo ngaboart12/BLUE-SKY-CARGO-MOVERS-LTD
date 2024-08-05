@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import imgeFour from '$lib/images/one--1.jpg?enhanced';
+	import imgeFour from '$lib/images/4.png?enhanced';
 	import ImageTwo from '$lib/images/2.png';
 	import Button from '$lib/components/Button.svelte';
 	import SvgOne from '$lib/images/vision/1.svelte';
@@ -25,7 +25,7 @@
 	const visions = [
 		{
 			name: 'OUR VISION',
-			description: 'To be a globally trusted consulting firm in audit and advisory services.',
+			description: 'To be a globally trusted consulting firm in audit and advisory services through empowering businesses to achieve excellence and success.',
 			icon: 1
 		},
 		{
@@ -37,15 +37,15 @@
 		{
 			name: 'CORE BELIEF',
 			description:
-				'To offer proactive services and delivering effective, reliable, dependable professional advice, maintaining the highest level of confidentiality and integrity. ',
+				'Providing proactive, effective, and reliable professional consulting services while upholding the highest standards of confidentiality and integrity.',
 			icon: 3
-		},
-		{
-			name: 'CORE VALUES',
-			description:
-				'Integrity, Customer Centricity, Excellence, Professionalism',
-			icon: 4
 		}
+		// {
+		// 	name: 'CORE VALUES',
+		// 	description:
+		// 		'Integrity, Customer Centricity, Excellence, Professionalism',
+		// 	icon: 4
+		// }
 	];
 	export let data;
 	export const blog = data.blogs.slice(0, 4).map((value: any) => {
@@ -109,37 +109,7 @@
 					</p>
 				</div>
 			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap w-fit mt-10">
-				<a
-					href="/contact"
-					class="py-3 px-10 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
-				>
-					<span>reach to us</span>
-					<span>
-						<svg
-							width="24"
-							height="25"
-							viewBox="0 0 24 25"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								opacity="0.4"
-								d="M19.75 12.2257L4.75 12.2257"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M13.7002 6.2013L19.7502 12.2253L13.7002 18.2503"
-								stroke="white"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</span>
-				</a>
+		
 				<a
 					href="/services"
 					class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
@@ -237,18 +207,7 @@
 				<ServicesCard isHome />
 			</div>
 		</div>
-		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
-			<div class="grid sm:grid-cols-2 items-center">
-				<div class="flex flex-col gap-2">
-					<div class="w-fit">
-						<Button>Specialized Packages</Button>
-					</div>
-				</div>
-			</div>
-			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
-				<ServicesCard isHome={true} baseNumber={8} endNumber={21} />
-			</div>
-		</div>
+
 		<div class="relative h-[250px] mt-10 flex items-center justify-center">
 			<div class="absolute top-0 w-full bg-[#083867] h-full z-10" />
 			<img
@@ -364,7 +323,7 @@
 					Want to Be Part of <br /> Our Team?
 				</p>
 				<a
-					href="/services"
+					href="/carrers"
 					class="py-3 px-6 w-fit flex items-center gap-6 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
 				>
 					<span>View more News</span>

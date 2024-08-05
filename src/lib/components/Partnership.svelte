@@ -1,13 +1,15 @@
 <script lang="ts">
 	import RRA from '$lib/images/RRA.png';
-	import CISI from '$lib/images/cisi.jpg';
-	import RSSB from '$lib/images/rssb.jpg';
-	import ICPAR from '$lib/images/icpar.jpg';
+	import UFP from '$lib/images/usaid.png';
+	import SWISS from '$lib/images/swiss_agency.png';
+	import ICPAR from '$lib/images/ICPAR-Logo.png';
 	import BNR from '$lib/images/bnr.png';
 	import ICPAK from '$lib/images/icpak.jpg';
 	import ACCA from '$lib/images/acca.jpg';
 	import Minecofin from '$lib/images/minecofin.png';
 	import RDB1 from '$lib/images/rdb.png';
+	import WBFP from '$lib/images/social-share.png'
+	import AFP from '$lib/images/images-removebg.png'
 
 	let whichOneIsActive;
 	let functionOpen = false;
@@ -17,84 +19,101 @@
 			id: 1,
 			image: RRA,
 			name: 'Rwanda Revenue Authority',
-			project: ['Tax Administration System'],
-			description: ['We are proud to have worked with the Rwanda Revenue Authority to develop a new tax administration system that is more efficient and user-friendly. Our team of experts worked closely with the RRA to design and implement a system that meets their needs and helps them better serve the people of Rwanda.'],
-		},
-		{
-			id: 2,
-			image: CISI,
-			name: 'Chartered Institute for Securities & Investment',
-			project: ['Training and Certification'],
-			description: ['We are proud to partner with the Chartered Institute for Securities & Investment to provide training and certification programs for finance professionals in Rwanda. Our courses are designed to help individuals develop the skills and knowledge they need to succeed in the financial services industry.'],
-		},
-		{
-			id: 3,
-			image: RSSB,
-			name: 'Rwanda Social Security Board',
-			project: ['Pension Management System'],
-			description: ['We are proud to have worked with the Rwanda Social Security Board to develop a new pension management system that is more efficient and user-friendly. Our team of experts worked closely with the RSSB to design and implement a system that meets their needs and helps them better serve the people of Rwanda.'],
-		},
-		{
-			id: 4,
-			image: ICPAR,
-			name: 'Institute of Certified Public Accountants of Rwanda',
-			project: ['Training and Certification'],
-			description: ['We are proud to partner with the Institute of Certified Public Accountants of Rwanda to provide training and certification programs for finance professionals in Rwanda. Our courses are designed to help individuals develop the skills and knowledge they need to succeed in the accounting industry.'],
+			project: ['RRA Senior Management Training on Human Capital Risk Management'],
+			description: [
+				'We are proud to have executed a high-level training with the Rwanda Revenue Authority (RRA) focused on Human Capital Risk Management, where over 50 senior management officials attended the five-day intensive training'
+			]
 		},
 		{
 			id: 5,
 			image: BNR,
 			name: 'Bank of Rwanda',
-			project: ['Financial Management System'],
-			description: ['We are proud to have worked with the Bank of Rwanda to develop a new financial management system that is more efficient and user-friendly. Our team of experts worked closely with the BNR to design and implement a system that meets their needs and helps them better serve the people of Rwanda.'],
+			project: ['Financial & Non financial due diligence of Non Umurenge SACCOs'],
+			description: [
+				'DNR PARTNERS CPA had the pleasure of conducting the financial and non-financial due diligence for the merger of five Non-Umurenge SACCOs operating in Rulindo District. This was part of a tender titled "Consultancy to Carry Out the Due Diligence and Asset Valuation for the Merger of Five (5) Non-Umurenge SACCOs in Rulindo District.',
+				'The due diligence included financial, IT, HR, legal, and operations due diligences.',
+				'The engagement involved key stakeholders such as the Central Bank of Rwanda (BNR), German Sparkassenstiftung Eastern Africa (DSIK) in Rwanda, Rulindo District, and the concerned SACCOs.'
+			]
 		},
 		{
-			id: 6,
-			image: ICPAK,
-			name: 'Institute of Certified Public Accountants of Kenya',
-			project: ['Training and Certification'],
-			description: ['We are proud to partner with the Institute of Certified Public Accountants of Kenya to provide training and certification programs for finance professionals in Kenya. Our courses are designed to help individuals develop the skills and knowledge they need to succeed in the accounting industry.'],
+			id: 4,
+			image: ICPAR,
+			name: 'Institute of Certified Public Accountants of Rwanda',
+			project: ['External audit services'],
+			description: [
+				'Since 2022, DNR has served as the external auditor for the Institute of Certified Public Accountants of Rwanda (ICPAR), the sole professional body regulating accountancy practice in Rwanda.'
+			]
 		},
 		{
 			id: 7,
 			image: ACCA,
 			name: 'Association of Chartered Certified Accountants',
-			project: ['Training and Certification'],
-			description: ['We are proud to partner with the Association of Chartered Certified Accountants to provide training and certification programs for finance professionals in Rwanda. Our courses are designed to help individuals develop the skills and knowledge they need to succeed in the accounting industry.'],
+			project: ['ACCA-Approved employer'],
+			description: [
+				'Following a thorough review of our application and  internal policies aimed at enhancing employee competence and career growth, DNR PARTNERS has been accredited as an ACCA-Approved Employer.'
+			]
 		},
 		{
-			id: 8,
-			image: Minecofin,
-			name: 'Ministry of Finance and Economic Planning',
-			project: ['Economic Development Strategy'],
-			description: ['We are proud to have worked with the Ministry of Finance and Economic Planning to develop a new economic development strategy that will help Rwanda achieve its development goals. Our team of experts worked closely with the Ministry to design and implement a strategy that will drive economic growth and create new opportunities for the people of Rwanda.'],
+			id: 11,
+			image: WBFP,
+			name: 'World bank financed projects',
+			project: ['External audit'],
+			description: [
+				'We appreciate the collaboration of the World Bank project management in Burundi for their timely responsiveness during the audit of the financial statements for the PRODECI TURIKUMWE Project for the year ended June 30, 2023'
+			]
 		},
 		{
-			id: 9,
-			image: RDB1,
-			name: 'Rwanda Development Board',
-			project: ['Investment Promotion'],
-			description: ['We are proud to have worked with the Rwanda Development Board to promote investment in Rwanda. Our team of experts worked closely with the RDB to attract new investors and create new opportunities for economic growth in Rwanda.'],
+			id: 12,
+			image: AFP,
+			name: 'AfDB financed projects',
+			project: ['External audit'],
+			description: [
+				'We appreciate the collaboration of the World Bank project management in Burundi for their timely responsiveness during the audit of the financial statements for the PARC-OBR and PARMOCAF Projects for the years 2022 and 2023'
+			]
 		},
+		{
+			id: 2,
+			image: UFP,
+			name: 'USAID financed projects',
+			project: ['External audit'],
+			description: [
+				'We are proud to have executed the audit of USAID funds for projects financed by USAID in Burundi, including Urisanze, GBV, RAFG, and RISE, under SWAA Burundi for two years 2022 and 2023.'
+			]
+		},
+		{
+			id: 3,
+			image: SWISS,
+			name: 'Swiss cooperation financed projects',
+			project: ['External audit'],
+			description: [
+				'DNR has been serving as the external auditor for Swiss Cooperation in Burundi since 2023. The audit was conducted in accordance with international standards on auditing and in compliance with PwC instructions.'
+			]
+		}
 	];
 	function handleOnClick(id: number) {
 		whichOneIsActive = id;
 	}
-
 </script>
 
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
 	<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Clientele</h2>
 	<p class="text-[#797C7F] font-light mt-2">
-		Our company, Your Gateway to Global Business Success, provides unparalleled expertise and innovative solutions tailored to your needs. We empower your vision and drive global success, helping you navigate international markets with confidence. With our support, you can unlock new opportunities and expand your reach.
+		Our company, Your Gateway to Global Business Success, provides unparalleled expertise and
+		innovative solutions tailored to your needs. We empower your vision and drive global success,
+		helping you navigate international markets with confidence. With our support, you can unlock new
+		opportunities and expand your reach.
 	</p>
 
-	<div class="grid sm:grid-cols-2 gap-x-6 mt-4 w-full cursor-pointer {functionOpen ? "h-auto" : "h-[250px]"} overflow-hidden">
+	<div
+		class="grid sm:grid-cols-2 gap-x-6 mt-4 w-full cursor-pointer {functionOpen
+			? 'h-auto'
+			: 'h-[280px]'} overflow-hidden"
+	>
 		{#each Partnes as item}
 			<button
 				class="flex flex-col transition-all duration-300 w-full"
 				on:click={() => {
-					if(whichOneIsActive === item.id){
+					if (whichOneIsActive === item.id) {
 						return handleOnClick(null);
 					}
 					handleOnClick(item.id);
@@ -144,35 +163,45 @@
 						</div>
 					</div>
 				</div>
-				<div class="px-8 my-2 items-start text-start overflow-hidden {whichOneIsActive !==
-					item.id
+				<div
+					class="px-8 my-2 items-start text-start overflow-hidden {whichOneIsActive !== item.id
 						? 'h-0'
-						: 'h-full'}">
+						: 'h-full'}"
+				>
 					{#each item.project as project, index}
-					<span class="text-[#083867] font-bold">{project}</span>	
-					<p
-						class="text-[#5E5D5D] items-start text-start text-[16px] font-light overflow-hidden transition-all duration-300 "
-					>
-						{item.description[index]}
-					</p>
+						<span class="text-[#083867] font-bold">{project}</span>
+						{#each item.description as itemone}
+							<p
+								class="text-[#5E5D5D] items-start text-start text-[16px] pb-4 font-light overflow-hidden transition-all duration-300"
+							>
+								{itemone}
+							</p>
+						{/each}
 					{/each}
 				</div>
 			</button>
 		{/each}
 	</div>
-	<button type="button"
-				on:click={() => functionOpen = !functionOpen}
-				class="flex -mt-4 mx-auto bg-white items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-4 w-4 {functionOpen ? "rotate-180" :"rotate-0"} transition-all duration-300 ">
-					<path fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd" />
-				</svg>
-				View {functionOpen ? "Less" : "More"}
+	<button
+		type="button"
+		on:click={() => (functionOpen = !functionOpen)}
+		class="flex -mt-4 mx-auto bg-white items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100"
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			class="mr-1 h-4 w-4 {functionOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-300"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+				clip-rule="evenodd"
+			/>
+		</svg>
+		View {functionOpen ? 'Less' : 'More'}
 	</button>
-
 </div>
-
 
 <!-- <div class=" gap-10 flex justify-between flex-wrap">
 	<a target="_blank" href="https://ecms.rra.gov.rw/home" class="flex justify-center items-center">

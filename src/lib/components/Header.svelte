@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import AllCountrySvg from './AllCountrySVG.svelte';
 	import CountryButton from './CountryButton.svelte';
+	import HeaderNavLink from './HeaderNavLink.svelte';
 	let y: number;
 	export let isColored = false;
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
@@ -32,12 +33,13 @@
 			href: `${basePath}/insights`
 		},
 		{
-			name: 'carrers',
+			name: 'careers',
 			href: `${basePath}/carrers`
 		}
 	];
 
-	$: isColored = $page.url.pathname.includes("insights") && $page.url.pathname.split("/").length > 2;
+	$: isColored =
+		$page.url.pathname.includes('insights') && $page.url.pathname.split('/').length > 2;
 </script>
 
 <div
@@ -73,20 +75,20 @@
 									<a href={item.href} class="capitalize">{item.name}</a>
 									<span class="mt-1 group-hover:rotate-180 transition-all duration-300">
 										<svg
-										width="12"
-										height="6"
-										viewBox="0 0 14 8"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
-											stroke={isColored ? 'black' : y > 50 ? 'black' : 'white'}
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
+											width="12"
+											height="6"
+											viewBox="0 0 14 8"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M12.8333 1.08334L6.99999 6.91668L1.16666 1.08334"
+												stroke={isColored ? 'black' : y > 50 ? 'black' : 'white'}
+												stroke-width="1.5"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											/>
+										</svg>
 									</span>
 								</div>
 								<div
@@ -96,30 +98,9 @@
 										class="w-screen max-w-[800px] flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5"
 									>
 										<h1 class="text-black px-4 pt-4 text-lg font-semibold">Our Services</h1>
-										<div class="px-4 grid sm:grid-cols-2  py-4">
+										<div class="px-4 grid sm:grid-cols-2 py-4">
 											{#each DATA as item}
-													<a
-													    href="{basePath}/services/{item.icon}"
-														class="group relative flex gap-x-6 items-start rounded-lg p-4 hover:bg-gray-50 cursor-pointer"
-													>
-														<div
-															class="mt-1 flex h-8 w-8 flex-none relative items-center justify-center overflow-hidden rounded-lg bg-gray-50 group-hover:bg-white"
-														>
-															<img
-																src={item.images[0]}
-																alt="1"
-																class="object-cover w-full h-full"
-															/>
-														</div>
-														<div class="flex flex-col">
-															<span
-																class="font-semibold text-gray-900 truncate"
-															>
-																{item.title}
-															</span>
-															<div class="text-gray-500 text-sm line-clamp-1">{item.description}</div>
-														</div>
-													</a>
+												<HeaderNavLink subTitles={item.subTitles} basePath={basePath} icon={item.icon} title={item.title} images={item.images[0]} description={item.description} />
 											{/each}
 										</div>
 									</div>
@@ -406,46 +387,46 @@
 											>
 										</span>
 									{/if}
-									{#if $page.url.pathname.split('/')[1] === 'rw' }
-									<span>
-										<svg
-											width="24"
-											height="24"
-											viewBox="0 0 30 30"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<g clip-path="url(#clip0_189_548)">
-												<path
-													d="M0 15C0 17.5986 0.661113 20.0428 1.82385 22.1739L15 23.4783L28.1762 22.1739C29.3389 20.0428 30 17.5986 30 15L15 13.6956L0 15Z"
-													fill="#FFDA44"
-												/>
-												<path
-													d="M28.1762 7.82607C25.6321 3.16342 20.6856 0 15 0C9.31436 0 4.36793 3.16342 1.82385 7.82607C0.661113 9.95719 0 12.4014 0 15H30C30 12.4014 29.3389 9.95719 28.1762 7.82607Z"
-													fill="#338AF3"
-												/>
-												<path
-													d="M15 30C20.6857 30 25.6321 26.8366 28.1762 22.1739H1.82385C4.36793 26.8366 9.31436 30 15 30Z"
-													fill="#496E2D"
-												/>
-												<path
-													d="M16.9565 8.77857L18.7885 9.64031L17.813 11.4145L19.8023 11.034L20.0543 13.0435L21.4398 11.5655L22.8255 13.0435L23.0775 11.034L25.0667 11.4144L24.0913 9.64025L25.9231 8.77857L24.0912 7.91695L25.0667 6.14273L23.0775 6.52324L22.8254 4.51376L21.4398 5.99173L20.0543 4.51376L19.8023 6.52324L17.8129 6.14273L18.7885 7.91701L16.9565 8.77857Z"
-													fill="#FFDA44"
-												/>
-											</g>
-											<defs>
-												<clipPath id="clip0_189_548">
-													<rect width="30" height="30" fill="white" />
-												</clipPath>
-											</defs>
-										</svg>
-									</span>
+									{#if $page.url.pathname.split('/')[1] === 'rw'}
+										<span>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 30 30"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<g clip-path="url(#clip0_189_548)">
+													<path
+														d="M0 15C0 17.5986 0.661113 20.0428 1.82385 22.1739L15 23.4783L28.1762 22.1739C29.3389 20.0428 30 17.5986 30 15L15 13.6956L0 15Z"
+														fill="#FFDA44"
+													/>
+													<path
+														d="M28.1762 7.82607C25.6321 3.16342 20.6856 0 15 0C9.31436 0 4.36793 3.16342 1.82385 7.82607C0.661113 9.95719 0 12.4014 0 15H30C30 12.4014 29.3389 9.95719 28.1762 7.82607Z"
+														fill="#338AF3"
+													/>
+													<path
+														d="M15 30C20.6857 30 25.6321 26.8366 28.1762 22.1739H1.82385C4.36793 26.8366 9.31436 30 15 30Z"
+														fill="#496E2D"
+													/>
+													<path
+														d="M16.9565 8.77857L18.7885 9.64031L17.813 11.4145L19.8023 11.034L20.0543 13.0435L21.4398 11.5655L22.8255 13.0435L23.0775 11.034L25.0667 11.4144L24.0913 9.64025L25.9231 8.77857L24.0912 7.91695L25.0667 6.14273L23.0775 6.52324L22.8254 4.51376L21.4398 5.99173L20.0543 4.51376L19.8023 6.52324L17.8129 6.14273L18.7885 7.91701L16.9565 8.77857Z"
+														fill="#FFDA44"
+													/>
+												</g>
+												<defs>
+													<clipPath id="clip0_189_548">
+														<rect width="30" height="30" fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+										</span>
 									{/if}
 									{#if !country.includes($page.url.pathname.split('/')[1])}
 										<AllCountrySvg />
 									{/if}
 								</div>
-								<span class="uppercase">Global Network</span>
+								<span class="capitalize">Global Network</span>
 								<svg
 									width="14"
 									height="8"

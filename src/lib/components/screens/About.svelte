@@ -9,7 +9,7 @@
 	import { browser } from '$app/environment';
 	import CONTENT from '../../../data/images.json'
 	import BG_IMAGE from '$lib/images/bg.1.jpeg'
-	import BG_IMAGE_1 from '$lib/images/1.1.111.png'
+	import BG_IMAGE_1 from '$lib/images/11.png'
 	import { page } from '$app/stores';
 	import ModelPersonDetail from '../ModelPersonDetail.svelte';
 	import ModalTwo from '../ModalTwo.svelte';
@@ -45,6 +45,8 @@
 	let modelDataone:any;
 	let modelDataTwo: any;
 	let vidioLink = '';
+
+	console.log(typeJob,"----...k,,,")
 
 
 
@@ -99,8 +101,8 @@
 		   <p class="mb-10 capitalize text-xl sm:text-2xl md:text-5xl font-bold text-white md:leading-[48px]">
 			About Us
 		   </p>
-		   <p class="text-[24px] sm:text-[24px] font-medium mt-2">
-			   We provid all services to keep you informed about the latest trends in the industry.
+		   <p class="text-[24px] sm:text-[24px] font-medium mt-2 capitalize">
+			dnr partners international is a global network of independent professional accounting and business advisers with over 20 years of experience.
 		   </p>
 	   </div>
    </div>
@@ -119,12 +121,7 @@
 						name="We are a global chartered professional accountants and business advisors headquartered in England"
 					/>
 					<p class="text-[#4C4A4A] font-light">
-						It has a sharp expertise from long term experiences in various business industries. The
-						firm is in charge of coordinating the international activities of the DNR PARTNERS
-						network Firms but does not provide, supervise or manage professional services to
-						clients. which is a world-wide network of independent professional accounting firms and
-						business advisers, each of which is a separate and independent legal entity. DNR
-						PARTNERS has offices in England, Rwanda, Burundi, Kenya, Zambia and South Africa.
+						DNR PARTNERS INTERNATIONAL is a leading global network of accounting and business advisors with a 20-year legacy of excellence. Headquartered in the UK, we have a strong African presence, delivering tailored solutions to businesses navigating complex markets. Our Tier 1 accreditation from the Central Bank of Rwanda underscores our commitment to local standards and our capacity to provide world-class financial advisory services.
 					</p>
 				</div>
 			</div>
@@ -135,7 +132,7 @@
 				<div class="w-fit">
 					<Button>services</Button>
 				</div>
-				<Title name="Meet The Team" />
+				<Title name="Meet Our Team" />
 			</div>
 			<div class="flex items-center flex-wrap sm:w-auto w-full mt-4">
 				{#each typeJobs as item}
@@ -182,7 +179,22 @@
 							<img src={item.mainImage} alt="" class="w-full h-[300px] object-cover rounded-2xl" />
 						</div>
 						<span class="font-light mt-2 capitalize">{item.name}</span>
-						<span class="font-light text-[#6C6C6C] capitalize">{item.subtitle}</span>
+						<div class="flex items-center justify-between gap-3">
+							<span class="font-light text-[#6C6C6C] capitalize truncate">{item.subtitle}</span>
+							<div class="flex gap-2 items-center">
+								<a target="_blank" href={item?.linkedin}>
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+								</a>
+								<button 
+								on:click={() => {
+									showModaltwo = true;
+									modelDataTwo = item;
+								}}
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C6C6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+								</button>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>

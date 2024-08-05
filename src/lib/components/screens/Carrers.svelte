@@ -4,6 +4,7 @@
 	import Conctact from '$lib/components/Conctact.svelte';
 	import BG_IMAGE from '$lib/images/bg-2.jpeg'
 	import empty from '$lib/images/empty.png';
+	import CountryButtonSelect from '../CountryButtonSelect.svelte';
 	import Modal from '../Modal.svelte';
 	import Dropzone from 'svelte-file-dropzone';
 
@@ -243,16 +244,16 @@
 			Carrers
 		   </p>
 		   <h2 class=" font-semibold text-white/90 capitalize text-sm sm:mt-3">
-			Your Expectation,Our Value Proposition
+			Would you like to build a rewarding career with DNR Partners International?
 		</h2>
 		   <p class="text-[24px] text-white/90 sm:text-[20px] font-medium mt-2">
-			We are always looking for talented professionals to join our growing team. Visit our Careers page to see current openings and learn more about working at DNR Partners.
+			Join our team of experts and contribute to the success of our clients while advancing your professional journey
 		   </p>
 	   </div>
    </div>
 </div>
-<div class="flex flex-col gap-6 sm:gap-4 mt-20">
-	<div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col items-center w-full">
+<div class="flex flex-col gap-6 sm:gap-4">
+	<!-- <div class="max-w-7xl mx-auto md:px-8 px-4 flex flex-col items-center w-full">
 		<div class="grid sm:grid-cols-2 gap-4 w-full cursor-pointer">
 			{#each Propositions as item}
 				<button
@@ -860,7 +861,7 @@
 				</button>
 			{/each}
 		</div>
-	</div>
+	</div> -->
 	<div class="bg-[#F0F8FF] py-10">
 		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
 			<div class="flex items-start gap-10 md:flex-nowrap flex-wrap">
@@ -902,13 +903,16 @@
 								/>
 							</svg>
 						</div>
-						<div class="w-full">
+						<div class="w-full flex items-center gap-2">
 							<input
 								type="text"
 								on:input={(event) => searchRole(event.target.value)}
 								class="text-[#A2A2A2] placeholder:capitalize font-light w-full outline-none"
 								placeholder="search openings"
 							/>
+							<div class="flex items-end justify-end gap-2">
+								<CountryButtonSelect />
+							</div>
 						</div>
 					</div>
 					<div class="grid md:grid-cols-2 gap-x-8 gap-y-6">

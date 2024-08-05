@@ -181,79 +181,31 @@
 							{item}
 						</p>
 					{/each}
-				</div>
-			</div>
-		</div>
-
-		{#if data.service?.functionalServices || data.service?.keyComponents}	
-		<div class="flex flex-col gap-2 items-start justify-start w-full mt-10">
-			<h2 class="text-[#083867] font-semibold text-2xl mb-3">{ data.service?.functionalServices ? "Functional Services" : data.service?.keyComponentsName ||  "Key Components"}</h2>
-			<div class="-m-1.5 overflow-auto w-full {functionOpen ? "h-auto" : "h-[200px]"}">
-				<div class="p-1.5 min-w-full inline-block align-middle w-full">
-				  <div class="overflow-hidden w-full">
-					<div class="table border-collapse table-auto w-full divide-y divide-gray-200">
-					  <div class="table-header-group">
-						<div class="table-row">
-						  <div class="table-cell px-6 py-3 text-start text-base font-medium text-gray-500 uppercase">Service</div>
-						  <div class="table-cell px-6 py-3 text-start text-base font-medium text-gray-500 uppercase">Description of Service</div>
-						</div>
-					  </div>
-					  <div class="table-row-group divide-y divide-gray-200 bg-white">
-						{#each (data.service?.functionalServices || data.service?.keyComponents) as item }		
-						<div class="table-row">
-						  <div class="table-cell px-6 py-4 whitespace-nowrap text-base font-medium text-gray-800">
-							{item.service}
-						  </div>
-						  <div class="table-cell px-6 py-4 text-base text-gray-800">
-							{item.description}
-						  </div>
-						</div>
+					{#if data.service?.subTitles }
+					<div class="w-full flex items-center flex-wrap gap-x-6 gap-y-3">
+						{#each data.service?.subTitles as subTitles }
+						   <div class="flex items-center gap-2">
+								<span class="w-2 h-2 bg-slate-200 rounded-full" />
+								<p>{subTitles}</p>
+						   </div>
 						{/each}
-				
-					  </div>
 					</div>
-				  </div>
+					{/if}
+					{#if data.service?.nb}		
+					<h3 class="text-xl text-black font-semibold underline leading-none">NB:</h3>
+					<div class="w-full flex items-start flex-col text-start ite flex-wrap gap-x-6 gap-y-3">
+						{#each data.service?.nb as item }
+						   <div class="flex items-center gap-2">
+								<span class="w-2 h-2 bg-slate-200 rounded-full" />
+								<p class="text-sm">{item}</p>
+						   </div>
+						{/each}
+					</div>
+					{/if}
+			
 				</div>
-			</div>
-			<div class="flex items-center flex-col w-full justify-center -mt-10">
-				<div class="w-full text-center items-center h-[40px] bg-gradient-to-t {functionOpen ? "" : "from-slate-50/90"} flex justify-center">
-				</div>
-				<button type="button"
-				on:click={() => functionOpen = !functionOpen}
-				class="flex -mt-4 bg-white items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-4 w-4 {functionOpen ? "rotate-180" :"rotate-0"} transition-all duration-300 ">
-					<path fill-rule="evenodd"
-						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-						clip-rule="evenodd" />
-				</svg>
-				View {functionOpen ? "Less" : "More"}
-			</button>
 			</div>
 		</div>
-		{/if}
+	
 	</div>
-	<div class="bg-[#F0F8FF] pt-6 pb-10">
-		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
-			<div class="grid sm:grid-cols-2 items-center">
-				<div class="flex flex-col gap-2">
-					<div class="w-fit">
-						<Button>More Services</Button>
-					</div>
-					<div class="sm:w-[60%]">
-						<Title isSmall name="Explore more services that suit you." />
-					</div>
-				</div>
-				<p class="text-[#636363] text-[16px] font-light">
-					We offer services such as audit and assurance, Tax advisory, Accounting, Corporate finance
-					advisory and Management consultancy. Our clients are from various industries like NGOs,
-					Trading, Manufacturing, Universities, Coffee & Tea export, Capital market, etc.
-				</p>
-			</div>
-			<div class="grid grid-cols-4 mt-8 gap-4 items-center w-full">
-				<ServicesCard isHome expctedId={data.service.icon} baseNumber={17} endNumber={21} />
-			</div>
-		</div>
-	</div>
-
-	<Conctact />
 </section>

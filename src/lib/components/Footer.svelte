@@ -98,7 +98,7 @@
 					<img src={logo} width={133} height={62} alt="logo" />
 				</div>
 				<p class="text-white font-light">
-					DNR Partners International is a global network of chartered professional accountants and business advisors headquartered in England. We operate in Rwanda, Burundi, Kenya, England, Zambia, Zimbabwe, and South Africa. Our firm provides services in audit and assurance, outsourced accounting, tax and business advisory, corporate training, risk, and legal compliance.
+					DNR Partners International is a global network of chartered professional accountants and business advisors, headquartered in England. With a strong presence across several African and European countries, we deliver comprehensive services in audit, assurance, accounting, tax, advisory, training, risk management, and legal compliance.
 				</p>
 				<div class="flex items-center gap-8">
 					<a href="https://twitter.com/ngilidius">
@@ -239,20 +239,12 @@
 					</div>
 				</div>
 				<div class="flex flex-col gap-6">
-					<p class="font-medium capitalize">Key Clients</p>
+					<p class="font-medium capitalize">Our sub chapters</p>
 					<div class="flex flex-col gap-2 font-light">
-						{#each ["World Bank Projects AFDB Projects USAID Projects",
-						"SIDA",
-						"Save the Children",
-						"Swiss Corporation",
-						"Banks and other Financial Institutions Agriculture Sector Projects",
-						"ICT Companies Projects",
-						"Faith based Organizations",
-						"Energy Sector Projects"] as item}
-							<p class="text-base flex flex-col gap-2 capitalize">{item}</p>
+						{#each ["About Us","The Team","Key Clients","Our World"] as item}
+							<a href={"#"} class="text-base flex flex-col gap-2 capitalize">{item}</a>
 						{/each}
-					
-					</div>
+					</div>	
 				</div>
 			</div>
 		</div>

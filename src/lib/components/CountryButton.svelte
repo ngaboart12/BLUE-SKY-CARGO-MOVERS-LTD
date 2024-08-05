@@ -2,7 +2,6 @@
 	import AllCountrySvg from './AllCountrySVG.svelte';
     export let onHome = false;
 	export let gap = false;
-	console.log(gap,"gapgapgap-")
 </script>
 {#if !onHome}    
 <a

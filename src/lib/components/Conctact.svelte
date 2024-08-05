@@ -13,31 +13,52 @@
 	const country = [
 		{
 			country: 'en',
-			email: 'england@dnrpartners.com'
+			email: 'england@dnrpartners.com',
+			email2:"info@dnrpartners.com",
+			tel: "+44 7588 197733",
+			location: "Gloucester Street, London WC1N 3AX, England",
+			website:"http://www.dnrpartners.com",
 		},
 		{
 			country: 'rw',
-			email: 'rwanda@dnrpartners.com'
+			email: 'rwanda@dnrpartners.com',
+			email2:"info@dnrpartners.com",
+			tel: "+250 (0) 788 386 134",
+			location: "KG 647 St, Kigali P.O. Box 5247 Kigali, Rwanda",
+			website:"http://www.dnrpartners.com",
 		},
 		{
 			country: 'bi',
-			email: 'burundi@dnrpartners.com'
+			email: 'burundi@dnrpartners.com',
+			email2:"info@dnrpartners.com",
+			tel: "+250 (0) 788 386 134",
+			location: "BJ 647 St, Bujumbura P.O. Box 5247 Bujumbura, Burundi",
+			website:"http://www.dnrpartners.com",
 		},
 		{
 			country: 'za',
-			email: 'zambia@dnrpartners.com'
+			email: 'zambia@dnrpartners.com',
+			email2:"info@dnrpartners.com",
+			tel: "+260 788 386 134",
+			location: "BJ 647 St, Bujumbura P.O. Box 5247 Bujumbura, Burundi",
+			website:"http://www.dnrpartners.com",
 		},
 		{
 			country: 'ke',
+			email2:"info@dnrpartners.com",
 			email: 'kenya@dnrpartners.com'
 		},
 		{
 			country: 'sa',
-			email: 'southafrica@dnrpartners.com'
+			email: 'asouth@dnrpartners.com',
+			email2:"info@dnrpartners.com",
+			location: "26 Oxford Road, New CBD, Durban, Kwa-Zulu Natal, 4001, South Africa",
+			tel:"+27 73 718 1692"
 		},
 		{
 			country: 'ug',
-			email: 'uganda@dnrpartners.com'
+			email: 'uganda@dnrpartners.com',
+			email2:"info@dnrpartners.com",
 		}
 	];
 
@@ -69,23 +90,21 @@
 	}
 
 	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
+	$: tel = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.tel || "+250 (0) 788 386 134";
+	$: email2 =	country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email2 || "info@dnrpartners.com";
 </script>
 
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
 	<div class="grid sm:grid-cols-2 gap-10 items-center">
 		<div class="flex flex-col gap-4">
-			<div class="w-fit">
-				<Button>Contact Us</Button>
-			</div>
 			<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#083867]">
-				Contact Us <br /> for Expert Legal Guidance
+				Contact Us
 			</h2>
 			<p class="text-[#797C7F] font-light">
-				Provide professional advice and guidance on legal matters, helping clients understand their
-				rights, obligations, and potential courses.
+				We provide strategic business advice to navigate complex challenges, ensuring clients make informed decisions and achieve their goals.
 			</p>
 
-			<div class="grid sm:grid-cols-2 gap-4">
+			<div class="grid sm:grid-cols-2 items-center gap-4">
 				<a href="tel:+250788386134" class="flex items-center gap-2">
 					<div>
 						<svg
@@ -106,7 +125,7 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<span class="font-light text-sm text-[#606060]">Gives us a Call</span>
-						<span class="font-m">+250 788 386 136 / +250 788 386 134</span>
+						<span class="font-m">{tel}</span>
 					</div>
 				</a>
 				<a href="mailto:info@rw.dnrpartners.com" class="flex items-center gap-2 mt-4">
@@ -155,9 +174,14 @@
 					</div>
 					<div class="flex flex-col gap-0.5">
 						<span class="font-light text-sm text-[#606060]">Email Us</span>
-						<span class="font-m">
-							{email}
-						</span>
+						<div class="flex gap-1 flex-col">
+							<span class="font-medium leading-none">
+								{email}
+							</span>
+							<span class="font-light text-sm leading-none">
+								{email2}
+							</span>
+						</div>
 					</div>
 				</a>
 			</div>
