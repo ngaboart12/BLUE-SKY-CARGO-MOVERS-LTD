@@ -1,8 +1,10 @@
 <script>
-	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
+	import { Popover, PopoverButton, PopoverPanel, } from '@rgossiaux/svelte-headlessui';
 	import AllCountrySvg from './AllCountrySVG.svelte';
 	export let gap = false;
+	export let handleFilterChange = (va) => {};
 	let selectedCountry = '';
+	$: handleFilterChange(selectedCountry === "" ?  "all" : selectedCountry);
 </script>
 
 <div class="relative min-w-[300px] flex items-end justify-end">
@@ -359,14 +361,14 @@
 			<div
 				class=" grid sm:grid-cols-3 gap-2 bg-white px-4 py-4 shadow rounded-2xl w-[650px] text-black"
 			>
-			<button
+			<PopoverButton
 			on:click={() => selectedCountry = ''}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
 			<AllCountrySvg />
 			<span class="font-medium capitalize">Global Network</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 			on:click={() => selectedCountry = 'rw'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 			>
@@ -398,8 +400,8 @@
 				</svg>
 			</span>
 			<span class="font-medium capitalize">rwanda</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 			on:click={() => selectedCountry = 'bi'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
@@ -451,9 +453,9 @@
 				</svg>
 			</span>
 			<span class="font-medium capitalize">burundi</span>
-		</button>
+		</PopoverButton>
 		
-		<button
+		<PopoverButton
 			on:click={() => selectedCountry = 'en'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
@@ -525,8 +527,8 @@
 				</svg>
 			</span>
 			<span class="font-medium capitalize">England</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 		   on:click={() => selectedCountry = 'za'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
@@ -559,8 +561,8 @@
 				</svg>
 			</span>
 			<span class="font-medium capitalize">zambia</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 			on:click={() => selectedCountry = 'sa'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
@@ -600,8 +602,8 @@
 				>
 			</span>
 			<span class="font-medium capitalize">South Africa</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 			on:click={() => selectedCountry = 'ke'}
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 		>
@@ -657,8 +659,8 @@
 				</svg>
 			</span>
 			<span class="font-medium capitalize">Kenya</span>
-		</button>
-		<button
+		</PopoverButton>
+		<PopoverButton
 			class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
 			on:click={() => selectedCountry = 'ug'}
 		>
@@ -670,7 +672,7 @@
 				/>
 			</span>
 			<span class="font-medium capitalize"> Uganda </span>
-		</button>
+		</PopoverButton>
 			</div>
 		</PopoverPanel>
 	</Popover>
