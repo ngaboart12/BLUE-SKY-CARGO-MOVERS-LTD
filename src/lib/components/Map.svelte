@@ -77,7 +77,7 @@
 						chart.appear(100, 100);
 
 						polygonSeries.events.on('datavalidated', function () {
-                            const defaultActiveCountries = ['RW', 'KE', 'BI', 'UG', 'ZM', 'ZA', 'GB'];
+                            const defaultActiveCountries = ['RW', 'KE', 'BI', 'UG', 'ZM', 'ZA', 'GB', 'TZ','CM'];
                             defaultActiveCountries.forEach((countryId) => {
                                 let countryDataItem = polygonSeries.getDataItemById(countryId);
                                 if(countryDataItem){

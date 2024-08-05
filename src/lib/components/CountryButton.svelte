@@ -317,3 +317,35 @@
 	</span>
 	<span class="font-medium capitalize"> Uganda </span>
 </a>
+
+<a
+	href="/tz"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+>
+	<span class="w-8 h-8 rounded-full overflow-hidden">
+		<img
+			class="w-full h-full object-cover"
+			src="https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg"
+			alt="Tanzania"
+		/>
+	</span>
+	<span class="font-medium capitalize">
+		Tanzania
+	</span>
+</a>
+
+<a
+	href="/ca"
+	class="py-3 px-6 w-full {gap === true && "relative left-2 right-2"} bg-[#FAFAFA] rounded-xl capitalize font-light flex items-center gap-2 hover:border hover:border-black duration-200 transition-all border border-transparent"
+>
+	<span class="w-8 h-8 rounded-full overflow-hidden">
+		<img
+			class="w-full h-full object-cover"
+			src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg"
+			alt="Cameroon"
+		/>
+	</span>
+	<span class="font-medium capitalize">
+		Cameroon
+	</span>
+</a>

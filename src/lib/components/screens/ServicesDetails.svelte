@@ -185,8 +185,8 @@
 					<div class="w-full flex items-center flex-wrap gap-x-6 gap-y-3">
 						{#each data.service?.subTitles as subTitles }
 						   <div class="flex items-center gap-2">
-								<span class="w-2 h-2 bg-slate-200 rounded-full" />
-								<p>{subTitles}</p>
+								<span class="w-3 h-3 bg-slate-300 rounded-full" />
+								<p class="text-[17px]">{subTitles}</p>
 						   </div>
 						{/each}
 					</div>
@@ -196,7 +196,7 @@
 					<div class="w-full flex items-start flex-col text-start ite flex-wrap gap-x-6 gap-y-3">
 						{#each data.service?.nb as item }
 						   <div class="flex items-center gap-2">
-								<span class="w-2 h-2 bg-slate-200 rounded-full" />
+								<span class="w-3 h-3 bg-slate-300 rounded-full" />
 								<p class="text-sm">{item}</p>
 						   </div>
 						{/each}

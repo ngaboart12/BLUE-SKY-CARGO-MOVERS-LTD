@@ -10,7 +10,7 @@
 	import HeaderNavLink from './HeaderNavLink.svelte';
 	let y: number;
 	export let isColored = false;
-	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];
+	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa', 'ug', 'ca', 'tz'];
 
 	$: basePath = country.includes($page.url.pathname.split('/')[1])
 		? `/${$page.url.pathname.split('/')[1]}`

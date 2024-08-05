@@ -10,14 +10,10 @@
 	import Card from '$lib/components/Card.svelte';
 	import Conctact from '$lib/components/Conctact.svelte';
 	import ServicesCard from '$lib/components/ServicesCard.svelte';
-	import showdown from 'showdown';
 	import Partnership from '$lib/components/Partnership.svelte';
 	import { page } from '$app/stores';
 	import CONTENT from '../../../data/countryText.json'
 	import CONTENT_IMG from "../../../data/images.json"
-	import Testimonials from '../Testimonials.svelte';
-	import FQs from '../FQs.svelte';
-	import Event from '../Event.svelte';
 	import Carousel from '../Carousel.svelte';
 	import Map from '../Map.svelte';
 	import CountryButton from '../CountryButton.svelte';
@@ -40,12 +36,6 @@
 				'Providing proactive, effective, and reliable professional consulting services while upholding the highest standards of confidentiality and integrity.',
 			icon: 3
 		}
-		// {
-		// 	name: 'CORE VALUES',
-		// 	description:
-		// 		'Integrity, Customer Centricity, Excellence, Professionalism',
-		// 	icon: 4
-		// }
 	];
 	export let data;
 	export const blog = data.blogs.slice(0, 4).map((value: any) => {
@@ -109,7 +99,6 @@
 					</p>
 				</div>
 			<div class="flex items-center md:gap-4 gap-2 md:flex-nowrap flex-wrap w-fit mt-10">
-		
 				<a
 					href="/services"
 					class="py-3 px-10 w-fit flex items-center gap-2 bg-transparent border-[white] border rounded-xl text-[white] capitalize font-light col-span-2 mt-2"
@@ -349,10 +338,6 @@
 		</div>
 	</div>
 	<Partnership />
-
-	<!-- <FQs /> -->
-	<!-- <Testimonials /> -->
-	<!-- <Event /> -->
 	<div class="w-full text-start mt-10 flex flex-col gap-8 max-w-7xl mx-auto">
 		<div class="sm:grid-cols-2 grid items-center gap-10">
 			<div class="flex flex-col gap-2,5">
