@@ -35,6 +35,12 @@
 			description:
 				'Providing proactive, effective, and reliable professional consulting services while upholding the highest standards of confidentiality and integrity.',
 			icon: 3
+		},
+		{
+			name: 'OUR CORE VALUES',
+			description:
+				'Integrity, Professionalism, Excellence ,Customer centricity, Serving',
+			icon: 4
 		}
 	];
 	export let data;

@@ -97,8 +97,8 @@
 		   <p class="mb-10 capitalize text-xl sm:text-2xl md:text-5xl font-bold text-white md:leading-[48px]">
 			About Us
 		   </p>
-		   <p class="text-[24px] sm:text-[24px] font-medium mt-2 capitalize">
-			dnr partners international is a global network of independent professional accounting and business advisers with over 20 years of experience.
+		   <p class="text-[24px] sm:text-[24px] font-medium mt-2">
+			DNR partners international is a global network of independent professional accounting and business advisers with over 20 years of experience.
 		   </p>
 	   </div>
    </div>

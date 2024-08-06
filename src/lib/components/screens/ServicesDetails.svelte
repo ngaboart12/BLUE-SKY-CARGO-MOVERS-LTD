@@ -191,19 +191,7 @@
 						{/each}
 					</div>
 					{/if}
-					{#if data.service?.nb}		
-					<h3 class="text-xl text-black font-semibold underline leading-none">NB:</h3>
-					<div class="w-full flex items-start flex-col text-start ite flex-wrap gap-x-6 gap-y-3">
-						{#each data.service?.nb as item }
-						   <div class="flex items-center gap-2">
-								<span class="w-3 h-3 bg-slate-300 rounded-full" />
-								<p class="text-sm">{item}</p>
-						   </div>
-						{/each}
-					</div>
-					{/if}
-			
-				</div>
+			</div>
 			</div>
 		</div>
 	

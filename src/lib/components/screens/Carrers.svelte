@@ -84,11 +84,6 @@
 	export let data;
 	let isLoading = false;
 
-	let files = {
-		accepted: [],
-		rejected: []
-	};
-
 	function handleFilesSelect(e) {
 		const { acceptedFiles, fileRejections } = e.detail;
 		files.accepted = [...files.accepted, ...acceptedFiles];
@@ -178,6 +173,10 @@
 			isLoading = false;
 		}
 	}
+	let files = {
+		accepted: [],
+		rejected: []
+	};
 	let nameValue;
 	let emailValue;
 	let phoneValue;
@@ -270,15 +269,6 @@
 				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
 					<input
 						type="text"
-						bind:value={nameValue}
-						required
-						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-						placeholder="enter your title"
-					/>
-				</div>
-				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
-					<input
-						type="text"
 						required
 						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
 						placeholder="enter your name"
@@ -321,6 +311,36 @@
 					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
 					placeholder="enter your website"
 					/>
+				</div>
+				<div class="col-span-2">
+					{#if files.accepted.length === 0}
+					<Dropzone containerClasses="!bg-transparent !border-none" on:drop={handleFilesSelect}>
+						<p>Drag or drop your CV file here</p>
+					</Dropzone>
+				{:else}
+					<div class="py-8 w-full">
+						<div class="flex items-center gap-1 w-fit mx-auto">
+							<div>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="feather feather-file"
+									><path
+										d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+									/><polyline points="13 2 13 9 20 9" /></svg
+								>
+							</div>
+							<p>{files.accepted[0].name}</p>
+						</div>
+					</div>
+				{/if}
 				</div>
 				<div class="col-span-2">
 					<div class="flex flex-col gap-2">
@@ -565,149 +585,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="grid grid-cols-2 gap-20 max-w-6xl my-10 mx-auto w-full">
-		<form class="flex flex-col gap-2 w-full">
-			<h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[#083867] capitalize">
-				Become a DNR Representative
-			</h2>
-			<div class="flex flex-col sm:grid sm:grid-cols-2 gap-5 h-fit font-light mt-3">
-				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
-					<input
-						type="text"
-						bind:value={nameValue}
-						required
-						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-						placeholder="enter your title"
-					/>
-				</div>
-				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
-					<input
-						type="text"
-						required
-						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-						placeholder="enter your name"
-					/>
-				</div>
-				<div class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full">
-					<select class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full">
-						{#each ["Rwanda", "burundi", "England","zambia","South Africa","Kenya","Uganda"] as item}
-							<option value={item}>{item}</option>
-						{/each}
-					</select>
-				</div>
-				<div
-					class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
-				>
-					<input
-						type="email"
-						required
-						bind:value={emailValue}
-						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-						placeholder="enter your profession"
-					/>
-				</div>
-				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
-					<input
-						type="text"
-						required
-						bind:value={phoneValue}
-						class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-						placeholder="enter your Company"
-					/>
-				</div>
-				<div
-					class="rounded-lg col-span-2 bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
-					data-svelte-h="svelte-1y98z1w"
-				>
-					<input
-					type="text"
-					required
-					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
-					placeholder="enter your website"
-					/>
-				</div>
-				<div class="col-span-2">
-					<div class="flex flex-col gap-2">
-						<button
-							disabled={isLoading}
-							on:click={(event) => {
-								event.preventDefault();
-								submitForm();
-							}}
-							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
-						>
-							<span>Send Message</span>
-							<span>
-								{#if isLoading}
-									<div class="animate-spin">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="feather feather-loader"
-											><line x1="12" y1="2" x2="12" y2="6" /><line
-												x1="12"
-												y1="18"
-												x2="12"
-												y2="22"
-											/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76" /><line
-												x1="16.24"
-												y1="16.24"
-												x2="19.07"
-												y2="19.07"
-											/><line x1="2" y1="12" x2="6" y2="12" /><line
-												x1="18"
-												y1="12"
-												x2="22"
-												y2="12"
-											/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24" /><line
-												x1="16.24"
-												y1="7.76"
-												x2="19.07"
-												y2="4.93"
-											/></svg
-										>
-									</div>
-								{:else}
-									<svg
-										width="10"
-										height="16"
-										viewBox="0 0 10 16"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M1.5 1L8.5 8L1.5 15"
-											stroke="white"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								{/if}
-							</span>
-						</button>
-						{#if success}
-							<p class="text-green-600">Message sent successfully</p>
-						{/if}
-					</div>
-				</div>
-			</div>
-		</form>
-		<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
-			<img
-				src={"/new/11.jpg"}
-				alt={""}
-				class="w-full object-cover h-full"
-			/>
 		</div>
 	</div>
 	<Conctact />
@@ -970,8 +847,8 @@
 						</div>
 					{/if}
 					{#if files.accepted.length === 0}
-						<Dropzone containerClasses="!bg-transparent !border-none" on:drop={handleFilesSelect}>
-							<p>Drag or drop your CV file here</p>
+						<Dropzone containerClasses="!bg-[red] border" on:drop={handleFilesSelect}>
+							   <p>Drag or drop your CV file here</p>
 						</Dropzone>
 					{:else}
 						<div class="py-8 w-full">

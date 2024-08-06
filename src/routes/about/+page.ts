@@ -39,7 +39,7 @@ export async function load({}) {
 						membersTeam.organizationType._ref === organizationType._id
 				)
 				.sort((a: { name: string }, b: { name: string }) => {
-					if (a.name.toLowerCase().startsWith('d') && !b.name.toLowerCase().startsWith('d')) {
+					if (a.name.toLowerCase().startsWith('d') && !b.name.toLowerCase().startsWith('d') || a.name.toLowerCase().startsWith('m') && !b.name.toLowerCase().startsWith('m') || a.name.toLowerCase().startsWith('f') && !b.name.toLowerCase().startsWith('f')) {
 						return -1;
 					}
 					if (!a.name.toLowerCase().startsWith('d') && b.name.toLowerCase().startsWith('d')) {

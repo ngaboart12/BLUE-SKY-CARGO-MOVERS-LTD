@@ -23,7 +23,7 @@
 			country: 'rw',
 			email: 'rwanda@dnrpartners.com',
 			email2:"info@dnrpartners.com",
-			tel: "+250 (0) 788 386 134",
+			tel: "+250 788 386 134",
 			location: "KG 647 St, Kigali P.O. Box 5247 Kigali, Rwanda",
 			website:"http://www.dnrpartners.com",
 		},
@@ -31,7 +31,7 @@
 			country: 'bi',
 			email: 'burundi@dnrpartners.com',
 			email2:"info@dnrpartners.com",
-			tel: "+250 (0) 788 386 134",
+			tel: "+250 788 386 134",
 			location: "BJ 647 St, Bujumbura P.O. Box 5247 Bujumbura, Burundi",
 			website:"http://www.dnrpartners.com",
 		},
@@ -90,7 +90,7 @@
 	}
 
 	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
-	$: tel = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.tel || "+250 (0) 788 386 134";
+	$: tel = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.tel || "+250 788 386 134";
 	$: email2 =	country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email2 || "info@dnrpartners.com";
 </script>
 
