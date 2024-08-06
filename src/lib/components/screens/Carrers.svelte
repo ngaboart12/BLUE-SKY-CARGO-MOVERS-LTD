@@ -247,7 +247,7 @@
 			<p
 				class="mb-10 capitalize text-xl sm:text-2xl md:text-5xl font-bold text-white md:leading-[48px]"
 			>
-				Carrers
+				careers
 			</p>
 			<h2 class=" font-semibold text-white/90 capitalize text-sm sm:mt-3">
 				Would you like to build a rewarding career with DNR Partners International?
