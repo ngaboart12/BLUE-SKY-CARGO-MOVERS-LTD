@@ -16,9 +16,9 @@
 			"Due diligence (Financial,HR, Legal, IT and operations)"
 		],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
-			"title":"Manager, Audit & Assurance",
-			"name":"Felicien BAJENEZA CPA"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
+			"title":"Managing Partner",
+			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
 		},
 		"icon": 1
 	},
@@ -44,9 +44,9 @@
 		],
 		"images": ["/new/2.jpg", "/new/12.jpg"],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
-			"title":"Managing Partner",
-			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
+			"title":"Manager, Audit & Assurance",
+			"name":"Felicien BAJENEZA CPA"
 		},
 		"icon": 2
 	},
@@ -86,9 +86,9 @@
 			"Corporate Trainings"
 		],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/9d6b90113a5d54bc38f2dd7bdad7ce4b6bec2711-551x709.jpg",
-			"title":"Epaphrodite Ndahimana",
-			"name":"Audit Associate Manager"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/24fbad9159c0fe7898800237fc544c8d2dc3dbe9-304x345.png",
+			"title":"Senior Manager, Strategy & Business development ",
+			"name":"Mansul KAKIMBA"
 		},
 		"icon": 4
 	}

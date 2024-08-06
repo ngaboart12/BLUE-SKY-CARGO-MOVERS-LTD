@@ -262,7 +262,7 @@
 <div class="flex flex-col gap-6 sm:gap-4">
 	<div class="grid grid-cols-2 gap-20 max-w-6xl my-10 mx-auto w-full">
 		<form class="flex flex-col gap-2 w-full">
-			<h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[#083867] capitalize">
+			<h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[#083867]">
 				Become a DNR Representative
 			</h2>
 			<div class="flex flex-col sm:grid sm:grid-cols-2 gap-5 h-fit font-light mt-3">
