@@ -1,6 +1,7 @@
 <script>
 	import logo from '$lib/images/5.png';
 	import { page } from '$app/stores';
+	import SERVICES from '../../data/sevrives.json';
 	const menu = [
 		{
 			name: 'Home',
@@ -59,18 +60,19 @@
 	];
 	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
 	$: isUrlOnServicesPage = $page.url.pathname.includes('services');
+	const servicesId = $page.url.pathname.split('/')[2] || 1;
+    const serviceData = SERVICES.find((item) => item.icon === Number(servicesId));
 </script>
 
 
 {#if isUrlOnServicesPage}	
 	<div class="max-w-7xl mx-auto mt-24 ">
 		<div class="items-center flex gap-4"> 
-			<img src="https://cdn.sanity.io/images/f3af10kw/dnr-data-set/f16cb5e21da45d09d1d59718052ca9b357965d07-1919x2560.jpg" class="w-[100px] h-[100px] rounded-md object-cover" alt="" />
+			<img src={serviceData.person.image} class="w-[100px] h-[100px] rounded-md object-cover" alt="" />
 			<div class="flex flex-col gap-0">
-				<p class="text-lg font-medium">Miss Clarisse Ishimwe</p>
+				<p class="text-lg font-medium">{serviceData.person.name}</p>
 				<p class="text-sm font-light">
-					Senior Audit
-				</p>
+					{serviceData.person.title}</p>
 				<p>
 					<a href="tel:+250788386136" class="text-sm font-light mt-2 flex flex-col gap-2 capitalize">
 						Tel: +250 788 386 136 / +250 788 386 134

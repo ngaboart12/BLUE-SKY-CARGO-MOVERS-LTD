@@ -6,44 +6,6 @@
 			"DNR Partners International comprehensive audit methodologies provide the foundation for audit opinion backed by sufficient and appropriate audit evidence. With a deep understanding of global and local regulatory landscapes, we deliver precise financial insights. Our expert team ensures your financial statements are accurate, reliable, and compliant, empowering you to build trust with stakeholders."
 		],
 		"images": ["/new/1.jpg", "/new/13.jpg"],
-		"functionalServices":[
-			{
-				"service":"Financial Audits",
-				"description":"Involves a comprehensive examination of financial statements to ensure accuracy, completeness, and adherence to International Financial Reporting Standards (IFRS) or other relevant accounting frameworks. We provide an independent opinion on the fairness and reliability of financial statements, enhancing stakeholder trust and supporting informed decision-making"
-			},
-			{
-				"service":"Internal Audits",
-				"description":"It involves evaluation of internal controls, risk management processes, and operational efficiency to identify areas for improvement and ensure effective governance. We strengthen internal control systems, enhance operational performance, and mitigate risks through detailed assessments and recommendations"
-			},
-			{
-				"service":"Compliance Audits",
-				"description":"It involves review of adherence to regulatory requirements, industry standards, and organizational policies to ensure compliance and identify potential areas of non-compliance. We support regulatory compliance, reduce legal and financial risks, and improve adherence to laws and regulations affecting the business. "
-			},
-			{
-				"service":"Forensic Audits",
-				"description":"It involves investigations into financial discrepancies, fraud, or misconduct to uncover evidence, support legal proceedings, and strengthen fraud prevention measures. We detect and address financial fraud or misconduct, provide evidence for legal actions, and enhance fraud detection and prevention strategies. "
-			},
-			{
-				"service":"Risk Management Audits",
-				"description":"Involves the assessment of risk management frameworks and practices to evaluate their effectiveness in identifying, assessing, and mitigating risks. We improve risk management processes, ensure robust risk mitigation strategies, and enhance overall organizational resilience."
-			},
-			{
-				"service":"IT Audits",
-				"description":"It involves the evaluation of information technology systems and controls to ensure data integrity, security, and alignment with business objectives. We strengthen IT governance, enhance data security, and ensure that IT systems support business operations effectively."
-			},
-			{
-				"service":"Operational Audits",
-				"description":"It involves the examination of operational processes and procedures to identify inefficiencies, redundancies, and opportunities for improvement. We optimize operational performance, improve efficiency, and drive cost savings through detailed process analysis and recommendations"
-			},
-			{
-				"service":"Integrated Assurance Services",
-				"description":"It involves the coordination of various assurance activities (financial, operational, IT) to provide a holistic view of the organization’s performance and risk management. We deliver comprehensive insights that address multiple facets of the organization’s operations and controls, fostering a more cohesive approach to assurance. "
-			},
-			{
-				"service":"Due Diligence",
-				"description":"It involves detailed review and assessment of financial, operational, and compliance aspects during mergers, acquisitions, or other significant business transactions. We support informed decision-making in transactions by providing an in-depth analysis of potential risks and opportunities"
-			}
-		],
 		"subTitles":[
 			"Statutory Audits",
 			"Performance audits",
@@ -53,6 +15,11 @@
 			"Forensic Audits",
 			"Due diligence (Financial,HR, Legal, IT and operations)"
 		],
+		"person":{
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
+			"title":"Manager, Audit & Assurance",
+			"name":"Felicien BAJENEZA CPA"
+		},
 		"icon": 1
 	},
 	{
@@ -76,48 +43,11 @@
 			}
 		],
 		"images": ["/new/2.jpg", "/new/12.jpg"],
-		"functionalServices":[
-			{
-				"service":"Tax Planning and Strategy",
-				"description":"It involves the development of comprehensive tax strategies to optimize tax positions, manage liabilities, and align tax planning with overall business objectives. We enhance tax efficiency through proactive planning, ensuring alignment with long-term business goals and mitigating potential tax risks. "
-			},
-			{
-				"service":"Corporate Tax Compliance",
-				"description":"Involves offering assistance with the preparation and submission of corporate tax returns and compliance with local and international tax regulations. We ensure accurate and timely filing of tax returns, minimize risk of non-compliance, and avoid potential penalties or legal issues. "
-			},
-			{
-				"service":"International Tax Advisory",
-				"description":"We offer guidance on managing cross-border tax issues, including transfer pricing, international tax treaties, and global tax compliance. We optimize global tax positions, navigate complex international regulations, and manage tax implications of cross-border transactions. "
-			},
-			{
-				"service":"Indirect Tax Services",
-				"description":"Involves offering support with indirect taxes such as VAT, GST, and sales tax, including compliance, planning, and audits. We ensure accurate reporting and compliance with indirect tax obligations, optimize VAT/GST recovery, and manage indirect tax risks."
-			},
-			{
-				"service":"Tax Risk Management",
-				"description":"Involves identification and assessment of tax risks and implementation of strategies to mitigate potential tax-related issues. We protect the organization from tax risks and liabilities through effective risk management and proactive problem-solving."
-			},
-			{
-				"service":"Tax Dispute Resolution",
-				"description":"Involves representation and support in resolving disputes with tax authorities, including negotiations, appeals, and litigation. We help resolve tax disputes efficiently and effectively, minimizing potential financial impacts and ensuring favorable outcomes."
-			},
-			{
-				"service":"Tax Due Diligence",
-				"description":"We offer comprehensive review and assessment of tax matters during mergers, acquisitions, or other significant transactions. We provide insights into potential tax implications of transactions, identify risks, and support informed decision-making."
-			},
-			{
-				"service":"Employee Tax and Benefits Planning",
-				"description":"We offer advisory services on tax-efficient compensation structures, employee benefits, and global mobility issues. We design tax-efficient employee compensation and benefits packages, and manage tax implications of international assignments"
-			},
-			{
-				"service":"Tax Incentives and Credits",
-				"description":"It involves identification and application of tax incentives, credits, and subsidies available for businesses. We maximize available tax benefits and incentives to reduce tax liabilities and support business growth. "
-			},
-			{
-				"service":"Estate and Succession Planning",
-				"description":"We offer guidance on tax-efficient estate and succession planning for individuals and businesses. We facilitate smooth transitions of wealth and business interests, minimizing tax impacts and ensuring compliance with estate planning laws"
-			}
-		],
+		"person":{
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
+			"title":"Managing Partner",
+			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
+		},
 		"icon": 2
 	},
     {
@@ -133,6 +63,11 @@
 			"Business / Share Valuation",
 			"Financial advisory"
 		],
+		"person":{
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/ee12eb1ec724f491211a3016ef3645beea52549a-800x800.png",
+			"title":"Enock Iradukunda",
+			"name":"CPA (R)"
+		},
         "icon": 3
     },
 	{
@@ -150,13 +85,11 @@
 			"Business performance and growth",
 			"Corporate Trainings"
 		],
-		"nb":[
-			"I propose to reduce the services  to 8 categorized services",
-			"We remove the word “Services”",
-			"We remove the Section “Functional Services” on each page",
-			"Remove the Section “More Services",
-			"Remove Team Profile on Services Section"
-		],
+		"person":{
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/9d6b90113a5d54bc38f2dd7bdad7ce4b6bec2711-551x709.jpg",
+			"title":"Epaphrodite Ndahimana",
+			"name":"Audit Associate Manager"
+		},
 		"icon": 4
 	}
 ]
