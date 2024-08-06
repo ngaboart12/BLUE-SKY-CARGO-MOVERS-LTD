@@ -135,25 +135,6 @@
 					{/if}
 				</button>
 			</div>
-			<!-- <a
-				href="#anchor-sectiion"
-				on:click={handleAnchorClick}
-				class="bg-[#D71B30] text-white flex items-center justify-center w-[50px] h-[50px] mt-10 rounded-full"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					class="feather feather-arrow-down"
-					><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg
-				>
-			</a> -->
 		</div>
 	</div>
 </div>
@@ -181,16 +162,38 @@
 							{item}
 						</p>
 					{/each}
-					{#if data.service?.subTitles }
-					<div class="w-full flex items-center flex-wrap gap-x-6 gap-y-3">
-						{#each data.service?.subTitles as subTitles }
-						   <div class="flex items-center gap-2">
-								<span class="w-3 h-3 bg-slate-300 rounded-full" />
-								<p class="text-[17px]">{subTitles}</p>
-						   </div>
-						{/each}
-					</div>
-					{/if}
+					{#if data.service?.icon === 2 } 
+						<div class="grid grid-cols-2 gap-2">
+
+							{#each data.service?.list as item }
+								<div class="flex items-start gap-2 flex-col">
+									<div class="flex items-center gap-2">
+										<span class="w-3 h-3 bg-slate-300 rounded-full" />
+										<p class="text-[17px]">{item.title}</p>
+									</div>
+									<div class="px-4">
+										{#each item.list as text }
+										<div class="flex items-baseline gap-2">
+											<span class="w-2 h-2  bg-slate-300 rounded-full" />
+											<p class="text-sm flex-1">{text}</p>
+										</div>
+										{/each}
+									</div>
+								</div>
+							{/each}
+						</div>
+						{:else}
+						<div class="w-full flex items-center flex-wrap gap-x-6 gap-y-3">
+							{#each data.service?.subTitles as subTitles }
+							   <div class="flex items-center gap-2">
+									<span class="w-3 h-3 bg-slate-300 rounded-full" />
+									<p class="text-[17px]">{subTitles}</p>
+							   </div>
+							{/each}
+						</div>
+						{/if}
+					
+					
 			</div>
 			</div>
 		</div>

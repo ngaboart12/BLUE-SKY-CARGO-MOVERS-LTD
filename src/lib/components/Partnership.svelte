@@ -27,7 +27,7 @@
 		{
 			id: 5,
 			image: BNR,
-			name: 'Bank of Rwanda',
+			name: 'National Bank of Rwanda',
 			project: ['Financial & Non financial due diligence of Non Umurenge SACCOs'],
 			description: [
 				'DNR PARTNERS CPA had the pleasure of conducting the financial and non-financial due diligence for the merger of five Non-Umurenge SACCOs operating in Rulindo District. This was part of a tender titled "Consultancy to Carry Out the Due Diligence and Asset Valuation for the Merger of Five (5) Non-Umurenge SACCOs in Rulindo District.',

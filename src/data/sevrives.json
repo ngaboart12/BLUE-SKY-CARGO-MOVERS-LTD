@@ -16,9 +16,9 @@
 			"Due diligence (Financial,HR, Legal, IT and operations)"
 		],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
-			"title":"Managing Partner",
-			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
+			"title":"Manager, Audit & Assurance",
+			"name":"Felicien BAJENEZA CPA"
 		},
 		"icon": 1
 	},
@@ -44,9 +44,9 @@
 		],
 		"images": ["/new/2.jpg", "/new/12.jpg"],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
-			"title":"Manager, Audit & Assurance",
-			"name":"Felicien BAJENEZA CPA"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/249218b2110952b4316df4990f548da2695e59c5-800x800.webp",
+			"title":"Manager, Tax & Accounts",
+			"name":"Emmanuel UWAYO, CPA-K"
 		},
 		"icon": 2
 	},
@@ -61,12 +61,14 @@
 			"Risk & Legal Compliance",
 			"Mergers & Acquisitions M&A",
 			"Business / Share Valuation",
-			"Financial advisory"
+			"Financial advisory",
+			"Transaction advisory",
+			"Fund management"
 		],
 		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/ee12eb1ec724f491211a3016ef3645beea52549a-800x800.png",
-			"title":"Enock Iradukunda",
-			"name":"CPA (R)"
+			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
+			"title":"Managing Partner",
+			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
 		},
         "icon": 3
     },
@@ -83,7 +85,9 @@
 			"Technology Consulting",
 			"Human Resources Consulting",
 			"Business performance and growth",
-			"Corporate Trainings"
+			"Corporate Trainings",
+			"Climate change advisory",
+			"Project management advisory"
 		],
 		"person":{
 			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/24fbad9159c0fe7898800237fc544c8d2dc3dbe9-304x345.png",

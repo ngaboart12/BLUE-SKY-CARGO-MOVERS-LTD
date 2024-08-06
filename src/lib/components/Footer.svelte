@@ -2,32 +2,6 @@
 	import logo from '$lib/images/5.png';
 	import { page } from '$app/stores';
 	import SERVICES from '../../data/sevrives.json';
-	const menu = [
-		{
-			name: 'Home',
-			href: `${$page.url.pathname.split('/')[1]}/`
-		},
-		{
-			name: 'about us',
-			href: `${$page.url.pathname.split('/')[1]}/about`
-		},
-		{
-			name: 'Services',
-			href: `${$page.url.pathname.split('/')[1]}/services`
-		},
-		{
-			name: 'insights',
-			href: `${$page.url.pathname.split('/')[1]}/insights`
-		},
-		{
-			name: 'carrers',
-			href: `${$page.url.pathname.split('/')[1]}/carrers`
-		}
-		// {
-		//     name:"global network",
-		//     href:"/global"
-		// }
-	];
 	const country = [
 		{
 			country: 'en',
@@ -58,6 +32,33 @@
 			email: 'uganda@dnrpartners.com'
 		}
 	];
+// @ts-ignore
+		$: basePath = country.includes($page.url.pathname.split('/')[1])
+		? `/${$page.url.pathname.split('/')[1]}`
+		: '';
+	const menu = [
+		{
+			name: 'Home',
+			href: basePath ? `${basePath}/` : '/'
+		},
+		{
+			name: 'about us',
+			href: basePath ? `${basePath}/about` : '/about'
+		},
+		{
+			name: 'Services',
+			href: basePath ? `${basePath}/services`: '/services'
+		},
+		{
+			name: 'insights',
+			href: basePath ? `${basePath}/insights`: '/insights'
+		},
+		{
+			name: 'Careers',
+			href: basePath ? `${basePath}/carrers` : '/carrers'
+		}
+	];
+
 	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
 	$: isUrlOnServicesPage = $page.url.pathname.includes('services');
 	const servicesId = $page.url.pathname.split('/')[2] || 1;
@@ -95,7 +96,7 @@
 		<div
 			class="flex items-start justify-between mt-10 gap-10 md:gap-20 py-12 md:flex-nowrap flex-wrap"
 		>
-			<div class="flex flex-col gap-6 md:w-[60%]">
+			<div class="flex flex-col gap-6 md:w-[100%]">
 				<div>
 					<img src={logo} width={133} height={62} alt="logo" />
 				</div>
@@ -174,7 +175,8 @@
 					</a>
 				</div>
 			</div>
-			<div class="grid grid-cols-2 sm:grid-cols-3 w-full flex-wrap gap-6">
+			<div class="grid grid-cols-2 justify-end sm:grid-cols-3 w-full flex-wrap gap-6">
+				<div />
 				<div class="flex flex-col gap-6">
 					<p class="font-medium capitalize">head office</p>
 					<div class="flex flex-col gap-4 font-light">
@@ -232,21 +234,23 @@
 						>
 					</div>
 				</div>
-				<div class="flex flex-col gap-6 md:ml-8">
+				
+				<div class="flex flex-col gap-6 md:ml-8 w-full">
 					<p class="font-medium capitalize">quick links</p>
-					<div class="flex flex-col gap-4 font-light">
-						{#each menu as item}
-							<a href={item.href} class="text-base flex flex-col gap-2 capitalize">{item.name}</a>
-						{/each}
+					<div class="grid grid-cols-2 gap-2">
+						<div class="flex flex-col gap-4 font-light">
+							{#each menu.slice(0,4) as item}
+								<a href={item.href} class="text-base flex flex-col gap-2 capitalize">{item.name}</a>
+							{/each}
+						</div>
+						<div class="flex flex-col gap-4 font-light">
+							{#each ["The Team","Key Clients","Our World"] as item}
+								<a href={"#"} class="text-base flex flex-col gap-2 capitalize">{item}</a>
+							{/each}
+							<a href={menu[menu.length - 1].href} class="text-base flex flex-col gap-2 capitalize">Careers</a>
+						</div>	
+
 					</div>
-				</div>
-				<div class="flex flex-col gap-6">
-					<p class="font-medium capitalize">Our sub chapters</p>
-					<div class="flex flex-col gap-2 font-light">
-						{#each ["About Us","The Team","Key Clients","Our World"] as item}
-							<a href={"#"} class="text-base flex flex-col gap-2 capitalize">{item}</a>
-						{/each}
-					</div>	
 				</div>
 			</div>
 		</div>
@@ -260,6 +264,7 @@
 					{#each ['About us', 'Contact', 'Privacy policy', 'Terms of Use'] as item}
 						<a href={item} class="text-[#E7E7E7] text-sm font-light">{item}</a>
 					{/each}
+					
 				</div>
 				<div>
 					<p class=" font-light text-sm">

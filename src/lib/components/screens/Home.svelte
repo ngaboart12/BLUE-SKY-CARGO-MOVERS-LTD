@@ -250,10 +250,29 @@
 							{item.icon}
 						{/if}
 					</div>
-					<div class="flex flex-col gap-1">
-						<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
-						<p class="font-extralight text-lg">{item.description}</p>
-					</div>
+					{#if item.icon === 4 }
+						<div class="grid grid">
+							<div class="flex flex-col gap-1">
+								<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
+								<div class="grid grid-cols-2 gap-2">
+									<div class="flex flex-col">
+										<span class="font-extralight text-lg">Integrity</span>
+										<span class="font-extralight text-lg">Professionalism</span>
+										<span class="font-extralight text-lg">Excellence</span>
+									</div>
+									<div class="flex flex-col">
+										<span class="font-extralight text-lg">Customer centricity</span>
+										<span class="font-extralight text-lg">Serving</span>
+									</div>
+								</div> 
+							</div>
+						</div>
+						{:else}
+						<div class="flex flex-col gap-1">
+							<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
+							<p class="font-extralight text-lg">{item.description}</p>
+						</div>
+					{/if}
 				</div>
 			{/each}
 		</div>
