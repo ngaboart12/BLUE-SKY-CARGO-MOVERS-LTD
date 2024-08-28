@@ -3,34 +3,7 @@
 	import { page } from '$app/stores';
 	import SERVICES from '../../data/sevrives.json';
 	const country = [
-		{
-			country: 'en',
-			email: 'england@dnrpartners.com'
-		},
-		{
-			country: 'rw',
-			email: 'rwanda@dnrpartners.com'
-		},
-		{
-			country: 'bi',
-			email: 'burundi@dnrpartners.com'
-		},
-		{
-			country: 'za',
-			email: 'zambia@dnrpartners.com'
-		},
-		{
-			country: 'ke',
-			email: 'kenya@dnrpartners.com'
-		},
-		{
-			country: 'sa',
-			email: 'southafrica@dnrpartners.com'
-		},
-		{
-			country: 'ug',
-			email: 'uganda@dnrpartners.com'
-		}
+		
 	];
 // @ts-ignore
 		$: basePath = country.includes($page.url.pathname.split('/')[1])
@@ -59,7 +32,7 @@
 		}
 	];
 
-	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
+	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "info@blueskycargo.com";
 	$: isUrlOnServicesPage = $page.url.pathname.includes('services');
 	const servicesId = $page.url.pathname.split('/')[2] || 1;
     const serviceData = SERVICES.find((item) => item.icon === Number(servicesId));
@@ -76,7 +49,7 @@
 					{serviceData.person.title}</p>
 				<p>
 					<a href="tel:+250788386136" class="text-sm font-light mt-2 flex flex-col gap-2 capitalize">
-						Tel: +250 788 386 136 / +250 788 386 134
+						+250784507999
 					</a>
 				</p>
 				<p>
@@ -101,8 +74,8 @@
 					<img src={logo} width={133} height={62} alt="logo" />
 				</div>
 				<p class="text-white font-light">
-					DNR Partners International is a global network of chartered professional accountants and business advisors, headquartered in England. With a strong presence across several African and European countries, we deliver comprehensive services in audit, assurance, accounting, tax, advisory, training, risk management, and legal compliance.
-				</p>
+                    Blue Sky Cargo Movers Ltd, established in 2018, is a dedicated forwarding company based in Kigali, Rwanda. We specialize in providing exceptional logistics solutions, ensuring your cargo is handled with utmost care and delivered on time. Our comprehensive services include sea freight, inland transportation, warehousing, and customs clearing, all tailored to meet each client's unique needs.
+                </p>
 				<div class="flex items-center gap-8">
 					<a href="https://twitter.com/ngilidius">
 						<svg
@@ -202,28 +175,17 @@
 						>
 
 						{#if $page.url.pathname.split('/')[1] === 'ke'}
-						<a href="tel:+254732227307" class="text-base flex flex-col gap-2 capitalize">
-							+254 732 227 307
+						<a href="tel:+250784507999" class="text-base flex flex-col gap-2 capitalize">
+							+250784507999
 						</a>
 						{:else if $page.url.pathname.split('/')[1] === 'en'}
-						<a href="tel:+447568197733" class="text-base flex flex-col gap-2 capitalize">
-							+44 7568 197733
+						<a href="tel:+250784507999" class="text-base flex flex-col gap-2 capitalize">
+							+250784507999
 					    </a>
-						{:else if $page.url.pathname.split('/')[1] === 'bi'}
-						<a href="tel:+25771582452" class="text-base flex flex-col gap-2 capitalize">
-							+257 71 58 24 52
-					   </a>
-						{:else if $page.url.pathname.split('/')[1] === 'za'}
-					   	<a href="tel:+260977753307" class="text-base flex flex-col gap-2 capitalize">
-						+260 97 7753307 / +260 96 6753307
-				   		</a>
-						{:else if $page.url.pathname.split('/')[1] === 'sa'}
-						<a href="tel:+27737181692" class="text-base flex flex-col gap-2 capitalize">
-							+27 73 718 1692
-						</a>
+						
 						{:else}
-						<a href="tel:+250788386136" class="text-base flex flex-col gap-2 capitalize">
-							+250 788 386 136 <br/> / +250 788 386 134
+						<a href="tel:+250784507999" class="text-base flex flex-col gap-2 capitalize">
+							+250784507999
 						</a>
 						{/if}
 
@@ -267,9 +229,9 @@
 					
 				</div>
 				<div>
-					<p class=" font-light text-sm">
-						© 2024 DNR PARTNERS INTERNATIONAL . All Rights Reserved
-					</p>
+					<p class="font-light text-sm">
+                        © 2024 Blue Sky Cargo Movers Ltd. All Rights Reserved
+                    </p>
 				</div>
 			</div>
 		</div>

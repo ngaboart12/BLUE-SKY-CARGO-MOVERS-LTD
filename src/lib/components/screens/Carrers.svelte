@@ -2,8 +2,9 @@
 	// @ts-nocheck
 
 	import Conctact from '$lib/components/Conctact.svelte';
-	import BG_IMAGE from '$lib/images/bg-2.jpeg';
-	import empty from '$lib/images/empty.png';
+	import BG_IMAGE from '$lib/images/009.jpeg';
+	import BG_IMAGEE from '$lib/images/staff2.jpeg';
+	import empty from '$lib/images/11.jpeg';
 	import CountryButtonSelect from '../CountryButtonSelect.svelte';
 	import Modal from '../Modal.svelte';
 	import Dropzone from 'svelte-file-dropzone';
@@ -81,7 +82,7 @@
 		'None'
 	];
 
-	export let data;
+	// export let data;
 	let isLoading = false;
 
 	function handleFilesSelect(e) {
@@ -190,17 +191,91 @@
 
 	let show = false;
 
-	const allOurRoles = data.openRoles.map((item: any) => {
-		return {
-			_id: item._id,
-			name: item.name,
-			experience: item.experience,
-			type: item.type,
-			location: item.location,
-			openings: item.openings
-		};
-	});
-	let ourRoles = allOurRoles.slice(0, 4);
+	const allOurRoles = [
+    {
+        _id: "1",
+        name: "Freight Coordinator",
+        experience: "1-5 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 5
+    },
+    {
+        _id: "2",
+        name: "Logistics Manager",
+        experience: "2-4 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 4
+    },
+    {
+        _id: "3",
+        name: "Warehouse Operations Supervisor",
+        experience: "3-7 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 3
+    },
+    {
+        _id: "4",
+        name: "Truck Driver",
+        experience: "1-3 years",
+        type: "part-time",
+        location: "Kigali",
+        openings: 6
+    },
+    {
+        _id: "5",
+        name: "Cargo Handler",
+        experience: "4-6 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 2
+    },
+    {
+        _id: "6",
+        name: "Customs Clearance Agent",
+        experience: "3-5 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 5
+    },
+    {
+        _id: "7",
+        name: "Fleet Maintenance Supervisor",
+        experience: "5-10 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 3
+    },
+    {
+        _id: "8",
+        name: "Logistics Analyst",
+        experience: "3-5 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 4
+    },
+    {
+        _id: "9",
+        name: "Dispatch Coordinator",
+        experience: "2-4 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 4
+    },
+    {
+        _id: "10",
+        name: "Freight Forwarding Specialist",
+        experience: "5-7 years",
+        type: "full-time",
+        location: "Kigali",
+        openings: 3
+    }
+];
+
+
+	let ourRoles = allOurRoles.slice(0, 10);
 	let modelData = ourRoles[0];
 	let modelDataone: any;
 	let showModal = false;
@@ -215,7 +290,7 @@
 
 	function searchRole(value) {
 		if (value === '' || !value || value.trim() === '') {
-			ourRoles = allOurRoles.slice(0, 4);
+			ourRoles = allOurRoles.slice(0, 10);
 			return;
 		}
 		searchvalue = value;
@@ -249,9 +324,10 @@
 			>
 				careers
 			</p>
-			<h2 class=" font-semibold text-white/90 capitalize text-sm sm:mt-3">
-				Would you like to build a rewarding career with DNR Partners International?
+			<h2 class="font-bold text-gray-800 capitalize text-lg sm:mt-5">
+				Ready to advance your career with Smart Cleans Solutions?
 			</h2>
+			
 			<p class="text-[24px] text-white/90 sm:text-[20px] font-medium mt-2">
 				Join our team of experts and contribute to the success of our clients while advancing your
 				professional journey
@@ -263,7 +339,7 @@
 	<div class="grid grid-cols-2 gap-20 max-w-6xl my-10 mx-auto w-full">
 		<form class="flex flex-col gap-2 w-full">
 			<h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[#083867]">
-				Become a DNR Representative
+				Become a Blue sky Representative
 			</h2>
 			<div class="flex flex-col sm:grid sm:grid-cols-2 gap-5 h-fit font-light mt-3">
 				<div class="rounded-lg bg-[#F0F0F0] col-span-2 px-4 py-3 flex items-center justify-between w-full">
@@ -275,11 +351,13 @@
 					/>
 				</div>
 				<div class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full">
-					<select class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full">
-						{#each ["Rwanda", "burundi", "England","zambia","South Africa","Kenya","Uganda"] as item}
-							<option value={item}>{item}</option>
-						{/each}
-					</select>
+					<input
+					type="text"
+					required
+					bind:value={emailValue}
+					class="bg-transparent outline-none border-none text-[#5C5C5C] placeholder:text-[#ADADAD] placeholder:capitalize w-full"
+					placeholder="enter your address"
+				/>
 				</div>
 				<div
 					class="rounded-lg bg-[#F0F0F0] px-4 py-3 flex items-center justify-between w-full"
@@ -350,7 +428,7 @@
 								event.preventDefault();
 								submitForm();
 							}}
-							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#007BFF] rounded-xl text-white capitalize font-light col-span-2"
 						>
 							<span>Send Message</span>
 							<span>
@@ -418,7 +496,7 @@
 		</form>
 		<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
 			<img
-				src={"/new/11.jpg"}
+				src={"/new/001.jpeg"}
 				alt={""}
 				class="w-full object-cover h-full"
 			/>
@@ -429,7 +507,7 @@
 			<div class="flex items-start gap-10 md:flex-nowrap flex-wrap">
 				<div class="w-[300px] flex flex-col gap-2.5">
 					<div class="w-fit">
-						<button class="rounded-lg font-light px-4 py-1.5 text-[#C43228] bg-white capitalize">
+						<button class="rounded-lg font-light px-4 py-1.5 text-[#007BFF] bg-white capitalize">
 							carreer
 						</button>
 					</div>
@@ -694,7 +772,7 @@
 						bind:value={phoneValue}
 					/>
 					{#if error.find((item) => item.field === 'phone')}
-						<div class="text-red-500 w-5 h-5">
+						<div class="text-blue-500 w-5 h-5">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="18"
@@ -847,9 +925,10 @@
 						</div>
 					{/if}
 					{#if files.accepted.length === 0}
-						<Dropzone containerClasses="!bg-[red] border" on:drop={handleFilesSelect}>
-							   <p>Drag or drop your CV file here</p>
-						</Dropzone>
+					<Dropzone containerClasses="bg-blue-500 border border-blue-700" on:drop={handleFilesSelect}>
+						<p>Drag or drop your CV file here</p>
+					</Dropzone>
+					
 					{:else}
 						<div class="py-8 w-full">
 							<div class="flex items-center gap-1 w-fit mx-auto">
@@ -916,7 +995,7 @@
 						disabled={isLoading}
 						on:click={validateForm}
 						class="{isLoading &&
-							'bg-opacity-80'} py-3 px-6 sm:mb-0 mb-5 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+							'bg-opacity-80'} py-3 px-6 sm:mb-0 mb-5 w-fit flex items-center gap-4 bg-[#1E40AF] rounded-xl text-white capitalize font-light col-span-2"
 					>
 						<span>Send Application</span>
 						<!-- svelte-ignore missing-declaration -->

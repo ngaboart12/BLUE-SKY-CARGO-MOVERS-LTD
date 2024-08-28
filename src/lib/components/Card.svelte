@@ -2,10 +2,10 @@
 	// import imgeThree from '$lib/images/3.png';
 	import dayjs from 'dayjs';
 	export let title: string;
-	export let desc: any[];
+	export let desc: string;
 	export let createdAt: string;
 	export let id: string;
-	export let imgUrl: string;
+	export let imgUrl:any;
 	import { page } from '$app/stores';
 
 	const country = ['en', 'rw', 'bi', 'za', 'ke', 'sa'];

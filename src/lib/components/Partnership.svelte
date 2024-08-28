@@ -17,7 +17,7 @@
 	const Partnes = [
 		{
 			id: 1,
-			image: RRA,
+			image: UFP,
 			name: 'Rwanda Revenue Authority',
 			project: ['RRA Senior Management Training on Human Capital Risk Management'],
 			description: [
@@ -26,7 +26,7 @@
 		},
 		{
 			id: 5,
-			image: BNR,
+			image: UFP,
 			name: 'National Bank of Rwanda',
 			project: ['Financial & Non financial due diligence of Non Umurenge SACCOs'],
 			description: [
@@ -37,7 +37,7 @@
 		},
 		{
 			id: 4,
-			image: ICPAR,
+			image: UFP,
 			name: 'Institute of Certified Public Accountants of Rwanda',
 			project: ['External audit services'],
 			description: [
@@ -46,7 +46,7 @@
 		},
 		{
 			id: 7,
-			image: ACCA,
+			image: UFP,
 			name: 'Association of Chartered Certified Accountants',
 			project: ['ACCA-Approved employer'],
 			description: [
@@ -55,7 +55,7 @@
 		},
 		{
 			id: 11,
-			image: WBFP,
+			image: UFP,
 			name: 'World bank financed projects',
 			project: ['External audit'],
 			description: [
@@ -64,7 +64,7 @@
 		},
 		{
 			id: 12,
-			image: AFP,
+			image: UFP,
 			name: 'AfDB financed projects',
 			project: ['External audit'],
 			description: [
@@ -82,7 +82,7 @@
 		},
 		{
 			id: 3,
-			image: SWISS,
+			image: UFP,
 			name: 'Swiss cooperation financed projects',
 			project: ['External audit'],
 			description: [

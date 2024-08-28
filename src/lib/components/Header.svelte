@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '../images/red-logo.svg';
+	import logo from '$lib/images/5.png';
 	import logowhite from '$lib/images/5.png';
 	import DATA from '../../data/sevrives.json';
 
@@ -60,7 +60,7 @@
 			<a href="/">
 				<img
 					src={isColored ? logo : y > 50 ? logo : logowhite}
-					alt="dnr"
+					alt="blue sky"
 					width={100}
 					height={100}
 				/>
@@ -422,11 +422,11 @@
 											</svg>
 										</span>
 									{/if}
-									{#if !country.includes($page.url.pathname.split('/')[1])}
+									<!-- {#if !country.includes($page.url.pathname.split('/')[1])}
 										<AllCountrySvg />
-									{/if}
+									{/if} -->
 								</div>
-								<span class="capitalize">Global Network</span>
+								<!-- <span class="capitalize">Global Network</span> -->
 								<svg
 									width="14"
 									height="8"
@@ -456,7 +456,7 @@
 
 				<a
 					href="/contact"
-					class="hidden md:block py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light"
+					class="hidden md:block py-3 px-6 bg-[#007BFF] rounded-xl text-white capitalize font-light"
 				>
 					reach to us
 				</a>

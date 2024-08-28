@@ -1,99 +1,88 @@
 [
     {
-		"title": "Audit & Assurance",
-		"description": "Our commitment to quality and integrity ensures better decision-making and operational excellence",
-		"paragraphs": [
-			"DNR Partners International comprehensive audit methodologies provide the foundation for audit opinion backed by sufficient and appropriate audit evidence. With a deep understanding of global and local regulatory landscapes, we deliver precise financial insights. Our expert team ensures your financial statements are accurate, reliable, and compliant, empowering you to build trust with stakeholders."
-		],
-		"images": ["/new/1.jpg", "/new/13.jpg"],
-		"subTitles":[
-			"Statutory Audits",
-			"Performance audits",
-			"Compliance audits",
-			"Internal audits",
-			"IT audits",
-			"Forensic Audits",
-			"Due diligence (Financial,HR, Legal, IT and operations)"
-		],
-		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/a8e149e12b65787aa472172c0a3a40f9cede3d6a-411x514.png",
-			"title":"Manager, Audit & Assurance",
-			"name":"Felicien BAJENEZA CPA"
-		},
-		"icon": 1
-	},
-	{
-		"title": "Tax & Accounting Services",
-		"description": "We support you in minimizing tax liabilities, maximizing tax efficiencies, and mitigating risks",
-		"paragraphs": [
-			"Our comprehensive tax and accounting services provide clarity and efficiency. We offer expert guidance on preparation, tax planning, compliance, and optimization, while delivering precise financial reporting. Our tailored solutions empower businesses to make informed decisions and achieve long-term financial success."
-		],
-		"subTitles":[
-			"Tax",
-			"Accounting"
-		],
-		"list":[
-			{
-				"title":"Tax",
-				"list":["Direct and indirect tax", "Corporate tax","International tax","Tax planning and compliance"]
-			},
-			{
-				"title":"Accounting",
-				"list":["Outsourced accounting and payroll services ranging", "IFRS based financial reporting","ESG & sustainability reporting","Accounting software installation and data migration"]
-			}
-		],
-		"images": ["/new/2.jpg", "/new/12.jpg"],
-		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/249218b2110952b4316df4990f548da2695e59c5-800x800.webp",
-			"title":"Manager, Tax & Accounts",
-			"name":"Emmanuel UWAYO, CPA-K"
-		},
-		"icon": 2
-	},
-    {
-        "title":"Advisory",
-        "description":"Our risk and compliance services are designed to help organizations identify, assess, and mitigate risks, and ensure adherence to regulatory requirements",
-        "paragraphs":[
-            "Our advisory services encompass a wide range of strategic solutions designed to drive business growth and enhance operational efficiency and compliance. From financial advisory and business valuation to risk management, legal compliance, and M&A transactions, we provide expert guidance to navigate complex challenges and seize opportunities."
+        "title": "Transport & Logistics Solutions",
+        "description": "We provide comprehensive transport and logistics solutions to ensure timely and efficient delivery of your cargo.",
+        "paragraphs": [
+            "Blue Sky Cargo Movers Ltd specializes in delivering exceptional transport and logistics services. Our expertise spans across various modes of transportation, including road and ocean transport, ensuring that your cargo is handled with the highest level of care. We employ cutting-edge technologies and industry best practices to offer seamless logistics solutions that meet your specific needs."
         ],
-		"images": ["/new/3.jpg", "/new/11.jpg"],
-		"subTitles":[
-			"Risk & Legal Compliance",
-			"Mergers & Acquisitions M&A",
-			"Business / Share Valuation",
-			"Financial advisory",
-			"Transaction advisory",
-			"Fund management"
-		],
-		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/29e099665d210b96555fdc136d09378f55bed4f9-1708x2560.jpg",
-			"title":"Managing Partner",
-			"name":"Dieudonne NGIRIMANA, FCCA,CPA"
-		},
+        "images": ["/images/009.jpeg", "/images/road_transport.jpg", "/images/ocean_transport.jpg"],
+        "subTitles": [
+            "Road Transport",
+            "Ocean Transport",
+            "Inland Transportation",
+            "Warehousing",
+            "Customs Clearing"
+        ],
+        "person": {
+            "image": ["/images/staff2.jpeg"],
+            "title": "Head of Transport Operations",
+            "name": "Mutabazi Fidele"
+        },
+        "icon": 1
+    },
+
+	{
+        "title": "warehouse renting service",
+        "description": "We prioritize our clients' needs, offering personalized and flexible solutions tailored to their logistics requirements.",
+        "paragraphs": [
+            "At Blue Sky Cargo Movers Ltd, our client-centric approach ensures that each client receives customized solutions tailored to their specific logistics needs. We offer personalized service with a focus on confidentiality and flexibility, adapting our strategies to meet the unique demands of every client. Our commitment to exceptional service delivery sets us apart in the logistics industry."
+        ],
+        "images": ["/images/33.jpeg"],
+        "subTitles": [
+            "Personalized Service",
+            "Confidentiality",
+            "Flexible Solutions",
+            "Tailored Logistics Strategies",
+            "Exceptional Service Delivery"
+        ],
+        "person": {
+            "image": ["/images/staff2.jpeg"],
+            "title": "Client Relations Manager",
+            "name": "Mutabazi Fidele"
+        },
+        "icon": 4
+    },
+	
+    {
+        "title": "Logistics Advisory",
+        "description": "Our logistics advisory services offer expert guidance to optimize your supply chain and improve operational efficiency.",
+        "paragraphs": [
+            "Blue Sky Cargo Movers Ltd provides logistics advisory services to help businesses enhance their supply chain operations. Our advisory team offers insights into optimizing logistics strategies, managing supply chain risks, and improving overall operational efficiency. We work closely with clients to develop customized solutions that drive growth and ensure sustainable practices."
+        ],
+        "images": ["/images/0001.jpg"],
+        "subTitles": [
+            "Supply Chain Optimization",
+            "Risk Management",
+            "Operational Efficiency",
+            "Sustainability Practices",
+            "Strategic Planning"
+        ],
+        "person": {
+            "image": ["/images/staff2.jpeg"],
+            "title": "Senior Logistics Consultant",
+            "name": "Mutabazi Fidele"
+        },
         "icon": 3
     },
-	{
-		"title": "Management Consulting",
-		"description": "We work closely with clients to understand their needs, analyze their business processes, and implement practical solutions….",
-		"paragraphs": [
-			"Management consulting services cover a broad spectrum of activities aimed at improving the overall performance and efficiency of organizations"
-		],
-		"images": ["/new/4.webp", "/new/10.jpg"],
-		"subTitles":[
-			"Strategy Consulting",
-			"Operations Consulting",
-			"Technology Consulting",
-			"Human Resources Consulting",
-			"Business performance and growth",
-			"Corporate Trainings",
-			"Climate change advisory",
-			"Project management advisory"
-		],
-		"person":{
-			"image": "https://cdn.sanity.io/images/f3af10kw/dnr-data-set/24fbad9159c0fe7898800237fc544c8d2dc3dbe9-304x345.png",
-			"title":"Senior Manager, Strategy & Business development ",
-			"name":"Mansul KAKIMBA"
-		},
-		"icon": 4
-	}
+    {
+        "title": "Transport In land services",
+        "description": "We prioritize our clients' needs, offering personalized and flexible solutions tailored to their logistics requirements.",
+        "paragraphs": [
+            "At Blue Sky Cargo Movers Ltd, our client-centric approach ensures that each client receives customized solutions tailored to their specific logistics needs. We offer personalized service with a focus on confidentiality and flexibility, adapting our strategies to meet the unique demands of every client. Our commitment to exceptional service delivery sets us apart in the logistics industry."
+        ],
+        "images": ["/images/2.jpeg"],
+        "subTitles": [
+            "Personalized Service",
+            "Confidentiality",
+            "Flexible Solutions",
+            "Tailored Logistics Strategies",
+            "Exceptional Service Delivery"
+        ],
+        "person": {
+            "image": ["/images/staff2.jpeg"],
+            "title": "Client Relations Manager",
+            "name": "Mutabazi Fidele"
+        },
+        "icon": 4
+    }
 ]

@@ -89,9 +89,9 @@
 		}
 	}
 
-	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "rwanda@dnrpartners.com";
-	$: tel = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.tel || "+250 788 386 134";
-	$: email2 =	country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email2 || "info@dnrpartners.com";
+	$: email = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email || "info@blueskycargo.com";
+	$: tel = country.find((item) => item.country === $page.url.pathname.split('/')[1])?.tel || "+250784507999";
+	$: email2 =	country.find((item) => item.country === $page.url.pathname.split('/')[1])?.email2 || "info@blueskycargo.com";
 </script>
 
 <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full">
@@ -105,7 +105,7 @@
 			</p>
 
 			<div class="grid sm:grid-cols-2 items-center gap-4">
-				<a href="tel:+250788386134" class="flex items-center gap-2">
+				<a href="tel:+250788386136" class="flex items-center gap-2">
 					<div>
 						<svg
 							width="56"
@@ -114,7 +114,7 @@
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
-							<circle cx="28" cy="28" r="28" fill="#C43228" />
+							<circle cx="28" cy="28" r="28" fill="#007BFF" />
 							<path
 								d="M37.97 34.83C37.97 35.19 37.89 35.56 37.72 35.92C37.55 36.28 37.33 36.62 37.04 36.94C36.55 37.48 36.01 37.87 35.4 38.12C34.8 38.37 34.15 38.5 33.45 38.5C32.43 38.5 31.34 38.26 30.19 37.77C29.04 37.28 27.89 36.62 26.75 35.79C25.6 34.95 24.51 34.02 23.47 32.99C22.44 31.95 21.51 30.86 20.68 29.72C19.86 28.58 19.2 27.44 18.72 26.31C18.24 25.17 18 24.08 18 23.04C18 22.36 18.12 21.71 18.36 21.11C18.6 20.5 18.98 19.94 19.51 19.44C20.15 18.81 20.85 18.5 21.59 18.5C21.87 18.5 22.15 18.56 22.4 18.68C22.66 18.8 22.89 18.98 23.07 19.24L25.39 22.51C25.57 22.76 25.7 22.99 25.79 23.21C25.88 23.42 25.93 23.63 25.93 23.82C25.93 24.06 25.86 24.3 25.72 24.53C25.59 24.76 25.4 25 25.16 25.24L24.4 26.03C24.29 26.14 24.24 26.27 24.24 26.43C24.24 26.51 24.25 26.58 24.27 26.66C24.3 26.74 24.33 26.8 24.35 26.86C24.53 27.19 24.84 27.62 25.28 28.14C25.73 28.66 26.21 29.19 26.73 29.72C27.27 30.25 27.79 30.74 28.32 31.19C28.84 31.63 29.27 31.93 29.61 32.11C29.66 32.13 29.72 32.16 29.79 32.19C29.87 32.22 29.95 32.23 30.04 32.23C30.21 32.23 30.34 32.17 30.45 32.06L31.21 31.31C31.46 31.06 31.7 30.87 31.93 30.75C32.16 30.61 32.39 30.54 32.64 30.54C32.83 30.54 33.03 30.58 33.25 30.67C33.47 30.76 33.7 30.89 33.95 31.06L37.26 33.41C37.52 33.59 37.7 33.8 37.81 34.05C37.91 34.3 37.97 34.55 37.97 34.83Z"
 								stroke="white"
@@ -124,11 +124,11 @@
 						</svg>
 					</div>
 					<div class="flex flex-col gap-0.5">
-						<span class="font-light text-sm text-[#606060]">Gives us a Call</span>
+						<span class="font-light text-sm text-[#007BFF]">Gives us a Call</span>
 						<span class="font-m">{tel}</span>
 					</div>
 				</a>
-				<a href="mailto:info@rw.dnrpartners.com" class="flex items-center gap-2 mt-4">
+				<a href="mailto:info@blueskycargo.com" class="flex items-center gap-2 mt-4">
 					<div>
 						<svg
 							width="56"
@@ -137,7 +137,7 @@
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
-							<circle cx="28" cy="28" r="28" fill="#C43228" />
+							<circle cx="28" cy="28" r="28" fill="#007BFF" />
 							<path
 								d="M24.5 35.5H24C20 35.5 18 34.5 18 29.5V24.5C18 20.5 20 18.5 24 18.5H32C36 18.5 38 20.5 38 24.5V29.5C38 33.5 36 35.5 32 35.5H31.5C31.19 35.5 30.89 35.65 30.7 35.9L29.2 37.9C28.54 38.78 27.46 38.78 26.8 37.9L25.3 35.9C25.14 35.68 24.77 35.5 24.5 35.5Z"
 								stroke="white"
@@ -242,7 +242,7 @@
 								event.preventDefault();
 								submitForm();
 							}}
-							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+							class="py-3 px-6 w-fit flex items-center gap-4 bg-[#007BFF] rounded-xl text-white capitalize font-light col-span-2"
 						>
 							<span>Send Message</span>
 							<span>

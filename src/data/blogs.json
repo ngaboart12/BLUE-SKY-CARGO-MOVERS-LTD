@@ -1,0 +1,113 @@
+{
+    "blogs": [
+      {
+        "_id": "1",
+        "title": "How Smart Logistics Enhances Supply Chain Efficiency",
+        "description": [
+          "Explore the benefits of smart logistics systems in boosting supply chain efficiency and operational effectiveness."
+        ],
+        "mainImage": ["/images/009.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "2",
+        "title": "Eco-Friendly Transportation Solutions for Modern Businesses",
+        "description": [
+          "Discover how our eco-friendly transportation solutions contribute to a greener environment and sustainable practices."
+        ],
+        "mainImage": ["/images/0001.jpg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "3",
+        "title": "The Future of Automated Freight Technology",
+        "description": [
+          "A deep dive into the latest advancements in automated freight technology and their impact on the logistics industry."
+        ],
+        "mainImage": ["/images/006.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "4",
+        "title": "Maintaining Safety Standards with Smart Transportation Solutions",
+        "description": [
+          "Learn how smart transportation solutions help maintain high safety standards across various logistics operations."
+        ],
+        "mainImage": ["/images/service3.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "5",
+        "title": "Top 5 Benefits of Regular Fleet Maintenance",
+        "description": [
+          "Understand the key advantages of regular fleet maintenance for optimizing transportation efficiency and reducing downtime."
+        ],
+        "mainImage": ["/images/33.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "6",
+        "title": "Integrating IoT in Freight Operations",
+        "description": [
+          "How the Internet of Things (IoT) is revolutionizing freight operations for better efficiency and effectiveness."
+        ],
+        "mainImage": ["/images/2.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "7",
+        "title": "Sustainable Transportation Practices for the Future",
+        "description": [
+          "Adopting sustainable transportation practices to ensure environmental responsibility and operational excellence."
+        ],
+        "mainImage": ["/images/3333.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "8",
+        "title": "Training Your Staff for Optimal Transportation Performance",
+        "description": [
+          "Strategies for effectively training your logistics staff to achieve the highest standards of performance."
+        ],
+        "mainImage": ["/images/33333.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "9",
+        "title": "Leveraging Data Analytics in Transportation Services",
+        "description": [
+          "Explore how data analytics can optimize transportation schedules, improve resource allocation, and enhance service quality."
+        ],
+        "mainImage": ["/images/data_analytics.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "10",
+        "title": "The Role of Green Certifications in Transportation Services",
+        "description": [
+          "Understand the importance of green certifications and how they can elevate your transportation business’s reputation and credibility."
+        ],
+        "mainImage": ["/images/green_certifications.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "11",
+        "title": "Enhancing Customer Satisfaction through Reliable Transportation",
+        "description": [
+          "Learn how maintaining high transportation standards can significantly boost customer satisfaction and loyalty."
+        ],
+        "mainImage": ["/images/customer_satisfaction.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      },
+      {
+        "_id": "12",
+        "title": "Cost-Effective Transportation Strategies for Small Businesses",
+        "description": [
+          "Discover budget-friendly transportation strategies that ensure efficiency without compromising on quality for small enterprises."
+        ],
+        "mainImage": ["/images/cost_effective.jpeg"],
+        "publishedAt": "2024-08-27T00:00:00.000Z"
+      }
+    ]
+  }
+  

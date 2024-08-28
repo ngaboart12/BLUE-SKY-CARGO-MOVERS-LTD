@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import imgeFour from '$lib/images/4.png?enhanced';
-	import ImageTwo from '$lib/images/2.png';
+	import imgeFour from '$lib/images/11.jpeg?enhanced';
+	import ImageTwo from '$lib/images/009.jpeg';
 	import Button from '$lib/components/Button.svelte';
 	import SvgOne from '$lib/images/vision/1.svelte';
 	import SvgTwo from '$lib/images/vision/2.svelte';
@@ -17,82 +17,75 @@
 	import Carousel from '../Carousel.svelte';
 	import Map from '../Map.svelte';
 	import CountryButton from '../CountryButton.svelte';
+	import blogsData from '../../../data/blogs.json';
+	
 
 	const visions = [
-		{
-			name: 'OUR VISION',
-			description: 'To be a globally trusted consulting firm in audit and advisory services through empowering businesses to achieve excellence and success.',
-			icon: 1
-		},
-		{
-			name: 'OUR MISSION',
-			description:
-				'To leverage on innovation, expertise and technology to offer globally competitive consultancy services to our clients',
-			icon: 2
-		},
-		{
-			name: 'CORE BELIEF',
-			description:
-				'Providing proactive, effective, and reliable professional consulting services while upholding the highest standards of confidentiality and integrity.',
-			icon: 3
-		},
-		{
-			name: 'OUR CORE VALUES',
-			description:
-				'Integrity, Professionalism, Excellence ,Customer centricity, Serving',
-			icon: 4
-		}
-	];
-	export let data;
-	export const blog = data.blogs.slice(0, 4).map((value: any) => {
-		if (value.mainImage) {
-			const typePrefix = value.mainImage._type ? `${value.mainImage._type}-` : 'image-';
-			const removeTypePrefix = value.mainImage.asset._ref.split(typePrefix)[1];
-			const lastIndex = removeTypePrefix.lastIndexOf('-');
-			const modifiedFilename =
-				removeTypePrefix.substring(0, lastIndex) + '.' + removeTypePrefix.substring(lastIndex + 1);
-			return {
-				...value,
-				mainImage: `https://cdn.sanity.io/images/f3af10kw/dnr-data-set/${modifiedFilename}`
-			};
-		} else {
-			return value;
-		}
-	});
+    {
+        name: 'OUR VISION',
+        description: 'To be the leading logistics and cargo moving company in East Africa, known for our exceptional service quality, reliability, and innovative solutions.',
+        icon: 1
+    },
+    {
+        name: 'OUR MISSION',
+        description: 'To provide comprehensive, efficient, and tailored logistics solutions that exceed our clients expectations, ensuring timely and secure delivery of cargo across all borders.',
+        icon: 2
+    },
+    {
+        name: 'CORE BELIEF',
+        description: 'We believe in the power of seamless logistics to drive economic growth and facilitate international trade, while maintaining the highest standards of integrity and professionalism.',
+        icon: 3
+    },
+    {
+        name: 'OUR CORE VALUES',
+        description: 'Excellence in Service Delivery, Customer Satisfaction, Integrity and Professionalism, Innovation in Logistics, Timely and Secure Deliveries, Environmental Responsibility',
+        icon: 4
+    }
+];
+
+	export const blog = blogsData.blogs.slice(0, 8).map((value: any) => {
+    if (value.mainImage && value.mainImage.length > 0) {
+        return {
+            ...value,
+            mainImage: value.mainImage[0] // Access the first image in the array
+        };
+    } else {
+        return value;
+    }
+});
 	let findContenent = CONTENT.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT[0];
 	$: findImage = CONTENT_IMG.find((item) => item.path === $page.url.pathname.split('/')[1]) || CONTENT_IMG[0];
 
 	const HERO_CONTENT = [
-		{
-			title: 'Your Gateway to Global Business Success',
-			subTitle: 'Our company is Your Gateway to Global Business Success, providing the expertise and innovative solutions needed to empower your vision and drive worldwide impact.',
-		},
-		{
-			title: 'Empowering Your Vision with Global Expertise',
-			subTitle: 'We are committed to empowering your vision with global expertise, ensuring your business reaches its fullest potential on the international stage.',
-		},
-		{
-			title: 'Strategic Insight, Worldwide Impact',
-			subTitle: 'Our strategic insight delivers worldwide impact, driving your business to new heights across the globe.',
-		},
-		{
-			title: 'Innovative Solutions for a Boundless World',
-			subTitle: 'We offer innovative solutions for a boundless world, enabling your business to overcome challenges and seize global opportunities.',
-		},
-		{
-			title: 'Your Partner in Global Growth and Innovation',
-			subTitle: 'We are your partner in global growth and innovation, dedicated to helping your business expand and thrive on an international scale.',
-		},
-		{
-			title: 'Leading the Way in Global Consulting Excellence',
-			subTitle: 'We are leading the way in global consulting excellence, providing top-tier expertise and solutions to drive your business success worldwide.',
-		}
-	]
-
+    {
+        title: 'BLUE SKY CARGO MOVERS LTD',
+        subTitle: 'Your Trusted Partner in Global Logistics and Cargo Solutions',
+    },
+    {
+        title: 'Excellence in Every Shipment',
+        subTitle: 'Experience unparalleled freight forwarding and customs clearing services tailored to your unique needs',
+    },
+    {
+        title: 'Comprehensive Care for Your Cargo',
+        subTitle: 'From sea freight to inland transportation, we ve got every aspect of your logistics covered',
+    },
+    {
+        title: 'Innovative Solutions for Modern Trade',
+        subTitle: 'Cutting-edge techniques and efficient practices for seamless international cargo movement',
+    },
+    {
+        title: 'Your Reliable Partner in Global Trade',
+        subTitle: 'Professional and customer-focused services to enhance your import and export operations',
+    },
+    {
+        title: 'Connecting Borders, Simplifying Trade',
+        subTitle: 'Let us handle the complexities of logistics while you focus on growing your business',
+    }
+]
 </script>
 
 <div class="min-h-[75vh] h-full flex relative justify-start items-end">
-	<video src="/1.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
+	<video src="/02.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
 	<div class="absolute top-0 w-full bg-black/40 h-full z-20"></div>
 	<div class="flex flex-col gap-4 items-start z-40 bg-[#14375a] px-12 py-12 pb-12">
 		<div class="text-white text-start max-w-4xl sm:mt-0 mt-28 overflow-hidden">
@@ -140,18 +133,25 @@
 		</div>
 	</div>
 </div>
-<div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
+<!-- <div class="max-w-7xl mx-auto py-8 md:px-8 px-4 w-full flex flex-col items-start">
 	<h2 class="text-xl mb-6 sm:text-2xl md:text-3xl font-bold text-[#083867]">Our Network</h2>
 	<Carousel perPage={5}> 
 		<CountryButton  gap={true} onHome />
 	</Carousel>
-</div>
+</div> -->
 
 <div class="flex flex-col gap-6 sm:gap-10 mt-10">
 	<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 		<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 			<div class="overflow-hidden w-full">
-				<Map />
+				<!-- <Map /> -->
+				<div class="w-full mt-10 h-[650px] overflow-hidden rounded-2xl">
+					<img
+						src={"/new/001.jpeg"}
+						alt={""}
+						class="w-full object-cover h-full"
+					/>
+				</div>
 			</div>
 			<div class="flex flex-col gap-3">
 				<div class="w-fit">
@@ -161,11 +161,11 @@
 					name="Empowering businesses worldwide with cutting-edge solutions and strategic insights that drive exceptional growth"
 				/>
 				<p class="text-[#4C4A4A] font-light">
-					At DNR Partners International, we are redefining excellence in auditing, assurance, and business management consultancy on a global scale. With our footprint grounded in Kigali, Rwanda, expanding to Europe in London, England, and across Africa in South Africa, Zambia, Burundi, Kenya, Uganda, Tanzania and growing…., we offer unparalleled expertise and innovative solutions that drive success in today’s complex business environment.
+					At Blue Sky Cargo Movers Ltd, we are redefining excellence in logistics and freight forwarding services across East Africa and beyond. With our headquarters in Kigali, Rwanda, and strategic offices at major entry points such as Gatuna, Rusumo, Gisenyi, and Rusizi, as well as at the ports of Mombasa and Dar es Salaam, we offer unparalleled expertise and innovative solutions that drive success in today's complex global trade environment. Our comprehensive range of services, including sea freight, inland transportation, warehousing, and customs clearing, ensures that your cargo is handled with the utmost care and delivered on time, every time.
 				</p>
 				<a
 					href="/about"
-					class="py-3 px-6 w-fit flex items-center gap-2 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-2"
+					class="py-3 px-6 w-fit flex items-center gap-2 bg-[#007BFF] rounded-xl text-white capitalize font-light col-span-2 mt-2"
 				>
 					<span>know more</span>
 					<span>
@@ -253,7 +253,7 @@
 					{#if item.icon === 4 }
 						<div class="grid grid">
 							<div class="flex flex-col gap-1">
-								<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
+								<p class="uppercase text-lg text-[#007BFF]">{item.name}</p>
 								<div class="grid grid-cols-2 gap-2">
 									<div class="flex flex-col">
 										<span class="font-extralight text-lg">Integrity</span>
@@ -269,7 +269,7 @@
 						</div>
 						{:else}
 						<div class="flex flex-col gap-1">
-							<p class="uppercase text-lg text-[#C43228]">{item.name}</p>
+							<p class="uppercase text-lg text-[#007BFF]">{item.name}</p>
 							<p class="font-extralight text-lg">{item.description}</p>
 						</div>
 					{/if}
@@ -295,8 +295,8 @@
 			<div class="flex items-end justify-end w-full">
 				<a
 					href="/insights"
-					class="py-3 px-6 w-fit flex items-center gap-4 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2 mt-6"
-				>
+					class="py-3 px-6 w-fit flex items-center gap-2 bg-[#007BFF] text-white border border-[#0056b3] rounded-xl capitalize font-light col-span-2 mt-2"
+					>
 					<span>View more News</span>
 					<span>
 						<svg
@@ -338,7 +338,7 @@
 				</p>
 				<a
 					href="/carrers"
-					class="py-3 px-6 w-fit flex items-center gap-6 bg-[#D71A30] rounded-xl text-white capitalize font-light col-span-2"
+					class="py-3 px-6 w-fit flex items-center gap-6 bg-[#007BFF] rounded-xl text-white capitalize font-light col-span-2"
 				>
 					<span>View more News</span>
 					<span>
@@ -362,32 +362,33 @@
 			</div>
 		</div>
 	</div>
-	<Partnership />
+	<!-- <Partnership /> -->
 	<div class="w-full text-start mt-10 flex flex-col gap-8 max-w-7xl mx-auto">
 		<div class="sm:grid-cols-2 grid items-center gap-10">
-			<div class="flex flex-col gap-2,5">
-				<h2 class="text-[#083867] font-semibold text-2xl mb-3">Why Choose DNR Partners?</h2>
+			<div class="flex flex-col gap-2.5">
+				<h2 class="text-[#083867] font-semibold text-2xl mb-3">Why Choose Blue Sky Cargo Movers Ltd?</h2>
 				<ul class="flex flex-col gap-2 list-disc ml-8">
-						<li class="text-[#595959] font-light">
-							DNR is a TIER 1 Accredited Audit Firm
-						</li>
-						<li class="text-[#595959] font-light">
-							DNR leverages on a Global Network of Experts
-						</li>
-						<li class="text-[#595959] font-light">
-							DNR is an ACCA-UK Approved Employer
-						</li>
-						<li class="text-[#595959] font-light">
-							DNR is in the first category of ICPAR’s Quality Assurance Ranking
-						</li>
-						<li class="text-[#595959] font-light">
-							DNR signed an MoU with Global University of Sciences and Technology, USA, on the implementation of SDGs across Africa
-						</li>
+					<li class="text-[#595959] font-light">
+						Blue Sky Cargo Movers Ltd is a well-established forwarding company with a proven track record in delivering exceptional logistics solutions.
+					</li>
+					<li class="text-[#595959] font-light">
+						We offer personalized client handling to ensure tailored services that meet specific needs and requirements.
+					</li>
+					<li class="text-[#595959] font-light">
+						Our zero tolerance policy guarantees strict adherence to ethical practices and full compliance with legal standards.
+					</li>
+					<li class="text-[#595959] font-light">
+						We provide comprehensive services including road transport, ocean transport, customs clearing, and logistics advisory.
+					</li>
+					<li class="text-[#595959] font-light">
+						Our strategic office locations ensure efficient handling of logistics across major entry points and ports in the region.
+					</li>
 				</ul>
 			</div>
+			
 			<div class="w-full mt-10 h-[350px] overflow-hidden rounded-2xl">
 				<img
-					src={"/new/11.jpg"}
+					src={"/new/007.jpeg"}
 					alt={""}
 					class="w-full object-cover h-full"
 				/>
