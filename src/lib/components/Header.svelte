@@ -487,7 +487,7 @@
 							{/each}
 							<a
 								href="/contact"
-								class="py-3 px-6 bg-[#D71A30] rounded-xl text-white capitalize font-light w-full col-span-2 mt-2"
+								class="py-3 px-6 bg-[#007BFF] rounded-xl text-white capitalize font-light w-full col-span-2 mt-2"
 							>
 								reach to us
 							</a>

@@ -26,40 +26,41 @@
 
 	const staticYoutubeUpdates = [
 		{
-			_id: '1',
-			title: 'Introduction to Our Cleaning Services',
-			image: ["/images/33.jpeg"],
-			url: 'https://youtu.be/3wSo4rB8AdI'
-		},
+  _id: '1',
+  title: 'Introduction to Our Cleaning Services',
+  image: ["/images/33.jpeg"],
+  embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+},
+
 		{
 			_id: '2',
 			title: 'How Our Cleaning Services Make a Difference',
 			image: ["/images/0001.jpg"],
-			url: 'https://youtu.be/Q0A5P6wQZMs'
+			embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 		},
 		{
 			_id: '3',
 			title: 'Top 5 Benefits of Professional Cleaning Services',
 			image: ["/images/33333.jpeg"],
-			url: 'https://youtu.be/OaA3wJ8M4IQ'
+			embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 		},
 		{
 			_id: '4',
 			title: 'Our Comprehensive Home Maintenance Services',
 			image: ["/images/009.jpeg"],
-			url: 'https://youtu.be/B4roC2d4MQM'
+			embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 		},
 		{
 			_id: '5',
 			title: 'Why Choose Our Company for Your Commercial Cleaning?',
 			image: ["/images/006.jpeg"],
-			url: 'https://youtu.be/Z1Cdp1R8XxA'
+			embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 		},
 		{
 			_id: '6',
 			title: 'Customer Testimonials About Our Services',
 			image: ["/images/service2.jpeg"],
-			url: 'https://youtu.be/DlH2A2aGnLI'
+			embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BLAi6mggIA4?si=sYcd_iJsrHxK_Zum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 		}
 	];
 
@@ -67,7 +68,7 @@
 		_id: item._id,
 		title: item.title,
 		image: item.image,
-		url: item.url
+		url: item.embed
 	}));
 </script>
 
