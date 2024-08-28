@@ -7,17 +7,4 @@ const client = createClient({
 	useCdn: true
 });
 
-export async function load({}) {
-	const data = await client.fetch(`*[_type == "blog" && (country == "rw" || country == "all")]`);
 
-	if (data) {
-		return {
-			blogs: data
-		};
-	}
-
-	return {
-		status: 500,
-		body: new Error('Internal Server Error')
-	};
-}

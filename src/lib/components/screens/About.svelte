@@ -8,8 +8,8 @@
 	import ModelPersonDetail from '../ModelPersonDetail.svelte';
 	import ModalTwo from '../ModalTwo.svelte';
 	import CONTENT from '../../../data/images.json';
-	import BG_IMAGE from '$lib/images/009.jpeg';
-	import BG_IMAGE_1 from '$lib/images/11.jpeg';
+	// import BG_IMAGE from '$lib/images/bg.1.jpg';
+	// import BG_IMAGE_1 from '$lib/images/11.jpeg';
 
 	let isLoading = true;
 	let showModalone = false;
@@ -101,7 +101,7 @@
 {:else}
 	<div class="min-h-[70vh] flex relative justify-center items-center">
 		<img
-			src={BG_IMAGE}
+			src={"/new/005.jpeg"}
 			alt="Background image"
 			class="absolute top-0 w-full h-full z-10 object-cover"
 		/>
@@ -122,7 +122,7 @@
 		<div class="max-w-7xl mx-auto py-8 md:px-8 px-4">
 			<div class="grid justify-items-center md:grid-cols-2 gap-4 md:gap-10 items-center">
 				<div>
-					<img src={BG_IMAGE_1} alt="About Us Image" class="w-[460px] h-full object-cover" />
+					<img src={"/new/009.jpeg"} alt="About Us Image" class="w-[660px] h-full object-cover" />
 				</div>
 				<div class="flex flex-col gap-3">
 					<div class="w-fit">
