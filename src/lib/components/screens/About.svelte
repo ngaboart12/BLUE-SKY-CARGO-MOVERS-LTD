@@ -101,7 +101,7 @@
 {:else}
 	<div class="min-h-[70vh] flex relative justify-center items-center">
 		<img
-			src={"/new/10.webp"}
+			src={"/new/005.jpeg"}
 			alt="Background image"
 			class="absolute top-0 w-full h-full z-10 object-cover"
 		/>

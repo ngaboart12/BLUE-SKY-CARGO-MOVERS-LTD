@@ -85,7 +85,8 @@
 </script>
 
 <div class="min-h-[75vh] h-full flex relative justify-start items-end">
-	<video src="/02.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" />
+	<!-- <video src="/02.mp4" autoplay loop muted class="absolute top-0 w-full h-full z-10 object-cover" /> -->
+	<img src={"/new/blueskyhome.jpg"} alt="Description of the image" class="absolute top-0 w-full h-full z-10 object-cover" />
 	<div class="absolute top-0 w-full bg-black/40 h-full z-20"></div>
 	<div class="flex flex-col gap-4 items-start z-40 bg-[#14375a] px-12 py-12 pb-12">
 		<div class="text-white text-start max-w-4xl sm:mt-0 mt-28 overflow-hidden">
