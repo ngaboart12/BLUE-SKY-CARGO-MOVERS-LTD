@@ -61,8 +61,8 @@
 				<img
 					src={isColored ? logo : y > 50 ? logo : logowhite}
 					alt="blue sky"
-					width={100}
-					height={100}
+					width={50}
+					height={50}
 				/>
 			</a>
 
